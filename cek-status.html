@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Periksa perkembangan pengajuan layanan masyarakat melalui PANGGIL PAK RT.">
+
+    <meta name="theme-color" content="#173D30">
+
+<!-- PWA MANIFEST -->
+<link rel="manifest" href="./manifest.json">
+
+    <title>Cek Status Pengajuan | PANGGIL PAK RT</title>
+
+    <!-- FAVICON -->
+<link rel="icon"
+    type="image/png"
+    href="./assets/images/favicon-panggil-pak-rt.png">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- MAIN STYLESHEETS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/form.css">
+
+    <!-- STATUS PAGE STYLES -->
+    <style>
+        .status-page {
+            min-height: 100vh;
+            padding: 40px 20px 70px;
+            background: var(--background-color, #F5F6EF);
+        }
+
+        .status-container {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .status-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 12px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid rgba(105, 118, 110, 0.2);
+}
+
+        .status-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #173D30;
+            text-decoration: none;
+        }
+
+        .status-brand-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    overflow: hidden;
+
+    border-radius: 12px;
+    background: #B9D7BD;
+}
+
+.status-brand-icon img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+        .status-brand-text strong {
+            display: block;
+            font-family: "Poppins", sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .status-brand-text small {
+            display: block;
+            margin-top: 2px;
+            color: #69766E;
+            font-size: 11px;
+        }
+
+        .status-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #173D30;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .status-back-link:hover {
+            text-decoration: underline;
+        }
+
+        .status-intro {
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .status-eyebrow {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 7px 13px;
+            border-radius: 30px;
+            background: #E4EDE5;
+            color: #315E45;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .status-intro h1 {
+            margin: 0 0 12px;
+            color: #173D30;
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(26px, 5vw, 36px);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .status-intro p {
+            max-width: 540px;
+            margin: 0 auto;
+            color: #69766E;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .status-card {
+            padding: 30px;
+            border: 1px solid rgba(105, 118, 110, 0.15);
+            border-radius: 16px;
+            background: #FFFFFF;
+            box-shadow: 0 10px 35px rgba(16, 43, 34, 0.06);
+        }
+
+        .status-card + .status-card {
+            margin-top: 22px;
+        }
+
+        .status-card-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .status-step-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #EAF1E9;
+            color: #315E45;
+        }
+
+        .status-card-heading h2 {
+            margin: 0 0 5px;
+            color: #173D30;
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .status-card-heading p {
+            margin: 0;
+            color: #69766E;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .status-field {
+            margin-bottom: 20px;
+        }
+
+        .status-field label {
+            display: block;
+            margin-bottom: 9px;
+            color: #263D32;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .status-field label span {
+            color: #C45B4B;
+        }
+
+        .status-field input {
+            width: 100%;
+            min-height: 50px;
+            padding: 13px 15px;
+            border: 1px solid #D9E0D9;
+            border-radius: 9px;
+            outline: none;
+            background: #FFFFFF;
+            color: #263D32;
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .status-field input:focus {
+            border-color: #477A5C;
+            box-shadow: 0 0 0 3px rgba(71, 122, 92, 0.12);
+        }
+
+        .status-field input::placeholder {
+            color: #A0AAA2;
+        }
+
+        .status-field small {
+            display: block;
+            margin-top: 8px;
+            color: #7A877E;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .status-submit-button {
+            width: 100%;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 18px;
+            border: none;
+            border-radius: 9px;
+            background: #173D30;
+            color: #FFFFFF;
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .status-submit-button:hover {
+            background: #24523E;
+            transform: translateY(-1px);
+        }
+
+        .status-submit-button:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status-feedback {
+            display: none;
+            margin-top: 16px;
+            padding: 13px 15px;
+            border-radius: 9px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .status-feedback.info,
+        .status-feedback.success,
+        .status-feedback.error {
+            display: block;
+        }
+
+        .status-feedback.info {
+            background: #EDF3F8;
+            color: #315B7A;
+        }
+
+        .status-feedback.success {
+            background: #E8F4E9;
+            color: #27623B;
+        }
+
+        .status-feedback.error {
+            background: #FBEDEC;
+            color: #A13E35;
+        }
+
+        .status-verification {
+            margin-top: 22px;
+        }
+
+        .status-code-input {
+            text-align: center;
+            font-size: 22px !important;
+            font-weight: 700;
+            letter-spacing: 9px;
+        }
+
+        .status-result {
+            margin-top: 24px;
+            padding: 24px;
+            border: 1px solid #DCE7DC;
+            border-radius: 12px;
+            background: #F8FBF7;
+        }
+
+        .status-result h3 {
+            margin: 0 0 18px;
+            color: #173D30;
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+        }
+
+        .status-result dl {
+            display: grid;
+            grid-template-columns: minmax(110px, 0.8fr) 1.5fr;
+            gap: 13px 18px;
+            margin: 0;
+        }
+
+        .status-result dt {
+            color: #69766E;
+            font-size: 13px;
+        }
+
+        .status-result dd {
+            margin: 0;
+            color: #263D32;
+            font-size: 13px;
+            font-weight: 600;
+            overflow-wrap: anywhere;
+        }
+
+        .status-reset-button {
+            margin-top: 20px;
+            padding: 11px 16px;
+            border: 1px solid #B9CBBE;
+            border-radius: 8px;
+            background: transparent;
+            color: #315E45;
+            font-family: "Inter", sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .status-reset-button:hover {
+            background: #EAF1E9;
+        }
+
+        .status-help {
+            margin-top: 24px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #EAF1E9;
+        }
+
+        .status-help h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 9px;
+            color: #173D30;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+        }
+
+        .status-help p {
+            margin: 0;
+            color: #53675A;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .status-footer {
+            margin-top: 35px;
+            color: #849087;
+            font-size: 12px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .status-footer a {
+            color: #315E45;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        /* DARK MODE */
+        html[data-theme="dark"] .status-page {
+            background: #102B22;
+        }
+
+        html[data-theme="dark"] .status-brand,
+        html[data-theme="dark"] .status-back-link,
+        html[data-theme="dark"] .status-intro h1,
+        html[data-theme="dark"] .status-card-heading h2,
+        html[data-theme="dark"] .status-help h3 {
+            color: #E5EFE6;
+        }
+
+        html[data-theme="dark"] .status-brand-icon {
+            background: #A8C5AE;
+            color: #102B22;
+        }
+
+        html[data-theme="dark"] .status-card {
+            border-color: #345044;
+            background: #19382C;
+        }
+
+        html[data-theme="dark"] .status-field label,
+        html[data-theme="dark"] .status-result dd {
+            color: #E1EAE2;
+        }
+
+        html[data-theme="dark"] .status-field input {
+            border-color: #456052;
+            background: #102B22;
+            color: #FFFFFF;
+        }
+
+        html[data-theme="dark"] .status-result {
+            border-color: #456052;
+            background: #19382C;
+        }
+
+        html[data-theme="dark"] .status-result h3 {
+            color: #E5EFE6;
+        }
+
+        html[data-theme="dark"] .status-help,
+        html[data-theme="dark"] .status-step-icon {
+            background: #244638;
+        }
+
+        html[data-theme="dark"] .status-help p,
+        html[data-theme="dark"] .status-intro p,
+        html[data-theme="dark"] .status-card-heading p,
+        html[data-theme="dark"] .status-result dt {
+            color: #B5C5B8;
+        }
+
+        html[data-theme="dark"] .status-eyebrow {
+            background: #294B3A;
+            color: #C8E0CC;
+        }
+
+        html[data-theme="dark"] .status-submit-button {
+            background: #A8C5AE;
+            color: #102B22;
+        }
+
+        html[data-theme="dark"] .status-reset-button {
+            border-color: #668572;
+            color: #D6E6D8;
+        }
+
+        html[data-theme="dark"] .status-footer a {
+            color: #B8D5BD;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .status-page {
+                padding: 20px 15px 45px;
+            }
+
+            .status-header {
+                margin-bottom: 28px;
+                padding: 16px 5px;
+            }
+
+            .status-brand-icon {
+    width: 44px;
+    height: 44px;
+}
+
+
+            .status-brand-text strong {
+                font-size: 13px;
+            }
+
+            .status-brand-text small {
+                font-size: 10px;
+            }
+
+            .status-back-link {
+                font-size: 12px;
+            }
+
+            .status-card {
+                padding: 21px 18px;
+            }
+
+            .status-card-heading h2 {
+                font-size: 16px;
+            }
+
+            .status-result {
+                padding: 18px;
+            }
+
+            .status-result dl {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+
+            .status-result dd {
+                margin-bottom: 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="status-header">
+        <a href="index.html" class="status-brand" aria-label="PANGGIL PAK RT - Beranda">
+
+            <div class="status-brand-icon">
+    <img
+        src="./assets/images/pwa-512.png"
+        alt="Logo PANGGIL PAK RT">
+</div>
+
+            <div class="status-brand-text">
+                <strong>PANGGIL PAK RT</strong>
+                <small>Satu Pintu Layanan Masyarakat</small>
+            </div>
+
+        </a>
+
+        <a href="index.html" class="status-back-link">
+            <i data-lucide="arrow-left" size="16" aria-hidden="true"></i>
+            <span>Beranda</span>
+        </a>
+    </header>
+
+
+    <!-- =========================================
+         MAIN STATUS PAGE
+    ========================================== -->
+
+    <main class="status-page">
+
+        <div class="status-container">
+
+            <!-- PAGE INTRO -->
+
+            <section class="status-intro">
+
+                <span class="status-eyebrow">
+                    LAYANAN INFORMASI PENGAJUAN
+                </span>
+
+                <h1>Cek Status Pengajuan</h1>
+
+                <p>
+                    Pantau perkembangan pengajuan layanan masyarakat
+                    dengan mudah. Masukkan nomor pengajuan dan email
+                    yang digunakan saat mengirimkan formulir.
+                </p>
+
+            </section>
+
+
+            <!-- =================================
+                 STEP 01 : REQUEST VERIFICATION
+            ================================== -->
+
+            <section class="status-card">
+
+                <div class="status-card-heading">
+
+                    <div class="status-step-icon">
+                        <i data-lucide="search" aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h2>01. Identifikasi Pengajuan</h2>
+
+                        <p>
+                            Masukkan informasi pengajuan untuk
+                            mendapatkan kode verifikasi.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="statusRequestForm"
+                    data-status-request-form
+                    novalidate>
+
+                    <div class="status-field">
+
+                        <label for="submissionId">
+                            Nomor Pengajuan <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="submissionId"
+                            name="submission_id"
+                            placeholder="Contoh: PPR-2026-000001"
+                            autocomplete="off"
+                            maxlength="18"
+                            required>
+
+                        <small>
+                            Nomor pengajuan dapat ditemukan pada
+                            informasi konfirmasi setelah formulir dikirim.
+                        </small>
+
+                    </div>
+
+
+                    <div class="status-field">
+
+                        <label for="statusEmail">
+                            Alamat Email Aktif <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="statusEmail"
+                            name="email"
+                            placeholder="nama@email.com"
+                            autocomplete="email"
+                            maxlength="254"
+                            required>
+
+                        <small>
+                            Gunakan alamat email yang sama dengan
+                            email saat mengirimkan pengajuan.
+                        </small>
+
+                    </div>
+
+
+                    <button type="submit" class="status-submit-button">
+
+                        <i data-lucide="mail" size="17" aria-hidden="true"></i>
+
+                        <span>Kirim Kode Verifikasi</span>
+
+                    </button>
+
+
+                    <div class="status-feedback"
+                        data-status-feedback
+                        id="statusRequestFeedback"
+                        role="status"
+                        aria-live="polite">
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =================================
+                 STEP 02 : VERIFICATION
+            ================================== -->
+
+            <section class="status-card status-verification"
+                id="statusVerificationSection"
+                data-status-verification-section
+                hidden>
+
+                <div class="status-card-heading">
+
+                    <div class="status-step-icon">
+                        <i data-lucide="shield-check" aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h2>02. Verifikasi Identitas</h2>
+
+                        <p>
+                            Masukkan enam digit kode verifikasi
+                            yang telah dikirimkan ke email Anda.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="statusVerificationForm"
+                    data-status-verify-form
+                    novalidate>
+
+                    <input
+                        type="hidden"
+                        id="verificationSubmissionId"
+                        name="submission_id">
+
+
+                    <div class="status-field">
+
+                        <label for="verificationCode">
+                            Kode Verifikasi <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="verificationCode"
+                            name="code"
+                            class="status-code-input"
+                            placeholder="000000"
+                            inputmode="numeric"
+                            autocomplete="one-time-code"
+                            pattern="[0-9]{6}"
+                            minlength="6"
+                            maxlength="6"
+                            required>
+
+                        <small>
+                            Kode hanya berlaku selama 10 menit.
+                            Jangan bagikan kode ini kepada orang lain.
+                        </small>
+
+                    </div>
+
+
+                    <button type="submit" class="status-submit-button">
+
+                        <i data-lucide="lock-keyhole" size="17" aria-hidden="true"></i>
+
+                        <span>Verifikasi dan Lihat Status</span>
+
+                    </button>
+
+
+                    <div class="status-feedback"
+                        data-status-feedback
+                        id="statusVerificationFeedback"
+                        role="status"
+                        aria-live="polite">
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =================================
+                 STEP 03 : STATUS RESULT
+            ================================== -->
+
+            <section class="status-result"
+                id="statusResult"
+                data-status-result
+                hidden>
+
+                <div data-status-result-content>
+                    <!-- Status pengajuan akan ditampilkan oleh status.js -->
+                </div>
+
+                <button
+                    type="button"
+                    class="status-reset-button"
+                    id="resetStatusButton"
+                    data-status-reset>
+
+                    <i data-lucide="refresh-ccw"
+                        size="14"
+                        aria-hidden="true"></i>
+
+                    Periksa Pengajuan Lain
+
+                </button>
+
+            </section>
+
+
+            <!-- =================================
+                 HELP INFORMATION
+            ================================== -->
+
+            <aside class="status-help">
+
+                <h3>
+                    <i data-lucide="info" size="17" aria-hidden="true"></i>
+                    Belum Menemukan Nomor Pengajuan?
+                </h3>
+
+                <p>
+                    Pastikan Anda telah berhasil mengirimkan formulir
+                    pengajuan. Periksa kembali informasi konfirmasi
+                    yang diterima setelah pengajuan dikirim.
+                    Jika masih mengalami kendala, silakan hubungi
+                    pengurus RT setempat.
+                </p>
+
+            </aside>
+
+
+            <!-- FOOTER -->
+
+            <footer class="status-footer">
+
+                <p>
+                    &copy; <span id="footerYear">2026</span>
+                    PANGGIL PAK RT.
+                    Satu Pintu Layanan Masyarakat.
+                </p>
+
+                <p>
+                    <a href="index.html">Kembali ke Beranda</a>
+                    &nbsp;·&nbsp;
+                    <a href="panduan.html">Panduan Penggunaan</a>
+                </p>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
+
+    <!-- PUBLIC CONFIGURATION -->
+    <script src="config/public-config.js"></script>
+
+    <!-- STATUS HANDLER -->
+    <script src="js/status.js"></script>
+
+
+    <!-- PAGE INITIALIZATION -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const footerYear = document.getElementById("footerYear");
+
+            if (footerYear) {
+                footerYear.textContent = new Date().getFullYear();
+            }
+
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+
+        });
+    </script>
+
+        <script src="./js/pwa.js" defer></script>
+
+</body>
+
+</html>

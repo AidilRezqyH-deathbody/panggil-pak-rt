@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Panduan penggunaan PANGGIL PAK RT untuk mengajukan layanan dan memeriksa status pengajuan masyarakat.">
+
+    <meta name="theme-color" content="#173D30">
+
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+
+    <title>Panduan Penggunaan | PANGGIL PAK RT</title>
+
+    <!-- FAVICON -->
+    <link rel="icon"
+    type="image/png"
+    href="./assets/images/favicon-panggil-pak-rt.png">
+
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            padding: 30px 20px 70px;
+            background: #F5F6EF;
+        }
+
+        .guide-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+       .guide-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 12px;
+    margin-bottom: 45px;
+    border-bottom: 1px solid rgba(105, 118, 110, 0.2);
+}
+
+        .guide-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #173D30;
+            text-decoration: none;
+        }
+
+        .guide-brand-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    overflow: hidden;
+
+    border-radius: 12px;
+    background: #B9D7BD;
+}
+
+.guide-brand-icon img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+        .guide-brand-text strong {
+            display: block;
+            font-family: "Poppins", sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .guide-brand-text small {
+            display: block;
+            margin-top: 2px;
+            color: #69766E;
+            font-size: 11px;
+        }
+
+        .guide-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #173D30;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .guide-back-link:hover {
+            text-decoration: underline;
+        }
+
+        .guide-hero {
+            margin-bottom: 45px;
+            text-align: center;
+        }
+
+        .guide-eyebrow {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 7px 14px;
+            border-radius: 30px;
+            background: #E4EDE5;
+            color: #315E45;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .guide-hero h1 {
+            margin: 0 0 14px;
+            color: #173D30;
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(27px, 5vw, 38px);
+            line-height: 1.3;
+        }
+
+        .guide-hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #69766E;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .guide-section {
+            margin-bottom: 26px;
+            padding: 28px;
+            border: 1px solid rgba(105, 118, 110, 0.15);
+            border-radius: 16px;
+            background: #FFFFFF;
+            box-shadow: 0 8px 25px rgba(16, 43, 34, 0.04);
+        }
+
+        .guide-section-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .guide-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #EAF1E9;
+            color: #315E45;
+        }
+
+        .guide-section-heading h2 {
+            margin: 0 0 6px;
+            color: #173D30;
+            font-family: "Poppins", sans-serif;
+            font-size: 19px;
+        }
+
+        .guide-section-heading p {
+            margin: 0;
+            color: #69766E;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .guide-content {
+            color: #53675A;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .guide-content p {
+            margin: 0 0 14px;
+        }
+
+        .guide-content ul,
+        .guide-content ol {
+            padding-left: 22px;
+            margin: 12px 0;
+        }
+
+        .guide-content li {
+            padding-left: 5px;
+            margin-bottom: 9px;
+        }
+
+        .guide-content strong {
+            color: #315E45;
+        }
+
+        .guide-steps {
+            display: grid;
+            gap: 16px;
+        }
+
+        .guide-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px;
+            border: 1px solid #E4EBE4;
+            border-radius: 12px;
+            background: #FAFCF9;
+        }
+
+        .guide-step-number {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #173D30;
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .guide-step h3 {
+            margin: 0 0 5px;
+            color: #263D32;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+        }
+
+        .guide-step p {
+            margin: 0;
+            color: #69766E;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .guide-status-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .guide-status-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            border: 1px solid #E4EBE4;
+            border-radius: 10px;
+        }
+
+        .guide-status-dot {
+            flex-shrink: 0;
+            width: 10px;
+            height: 10px;
+            margin-top: 6px;
+            border-radius: 50%;
+            background: #A8C5AE;
+        }
+
+        .guide-status-item strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #263D32;
+            font-size: 13px;
+        }
+
+        .guide-status-item p {
+            margin: 0;
+            color: #69766E;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .guide-note {
+            margin-top: 18px;
+            padding: 16px;
+            border-left: 4px solid #8BAF91;
+            border-radius: 6px;
+            background: #EDF4ED;
+            color: #53675A;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .guide-faq {
+            display: grid;
+            gap: 12px;
+        }
+
+        .guide-faq details {
+            padding: 16px;
+            border: 1px solid #E4EBE4;
+            border-radius: 10px;
+            background: #FAFCF9;
+        }
+
+        .guide-faq summary {
+            color: #263D32;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .guide-faq details p {
+            margin: 12px 0 0;
+            color: #69766E;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .guide-cta {
+            padding: 30px;
+            border-radius: 16px;
+            background: #173D30;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .guide-cta h2 {
+            margin: 0 0 10px;
+            font-family: "Poppins", sans-serif;
+            font-size: 21px;
+        }
+
+        .guide-cta p {
+            max-width: 520px;
+            margin: 0 auto 20px;
+            color: #D0DFD2;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .guide-cta-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .guide-button {
+            min-height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 18px;
+            border: 1px solid transparent;
+            border-radius: 9px;
+            background: #FFFFFF;
+            color: #173D30;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        .guide-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .guide-button-outline {
+            border-color: rgba(255, 255, 255, 0.5);
+            background: transparent;
+            color: #FFFFFF;
+        }
+
+        .guide-footer {
+            margin-top: 35px;
+            color: #849087;
+            font-size: 12px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .guide-footer a {
+            color: #315E45;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* DARK MODE */
+
+        html[data-theme="dark"] .guide-page {
+            background: #102B22;
+        }
+
+        html[data-theme="dark"] .guide-brand,
+        html[data-theme="dark"] .guide-back-link,
+        html[data-theme="dark"] .guide-hero h1,
+        html[data-theme="dark"] .guide-section-heading h2 {
+            color: #E5EFE6;
+        }
+
+        html[data-theme="dark"] .guide-brand-icon {
+    background: #B9D7BD;
+}
+
+        html[data-theme="dark"] .guide-section {
+            border-color: #345044;
+            background: #19382C;
+        }
+
+        html[data-theme="dark"] .guide-content,
+        html[data-theme="dark"] .guide-hero p,
+        html[data-theme="dark"] .guide-section-heading p {
+            color: #B5C5B8;
+        }
+
+        html[data-theme="dark"] .guide-step,
+        html[data-theme="dark"] .guide-status-item,
+        html[data-theme="dark"] .guide-faq details {
+            border-color: #456052;
+            background: #102B22;
+        }
+
+        html[data-theme="dark"] .guide-step h3,
+        html[data-theme="dark"] .guide-status-item strong,
+        html[data-theme="dark"] .guide-faq summary {
+            color: #E5EFE6;
+        }
+
+        html[data-theme="dark"] .guide-step p,
+        html[data-theme="dark"] .guide-status-item p,
+        html[data-theme="dark"] .guide-faq details p {
+            color: #B5C5B8;
+        }
+
+        html[data-theme="dark"] .guide-note {
+            border-color: #A8C5AE;
+            background: #244638;
+            color: #D6E6D8;
+        }
+
+        html[data-theme="dark"] .guide-eyebrow {
+            background: #294B3A;
+            color: #C8E0CC;
+        }
+
+        html[data-theme="dark"] .guide-footer a {
+            color: #B8D5BD;
+        }
+
+        @media (max-width: 600px) {
+
+            .guide-page {
+                padding: 20px 15px 45px;
+            }
+
+            .guide-header {
+    margin-bottom: 32px;
+    padding: 16px 5px;
+}
+            .guide-brand-icon {
+    width: 44px;
+    height: 44px;
+}
+
+            .guide-brand-text strong {
+                font-size: 13px;
+            }
+
+            .guide-brand-text small {
+                font-size: 10px;
+            }
+
+            .guide-back-link {
+                font-size: 12px;
+            }
+
+            .guide-section {
+                padding: 21px 18px;
+            }
+
+            .guide-section-heading h2 {
+                font-size: 16px;
+            }
+
+            .guide-step {
+                padding: 13px;
+            }
+
+            .guide-cta {
+                padding: 25px 18px;
+            }
+
+            .guide-cta h2 {
+                font-size: 19px;
+            }
+
+            .guide-cta-actions {
+                flex-direction: column;
+            }
+
+            .guide-button {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="guide-header">
+
+        <a href="index.html" class="guide-brand">
+
+            <div class="guide-brand-icon">
+    <img
+        src="./assets/images/pwa-512.png"
+        alt="Logo PANGGIL PAK RT">
+</div>
+
+            <div class="guide-brand-text">
+                <strong>PANGGIL PAK RT</strong>
+                <small>Satu Pintu Layanan Masyarakat</small>
+            </div>
+
+        </a>
+
+        <a href="index.html" class="guide-back-link">
+            <i data-lucide="arrow-left" size="16" aria-hidden="true"></i>
+            <span>Beranda</span>
+        </a>
+
+    </header>
+
+
+    <main class="guide-page">
+
+        <div class="guide-container">
+
+            <!-- HERO -->
+
+            <section class="guide-hero">
+
+                <span class="guide-eyebrow">
+                    PUSAT BANTUAN
+                </span>
+
+                <h1>Panduan Penggunaan</h1>
+
+                <p>
+                    Selamat datang di PANGGIL PAK RT.
+                    Pelajari langkah-langkah penggunaan layanan
+                    digital masyarakat agar pengajuan Anda
+                    dapat dilakukan dengan mudah dan benar.
+                </p>
+
+            </section>
+
+
+            <!-- SECTION 01 -->
+
+            <section class="guide-section">
+
+                <div class="guide-section-heading">
+
+                    <div class="guide-icon">
+                        <i data-lucide="info" aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h2>Mengenal PANGGIL PAK RT</h2>
+
+                        <p>
+                            Satu pintu layanan masyarakat berbasis digital.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="guide-content">
+
+                    <p>
+                        <strong>PANGGIL PAK RT</strong> merupakan
+                        platform layanan masyarakat yang dirancang
+                        untuk membantu warga menyampaikan berbagai
+                        kebutuhan administrasi, informasi, laporan,
+                        dan aspirasi kepada pengurus RT.
+                    </p>
+
+                    <p>
+                        Melalui platform ini, warga dapat mengirimkan
+                        pengajuan secara daring dan memantau
+                        perkembangan pengajuan tanpa harus selalu
+                        datang langsung kepada pengurus RT.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION 02 -->
+
+            <section class="guide-section">
+
+                <div class="guide-section-heading">
+
+                    <div class="guide-icon">
+                        <i data-lucide="clipboard-check" aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h2>Persiapan Sebelum Mengajukan</h2>
+
+                        <p>
+                            Pastikan informasi yang dibutuhkan sudah tersedia.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="guide-content">
+
+                    <ul>
+                        <li>
+                            Siapkan nama lengkap sesuai identitas.
+                        </li>
+
+                        <li>
+                            Siapkan nomor WhatsApp yang aktif.
+                        </li>
+
+                        <li>
+                            Gunakan alamat email aktif yang dapat diakses.
+                        </li>
+
+                        <li>
+                            Pastikan memilih RT tempat tinggal yang benar.
+                        </li>
+
+                        <li>
+                            Siapkan informasi layanan dan keterangan
+                            pengajuan secara jelas.
+                        </li>
+
+                        <li>
+                            Jika diperlukan, siapkan dokumen pendukung
+                            dalam format PDF, JPG, JPEG, atau PNG.
+                        </li>
+                    </ul>
+
+                    <div class="guide-note">
+                        <strong>Perhatian:</strong>
+                        Jangan mengirimkan informasi atau dokumen
+                        yang tidak berkaitan dengan kebutuhan layanan.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION 03 -->
+
+            <section class="guide-section">
+
+                <div class="guide-section-heading">
+
+                    <div class="guide-icon">
+                        <i data-lucide="file-plus" aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h2>Cara Mengirim Pengajuan</h2>
+
+                        <p>
+                            Ikuti langkah berikut untuk mengirimkan
+                            kebutuhan layanan masyarakat.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="guide-steps">
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">1</div>
+
+                        <div>
+                            <h3>Buka Halaman Pengajuan</h3>
+
+                            <p>
+                                Pilih menu pengajuan melalui halaman
+                                utama PANGGIL PAK RT.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">2</div>
+
+                        <div>
+                            <h3>Isi Identitas Pemohon</h3>
+
+                            <p>
+                                Masukkan nama lengkap, nomor WhatsApp,
+                                email aktif, dan informasi RT tempat tinggal.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">3</div>
+
+                        <div>
+                            <h3>Pilih Jenis Layanan</h3>
+
+                            <p>
+                                Pilih kategori layanan yang sesuai
+                                dengan kebutuhan Anda.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">4</div>
+
+                        <div>
+                            <h3>Lengkapi Informasi Pengajuan</h3>
+
+                            <p>
+                                Tuliskan perihal dan penjelasan
+                                pengajuan secara jelas. Sertakan
+                                dokumen pendukung jika diperlukan.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">5</div>
+
+                        <div>
+                            <h3>Periksa dan Kirim</h3>
+
+                            <p>
+                                Periksa kembali seluruh informasi,
+                                setujui ketentuan pengajuan, kemudian
+                                kirim formulir.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">6</div>
+
+                        <div>
+                            <h3>Simpan Nomor Pengajuan</h3>
+
+                            <p>
+                                Setelah pengajuan berhasil diterima,
+                                simpan nomor pengajuan untuk digunakan
+                                ketika memeriksa status.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION 04 -->
+
+            <section class="guide-section">
+
+                <div class="guide-section-heading">
+
+                    <div class="guide-icon">
+                        <i data-lucide="search-check" aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h2>Cara Memeriksa Status</h2>
+
+                        <p>
+                            Pantau perkembangan pengajuan Anda
+                            melalui halaman pemeriksaan status.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="guide-steps">
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">1</div>
+
+                        <div>
+                            <h3>Buka Halaman Cek Status</h3>
+
+                            <p>
+                                Pilih menu Cek Status pada halaman utama.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">2</div>
+
+                        <div>
+                            <h3>Masukkan Nomor Pengajuan</h3>
+
+                            <p>
+                                Gunakan nomor pengajuan yang diterima
+                                setelah formulir berhasil dikirim.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">3</div>
+
+                        <div>
+                            <h3>Masukkan Email Terdaftar</h3>
+
+                            <p>
+                                Gunakan email yang sama dengan email
+                                ketika mengirimkan pengajuan.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">4</div>
+
+                        <div>
+                            <h3>Masukkan Kode Verifikasi</h3>
+
+                            <p>
+                                Periksa email untuk mendapatkan
+                                kode verifikasi enam digit,
+                                kemudian masukkan kode tersebut.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="guide-step">
+
+                        <div class="guide-step-number">5</div>
+
+                        <div>
+                            <h3>Lihat Perkembangan Pengajuan</h3>
+
+                            <p>
+                                Jika verifikasi berhasil, informasi
+                                status pengajuan akan ditampilkan.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="guide-note">
+                    Kode verifikasi berlaku selama 10 menit.
+                    Jangan membagikan kode tersebut kepada siapa pun.
+                </div>
+
+            </section>
+
+
+            <!-- SECTION 05 -->
+
+            <section class="guide-section">
+
+                <div class="guide-section-heading">
+
+                    <div class="guide-icon">
+                        <i data-lucide="list-checks" aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h2>Memahami Status Pengajuan</h2>
+
+                        <p>
+                            Berikut arti dari setiap status
+                            yang mungkin muncul.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="guide-status-list">
+
+                    <div class="guide-status-item">
+                        <div class="guide-status-dot"></div>
+
+                        <div>
+                            <strong>MENUNGGU</strong>
+
+                            <p>
+                                Pengajuan telah diterima dan sedang
+                                menunggu tindak lanjut dari pengurus RT.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="guide-status-item">
+                        <div class="guide-status-dot"></div>
+
+                        <div>
+                            <strong>DIPROSES</strong>
+
+                            <p>
+                                Pengajuan sedang diperiksa atau
+                                ditindaklanjuti oleh pengurus RT.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="guide-status-item">
+                        <div class="guide-status-dot"></div>
+
+                        <div>
+                            <strong>PERLU PERBAIKAN</strong>
+
+                            <p>
+                                Pengajuan membutuhkan informasi
+                                atau perbaikan tambahan.
+                                Silakan menghubungi pengurus RT
+                                untuk mengetahui hal yang perlu dilengkapi.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="guide-status-item">
+                        <div class="guide-status-dot"></div>
+
+                        <div>
+                            <strong>SELESAI</strong>
+
+                            <p>
+                                Proses pengajuan telah diselesaikan
+                                oleh pengurus RT.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION 06 -->
+
+            <section class="guide-section">
+
+                <div class="guide-section-heading">
+
+                    <div class="guide-icon">
+                        <i data-lucide="help-circle" aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h2>Pertanyaan Umum</h2>
+
+                        <p>
+                            Beberapa jawaban untuk kendala
+                            yang mungkin dialami warga.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="guide-faq">
+
+                    <details>
+                        <summary>
+                            Bagaimana jika lupa nomor pengajuan?
+                        </summary>
+
+                        <p>
+                            Periksa kembali informasi konfirmasi
+                            setelah pengajuan dikirim. Jika masih
+                            tidak ditemukan, hubungi pengurus RT
+                            untuk mendapatkan bantuan.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            Mengapa kode verifikasi tidak masuk?
+                        </summary>
+
+                        <p>
+                            Pastikan alamat email yang dimasukkan benar.
+                            Periksa juga folder Spam atau Promosi.
+                            Jika belum diterima, tunggu sebentar sebelum
+                            meminta kode kembali.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            Mengapa nomor pengajuan tidak ditemukan?
+                        </summary>
+
+                        <p>
+                            Pastikan nomor pengajuan ditulis dengan
+                            benar dan sesuai dengan nomor yang
+                            diterima setelah pengajuan berhasil dikirim.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            Apakah pengajuan langsung selesai setelah dikirim?
+                        </summary>
+
+                        <p>
+                            Tidak. Pengajuan yang dikirim akan diterima
+                            terlebih dahulu, kemudian ditindaklanjuti
+                            oleh pengurus RT sesuai kebutuhan layanan.
+                        </p>
+                    </details>
+
+
+                    <details>
+                        <summary>
+                            Bagaimana jika status pengajuan belum berubah?
+                        </summary>
+
+                        <p>
+                            Status akan diperbarui setelah ada
+                            tindak lanjut dari pengurus RT.
+                            Jika membutuhkan informasi lebih lanjut,
+                            silakan hubungi pengurus RT setempat.
+                        </p>
+                    </details>
+
+                </div>
+
+            </section>
+
+
+            <!-- FINAL CTA -->
+
+            <section class="guide-cta">
+
+                <h2>Siap Menggunakan Layanan?</h2>
+
+                <p>
+                    Sekarang Anda sudah memahami langkah-langkah
+                    penggunaan PANGGIL PAK RT.
+                    Silakan mulai pengajuan atau periksa perkembangan
+                    pengajuan yang sudah dikirim.
+                </p>
+
+                <div class="guide-cta-actions">
+
+                    <a href="pengajuan.html" class="guide-button">
+                        <i data-lucide="file-plus" size="16"></i>
+                        Buat Pengajuan
+                    </a>
+
+                    <a href="cek-status.html"
+                        class="guide-button guide-button-outline">
+                        <i data-lucide="search" size="16"></i>
+                        Cek Status
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="guide-footer">
+
+                <p>
+                    &copy; <span id="footerYear">2026</span>
+                    PANGGIL PAK RT.
+                    Satu Pintu Layanan Masyarakat.
+                </p>
+
+                <p>
+                    <a href="index.html">Kembali ke Beranda</a>
+                </p>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const footerYear = document.getElementById("footerYear");
+
+            if (footerYear) {
+                footerYear.textContent = new Date().getFullYear();
+            }
+
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+
+        });
+    </script>
+
+     <!-- PWA REGISTRATION -->
+    <script src="./js/pwa.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1890 @@
+
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Petugas | PANGGIL PAK RT</title>
+
+    <meta name="description" content="Dashboard pengelolaan layanan masyarakat PANGGIL PAK RT.">
+    <meta name="theme-color" content="#173D30">
+    <meta name="author" content="PANGGIL PAK RT">
+
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" type="image/png" href="./assets/images/favicon-panggil-pak-rt.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <link rel="stylesheet" href="css/staff.css">
+
+    <style>
+        /* ======================================
+           GLOBAL
+        ====================================== */
+
+        .dashboard-page {
+            min-height: 100vh;
+            background: #F5F6EF;
+            color: #26352D;
+            font-family: "Inter", sans-serif;
+        }
+
+        .dashboard-page *,
+        .dashboard-page *::before,
+        .dashboard-page *::after {
+            box-sizing: border-box;
+        }
+
+        .dashboard-page [hidden] {
+            display: none !important;
+        }
+
+        .dashboard-page button {
+            font-family: inherit;
+        }
+
+        /* ======================================
+           HEADER
+        ====================================== */
+
+        .dashboard-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #FFFFFF;
+            border-bottom: 1px solid #E1E7E0;
+        }
+
+        .dashboard-header-inner {
+            width: min(1380px, calc(100% - 48px));
+            min-height: 78px;
+            margin: auto;
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .dashboard-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .dashboard-brand-logo {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            background: #B9D7BD;
+            border-radius: 12px;
+        }
+
+        .dashboard-brand-logo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .dashboard-brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .dashboard-brand-text strong {
+            color: #102B22;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+        }
+
+        .dashboard-brand-text span {
+            color: #69766E;
+            font-size: 10px;
+        }
+
+        .dashboard-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .dashboard-account {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dashboard-avatar {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            color: #173D30;
+            background: #E6EFE6;
+            border-radius: 50%;
+        }
+
+        .dashboard-account-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .dashboard-account-info strong {
+            color: #26352D;
+            font-size: 12px;
+        }
+
+        .dashboard-account-info span {
+            color: #69766E;
+            font-size: 10px;
+        }
+
+        .dashboard-logout {
+            min-height: 40px;
+            padding: 9px 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #A33B32;
+            background: #FFF4F2;
+            border: 1px solid #F1DAD6;
+            border-radius: 9px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .dashboard-logout:hover {
+            background: #FCE9E6;
+        }
+
+        .dashboard-logout:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        /* ======================================
+           MAIN
+        ====================================== */
+
+        .dashboard-main {
+            width: min(1380px, calc(100% - 48px));
+            margin: auto;
+            padding: 43px 0 65px;
+        }
+
+        .dashboard-welcome {
+            margin-bottom: 32px;
+        }
+
+        .dashboard-eyebrow {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #237A4B;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.6px;
+        }
+
+        .dashboard-welcome h1 {
+            margin: 0 0 10px;
+            color: #102B22;
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(25px, 4vw, 35px);
+            line-height: 1.3;
+        }
+
+        .dashboard-welcome p {
+            margin: 0;
+            color: #69766E;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* ======================================
+           PROFILE
+        ====================================== */
+
+        .dashboard-profile-panel {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            color: #FFFFFF;
+            background: linear-gradient(120deg, #173D30, #245642);
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(16, 43, 34, 0.10);
+            margin-bottom: 35px;
+        }
+
+        .dashboard-profile-main {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+        }
+
+        .dashboard-profile-icon {
+            width: 55px;
+            height: 55px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            color: #173D30;
+            background: #DCEBDD;
+            border-radius: 15px;
+        }
+
+        .dashboard-profile-icon i {
+            width: 26px;
+            height: 26px;
+        }
+
+        .dashboard-profile-text span {
+            display: block;
+            margin-bottom: 5px;
+            color: #C6DDC9;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .dashboard-profile-text h2 {
+            margin: 0 0 5px;
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+        }
+
+        .dashboard-profile-text p {
+            margin: 0;
+            color: #D8E8DB;
+            font-size: 11px;
+        }
+
+        .dashboard-profile-badge {
+            padding: 9px 13px;
+            color: #E8F5E9;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* ======================================
+           SECTION HEADING
+        ====================================== */
+
+        .dashboard-section-heading {
+            margin-bottom: 18px;
+        }
+
+        .dashboard-section-heading h2 {
+            margin: 0 0 6px;
+            color: #173D30;
+            font-family: "Poppins", sans-serif;
+            font-size: 19px;
+        }
+
+        .dashboard-section-heading p {
+            margin: 0;
+            color: #69766E;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* ======================================
+           SUMMARY
+        ====================================== */
+
+        .dashboard-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 17px;
+            margin-bottom: 36px;
+        }
+
+        .dashboard-summary-card {
+            min-height: 155px;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5EAE3;
+            border-radius: 13px;
+        }
+
+        .dashboard-summary-icon {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 15px;
+            color: #173D30;
+            background: #EAF1E9;
+            border-radius: 10px;
+        }
+
+        .dashboard-summary-icon i {
+            width: 19px;
+            height: 19px;
+        }
+
+        .dashboard-summary-card h3 {
+            margin: 0 0 9px;
+            color: #26352D;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .dashboard-summary-number {
+            margin: 0 0 5px;
+            color: #173D30;
+            font-family: "Poppins", sans-serif;
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        .dashboard-summary-card p:last-child {
+            margin: 0;
+            color: #89938B;
+            font-size: 10px;
+        }
+
+        /* ======================================
+           WORKSPACE
+        ====================================== */
+
+        .dashboard-workspace {
+            padding: 27px;
+            background: #FFFFFF;
+            border: 1px solid #E1E7E0;
+            border-radius: 14px;
+        }
+
+        .dashboard-workspace-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .dashboard-workspace-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .dashboard-workspace-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            color: #173D30;
+            background: #EAF1E9;
+            border-radius: 11px;
+        }
+
+        .dashboard-workspace-title h3 {
+            margin: 0 0 4px;
+            color: #173D30;
+            font-family: "Poppins", sans-serif;
+            font-size: 15px;
+        }
+
+        .dashboard-workspace-title p {
+            margin: 0;
+            color: #69766E;
+            font-size: 11px;
+        }
+
+        .dashboard-refresh-button {
+            min-height: 39px;
+            padding: 9px 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #173D30;
+            background: #EDF3ED;
+            border: 1px solid #DCE8DC;
+            border-radius: 9px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .dashboard-refresh-button:hover {
+            background: #E1ECE1;
+        }
+
+        .dashboard-refresh-button:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        /* ======================================
+           TABLE
+        ====================================== */
+
+        .dashboard-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid #E5EAE3;
+            border-radius: 11px;
+        }
+
+        .dashboard-table {
+            width: 100%;
+            min-width: 950px;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .dashboard-table th {
+            padding: 15px 16px;
+            color: #52645A;
+            background: #F6F8F4;
+            border-bottom: 1px solid #E5EAE3;
+            font-size: 10px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .dashboard-table td {
+            padding: 15px 16px;
+            color: #46564C;
+            border-bottom: 1px solid #EDF0EB;
+            font-size: 11px;
+            line-height: 1.6;
+            vertical-align: middle;
+        }
+
+        .dashboard-table tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .dashboard-table tbody tr:hover {
+            background: #FAFBF9;
+        }
+
+        .submission-status {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 9px;
+            border-radius: 20px;
+            font-size: 9px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .status-menunggu {
+            color: #916315;
+            background: #FFF4D9;
+        }
+
+        .status-diproses {
+            color: #245C94;
+            background: #E6F1FC;
+        }
+
+        .status-perbaikan {
+            color: #A34C28;
+            background: #FFF0E8;
+        }
+
+        .status-selesai {
+            color: #237348;
+            background: #E5F4E9;
+        }
+
+        .status-unknown {
+            color: #58645C;
+            background: #EDF0ED;
+        }
+
+        /* ======================================
+           STATUS MANAGEMENT
+        ====================================== */
+
+        .submission-action {
+            min-width: 190px;
+        }
+
+        .submission-status-control {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 170px;
+        }
+
+        .submission-status-select {
+            width: 100%;
+            min-height: 37px;
+            padding: 8px 10px;
+            color: #26352D;
+            background: #FFFFFF;
+            border: 1px solid #DCE5DB;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .submission-status-select:focus {
+            border-color: #237A4B;
+            box-shadow: 0 0 0 3px rgba(35, 122, 75, 0.10);
+        }
+
+        .submission-status-select:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .submission-save-button {
+            min-height: 35px;
+            padding: 8px 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            color: #FFFFFF;
+            background: #173D30;
+            border: 1px solid #173D30;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .submission-save-button:hover:not(:disabled) {
+            background: #245642;
+        }
+
+        .submission-save-button:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+        }
+
+        .submission-status-feedback {
+            min-height: 14px;
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+        .submission-status-feedback.success {
+            color: #237348;
+        }
+
+        .submission-status-feedback.error {
+            color: #A33B32;
+        }
+
+        /* ======================================
+           TABLE STATES
+        ====================================== */
+
+        .dashboard-table-state {
+            padding: 42px 20px;
+            text-align: center;
+        }
+
+        .dashboard-table-state i {
+            width: 34px;
+            height: 34px;
+            margin-bottom: 12px;
+            color: #7D9C82;
+        }
+
+        .dashboard-table-state h4 {
+            margin: 0 0 8px;
+            color: #26352D;
+            font-size: 13px;
+        }
+
+        .dashboard-table-state p {
+            max-width: 440px;
+            margin: auto;
+            color: #69766E;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .dashboard-inline-error,
+        .dashboard-inline-success {
+            margin-bottom: 15px;
+            padding: 13px 15px;
+            border-radius: 9px;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .dashboard-inline-error {
+            color: #963F35;
+            background: #FFF3F0;
+            border: 1px solid #F2D9D3;
+        }
+
+        .dashboard-inline-success {
+            color: #237348;
+            background: #EAF5EC;
+            border: 1px solid #CFE5D3;
+        }
+
+        /* ======================================
+           PAGINATION
+        ====================================== */
+
+        .dashboard-pagination {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .dashboard-pagination-info {
+            color: #69766E;
+            font-size: 11px;
+        }
+
+        .dashboard-pagination-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dashboard-page-button {
+            min-width: 38px;
+            min-height: 36px;
+            padding: 8px 11px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: #173D30;
+            background: #FFFFFF;
+            border: 1px solid #DCE5DB;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .dashboard-page-button:hover:not(:disabled) {
+            background: #EDF3ED;
+        }
+
+        .dashboard-page-button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* ======================================
+           FOOTER
+        ====================================== */
+
+        .dashboard-footer {
+            padding: 20px 24px;
+            text-align: center;
+            border-top: 1px solid #E1E7E0;
+        }
+
+        .dashboard-footer p {
+            margin: 0;
+            color: #89938B;
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        /* ======================================
+           SESSION STATES
+        ====================================== */
+
+        .dashboard-state {
+            width: min(440px, calc(100% - 32px));
+            margin: 100px auto;
+            padding: 35px 25px;
+            text-align: center;
+            background: #FFFFFF;
+            border: 1px solid #E1E7E0;
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(16, 43, 34, 0.06);
+        }
+
+        .dashboard-state-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 18px;
+            color: #173D30;
+            background: #EAF1E9;
+            border-radius: 15px;
+        }
+
+        .dashboard-state h2 {
+            margin: 0 0 9px;
+            color: #173D30;
+            font-family: "Poppins", sans-serif;
+            font-size: 20px;
+        }
+
+        .dashboard-state p {
+            margin: 0 0 20px;
+            color: #69766E;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .dashboard-state-button {
+            min-height: 43px;
+            padding: 11px 18px;
+            color: #FFFFFF;
+            background: #173D30;
+            border: 0;
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .dashboard-state-button:hover {
+            background: #102B22;
+        }
+
+        /* ======================================
+           RESPONSIVE
+        ====================================== */
+
+        @media (max-width: 1100px) {
+            .dashboard-summary-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 750px) {
+            .dashboard-summary-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .dashboard-header-inner {
+                width: calc(100% - 30px);
+                min-height: 70px;
+                padding: 0 5px;
+            }
+
+            .dashboard-brand-logo {
+                width: 44px;
+                height: 44px;
+            }
+
+            .dashboard-brand-text strong {
+                font-size: 11px;
+            }
+
+            .dashboard-brand-text span {
+                font-size: 9px;
+            }
+
+            .dashboard-account-info {
+                display: none;
+            }
+
+            .dashboard-header-actions {
+                gap: 9px;
+            }
+
+            .dashboard-logout {
+                min-height: 37px;
+                padding: 8px 10px;
+                font-size: 10px;
+            }
+
+            .dashboard-main {
+                width: calc(100% - 30px);
+                padding: 30px 0 45px;
+            }
+
+            .dashboard-welcome h1 {
+                font-size: 25px;
+            }
+
+            .dashboard-welcome p {
+                font-size: 11px;
+            }
+
+            .dashboard-profile-panel {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 20px;
+                gap: 17px;
+            }
+
+            .dashboard-profile-text h2 {
+                font-size: 15px;
+            }
+
+            .dashboard-summary-grid {
+                gap: 11px;
+            }
+
+            .dashboard-summary-card {
+                min-height: 140px;
+                padding: 15px;
+            }
+
+            .dashboard-summary-card h3 {
+                font-size: 10px;
+            }
+
+            .dashboard-summary-number {
+                font-size: 24px;
+            }
+
+            .dashboard-workspace {
+                padding: 17px;
+            }
+
+            .dashboard-pagination {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .dashboard-page *,
+            .dashboard-page *::before,
+            .dashboard-page *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="dashboard-page">
+
+    <!-- SESSION LOADING -->
+    <section id="sessionLoading" class="dashboard-state">
+        <div class="dashboard-state-icon">
+            <i data-lucide="shield-check"></i>
+        </div>
+
+        <h2>Memeriksa Sesi</h2>
+
+        <p>
+            Sistem sedang memverifikasi autentikasi petugas.
+            Mohon tunggu sebentar.
+        </p>
+    </section>
+
+    <!-- SESSION ERROR -->
+    <section id="sessionError" class="dashboard-state" hidden>
+        <div class="dashboard-state-icon">
+            <i data-lucide="alert-circle"></i>
+        </div>
+
+        <h2 id="sessionErrorTitle">Sesi Tidak Dapat Diperiksa</h2>
+
+        <p id="sessionErrorMessage">
+            Terjadi kendala ketika memeriksa sesi petugas.
+        </p>
+
+        <button type="button" id="retrySessionButton" class="dashboard-state-button">
+            Coba Lagi
+        </button>
+
+        <p style="margin-top: 15px; margin-bottom: 0;">
+            <a href="petugas.html" style="color: #173D30; font-weight: 700;">
+                Kembali ke halaman login
+            </a>
+        </p>
+    </section>
+
+    <!-- DASHBOARD CONTENT -->
+    <div id="dashboardContent" hidden>
+
+        <!-- HEADER -->
+        <header class="dashboard-header">
+            <div class="dashboard-header-inner">
+
+                <a href="index.html" class="dashboard-brand">
+                    <div class="dashboard-brand-logo">
+                        <img src="./assets/images/pwa-512.png" alt="Logo PANGGIL PAK RT">
+                    </div>
+
+                    <div class="dashboard-brand-text">
+                        <strong>PANGGIL PAK RT</strong>
+                        <span>Dashboard Petugas</span>
+                    </div>
+                </a>
+
+                <div class="dashboard-header-actions">
+                    <div class="dashboard-account">
+                        <div class="dashboard-avatar">
+                            <i data-lucide="user-round"></i>
+                        </div>
+
+                        <div class="dashboard-account-info">
+                            <strong id="headerStaffName">Petugas RT</strong>
+                            <span id="headerStaffArea">Wilayah Petugas</span>
+                        </div>
+                    </div>
+
+                    <button type="button" id="logoutButton" class="dashboard-logout">
+                        <i data-lucide="log-out"></i>
+                        <span>Keluar</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main class="dashboard-main">
+
+            <!-- WELCOME -->
+            <section class="dashboard-welcome">
+                <span class="dashboard-eyebrow">RUANG KERJA PETUGAS</span>
+
+                <h1>
+                    Selamat Datang,
+                    <span id="welcomeStaffName">Petugas</span>.
+                </h1>
+
+                <p>
+                    Berikut adalah ringkasan layanan masyarakat
+                    yang berada dalam tanggung jawab wilayah Anda.
+                </p>
+            </section>
+
+            <!-- PROFILE -->
+            <section class="dashboard-profile-panel">
+                <div class="dashboard-profile-main">
+                    <div class="dashboard-profile-icon">
+                        <i data-lucide="user-round-check"></i>
+                    </div>
+
+                    <div class="dashboard-profile-text">
+                        <span>AKUN PETUGAS AKTIF</span>
+                        <h2 id="profileStaffName">Petugas RT</h2>
+                        <p id="profileStaffEmail">-</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-profile-badge" id="profileStaffArea">
+                    Wilayah belum tersedia
+                </div>
+            </section>
+
+            <!-- SUMMARY -->
+            <section aria-labelledby="summaryTitle">
+                <div class="dashboard-section-heading">
+                    <h2 id="summaryTitle">Ringkasan Layanan</h2>
+
+                    <p>
+                        Statistik pengajuan berdasarkan wilayah
+                        petugas yang sedang login.
+                    </p>
+                </div>
+
+                <div class="dashboard-summary-grid">
+
+                    <article class="dashboard-summary-card">
+                        <div class="dashboard-summary-icon">
+                            <i data-lucide="inbox"></i>
+                        </div>
+                        <h3>Total Pengajuan</h3>
+                        <div class="dashboard-summary-number" id="summaryTotal">—</div>
+                        <p>Seluruh pengajuan</p>
+                    </article>
+
+                    <article class="dashboard-summary-card">
+                        <div class="dashboard-summary-icon">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <h3>Menunggu</h3>
+                        <div class="dashboard-summary-number" id="summaryMenunggu">—</div>
+                        <p>Belum diproses</p>
+                    </article>
+
+                    <article class="dashboard-summary-card">
+                        <div class="dashboard-summary-icon">
+                            <i data-lucide="refresh-cw"></i>
+                        </div>
+                        <h3>Sedang Diproses</h3>
+                        <div class="dashboard-summary-number" id="summaryDiproses">—</div>
+                        <p>Dalam penanganan</p>
+                    </article>
+
+                    <article class="dashboard-summary-card">
+                        <div class="dashboard-summary-icon">
+                            <i data-lucide="alert-circle"></i>
+                        </div>
+                        <h3>Perlu Perbaikan</h3>
+                        <div class="dashboard-summary-number" id="summaryPerbaikan">—</div>
+                        <p>Memerlukan tindak lanjut</p>
+                    </article>
+
+                    <article class="dashboard-summary-card">
+                        <div class="dashboard-summary-icon">
+                            <i data-lucide="check-circle"></i>
+                        </div>
+                        <h3>Selesai</h3>
+                        <div class="dashboard-summary-number" id="summarySelesai">—</div>
+                        <p>Pengajuan terselesaikan</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- SUBMISSION WORKSPACE -->
+            <section class="dashboard-workspace">
+
+                <div class="dashboard-workspace-header">
+                    <div class="dashboard-workspace-title">
+                        <div class="dashboard-workspace-icon">
+                            <i data-lucide="layout-dashboard"></i>
+                        </div>
+
+                        <div>
+                            <h3>Pengelolaan Pengajuan</h3>
+                            <p>
+                                Daftar pengajuan masyarakat di wilayah
+                                RT yang menjadi tanggung jawab petugas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button type="button" id="refreshDashboardButton" class="dashboard-refresh-button">
+                        <i data-lucide="refresh-cw"></i>
+                        <span>Muat Ulang</span>
+                    </button>
+                </div>
+
+                <div id="dashboardDataError" class="dashboard-inline-error" role="alert" hidden></div>
+                <div id="dashboardDataSuccess" class="dashboard-inline-success" role="status" hidden></div>
+
+                <!-- TABLE -->
+                <div class="dashboard-table-wrapper">
+                    <table class="dashboard-table">
+
+                        <thead>
+                            <tr>
+                                <th>ID PENGAJUAN</th>
+                                <th>TANGGAL</th>
+                                <th>LAYANAN</th>
+                                <th>PERIHAL</th>
+                                <th>STATUS</th>
+                                <th>AKSI</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="submissionTableBody">
+                            <tr>
+                                <td colspan="6">
+                                    <div class="dashboard-table-state">
+                                        <i data-lucide="loader-circle"></i>
+                                        <h4>Memuat Data</h4>
+                                        <p>
+                                            Sistem sedang mengambil data
+                                            pengajuan dari server.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <!-- PAGINATION -->
+                <div class="dashboard-pagination" id="dashboardPagination" hidden>
+                    <div class="dashboard-pagination-info" id="paginationInfo">
+                        Halaman 1
+                    </div>
+
+                    <div class="dashboard-pagination-actions">
+                        <button type="button" id="previousPageButton" class="dashboard-page-button">
+                            <i data-lucide="chevron-left"></i>
+                            Sebelumnya
+                        </button>
+
+                        <button type="button" id="nextPageButton" class="dashboard-page-button">
+                            Berikutnya
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+            <p>
+                © <span id="dashboardYear">2026</span>
+                PANGGIL PAK RT. Hak cipta dilindungi.
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- CONFIGURATION -->
+    <script src="config/public-config.js" defer></script>
+    <script src="js/staff-auth.js" defer></script>
+
+    <!-- DASHBOARD LOGIC -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            "use strict";
+
+            /* ======================================
+               ELEMENT REFERENCES
+            ====================================== */
+
+            const loadingState = document.getElementById("sessionLoading");
+            const errorState = document.getElementById("sessionError");
+            const errorTitle = document.getElementById("sessionErrorTitle");
+            const errorMessage = document.getElementById("sessionErrorMessage");
+            const dashboardContent = document.getElementById("dashboardContent");
+
+            const retryButton = document.getElementById("retrySessionButton");
+            const logoutButton = document.getElementById("logoutButton");
+            const refreshButton = document.getElementById("refreshDashboardButton");
+
+            const tableBody = document.getElementById("submissionTableBody");
+            const dataError = document.getElementById("dashboardDataError");
+            const dataSuccess = document.getElementById("dashboardDataSuccess");
+
+            const pagination = document.getElementById("dashboardPagination");
+            const paginationInfo = document.getElementById("paginationInfo");
+
+            const previousButton = document.getElementById("previousPageButton");
+            const nextButton = document.getElementById("nextPageButton");
+
+            /* ======================================
+               RUNTIME STATE
+            ====================================== */
+
+            let currentPage = 1;
+            const pageSize = 10;
+            let dashboardLoading = false;
+
+            /* ======================================
+               INITIALIZATION
+            ====================================== */
+
+            document.getElementById("dashboardYear").textContent =
+                new Date().getFullYear();
+
+            function refreshIcons() {
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            }
+
+            function getAuthModule() {
+                return window.PanggilPakRTStaffAuth || null;
+            }
+
+            /* ======================================
+               VIEW MANAGEMENT
+            ====================================== */
+
+            function showLoading() {
+                loadingState.hidden = false;
+                errorState.hidden = true;
+                dashboardContent.hidden = true;
+            }
+
+            function showError(title, message) {
+                loadingState.hidden = true;
+                dashboardContent.hidden = true;
+                errorState.hidden = false;
+
+                errorTitle.textContent = title;
+                errorMessage.textContent = message;
+
+                refreshIcons();
+            }
+
+            function showDashboard() {
+                loadingState.hidden = true;
+                errorState.hidden = true;
+                dashboardContent.hidden = false;
+
+                refreshIcons();
+            }
+
+            /* ======================================
+               STAFF PROFILE
+            ====================================== */
+
+            function displayStaffProfile(staff) {
+                const rtName = staff.rt_name || staff.rt_id || "Petugas RT";
+                const rwName = staff.rw || "RW belum tersedia";
+                const area = rtName + " · " + rwName;
+
+                document.getElementById("headerStaffName").textContent = rtName;
+                document.getElementById("headerStaffArea").textContent = area;
+                document.getElementById("welcomeStaffName").textContent = rtName;
+                document.getElementById("profileStaffName").textContent = rtName;
+                document.getElementById("profileStaffEmail").textContent = staff.email || "-";
+                document.getElementById("profileStaffArea").textContent = area;
+            }
+
+            /* ======================================
+               NUMBER FORMAT
+            ====================================== */
+
+            function formatNumber(value) {
+                const number = Number(value);
+
+                if (!Number.isFinite(number)) {
+                    return "0";
+                }
+
+                return new Intl.NumberFormat("id-ID").format(number);
+            }
+
+            /* ======================================
+               SUMMARY RENDERING
+            ====================================== */
+
+            function renderSummary(summary) {
+                document.getElementById("summaryTotal").textContent =
+                    formatNumber(summary.total);
+
+                document.getElementById("summaryMenunggu").textContent =
+                    formatNumber(summary.menunggu);
+
+                document.getElementById("summaryDiproses").textContent =
+                    formatNumber(summary.diproses);
+
+                document.getElementById("summaryPerbaikan").textContent =
+                    formatNumber(summary.perlu_perbaikan);
+
+                document.getElementById("summarySelesai").textContent =
+                    formatNumber(summary.selesai);
+            }
+
+            /* ======================================
+               DATE FORMAT
+            ====================================== */
+
+            function formatSubmissionDate(value) {
+                if (!value) {
+                    return "-";
+                }
+
+                const date = new Date(value);
+
+                if (Number.isNaN(date.getTime())) {
+                    return "-";
+                }
+
+                return new Intl.DateTimeFormat("id-ID", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                    timeZone: "Asia/Jakarta"
+                }).format(date);
+            }
+
+            /* ======================================
+               STATUS FORMAT
+            ====================================== */
+
+            function getStatusInformation(status) {
+                const normalized = String(status || "").trim().toUpperCase();
+
+                const statusMap = {
+                    "MENUNGGU": {
+                        label: "Menunggu",
+                        className: "status-menunggu"
+                    },
+
+                    "DIPROSES": {
+                        label: "Sedang Diproses",
+                        className: "status-diproses"
+                    },
+
+                    "PERLU_PERBAIKAN": {
+                        label: "Perlu Perbaikan",
+                        className: "status-perbaikan"
+                    },
+
+                    "SELESAI": {
+                        label: "Selesai",
+                        className: "status-selesai"
+                    }
+                };
+
+                return statusMap[normalized] || {
+                    label: normalized || "Tidak Diketahui",
+                    className: "status-unknown"
+                };
+            }
+
+            /* ======================================
+               TABLE STATE
+            ====================================== */
+
+            function renderTableState(title, message, icon) {
+                tableBody.replaceChildren();
+
+                const row = document.createElement("tr");
+                const cell = document.createElement("td");
+
+                cell.colSpan = 6;
+
+                const wrapper = document.createElement("div");
+                wrapper.className = "dashboard-table-state";
+
+                const iconElement = document.createElement("i");
+                iconElement.setAttribute("data-lucide", icon || "database");
+
+                const heading = document.createElement("h4");
+                heading.textContent = title;
+
+                const paragraph = document.createElement("p");
+                paragraph.textContent = message;
+
+                wrapper.append(iconElement, heading, paragraph);
+                cell.appendChild(wrapper);
+                row.appendChild(cell);
+                tableBody.appendChild(row);
+
+                refreshIcons();
+            }
+
+            /* ======================================
+               TABLE RENDERING
+            ====================================== */
+
+            function renderSubmissions(submissions) {
+                tableBody.replaceChildren();
+
+                if (!Array.isArray(submissions) || submissions.length === 0) {
+                    renderTableState(
+                        "Belum Ada Pengajuan",
+                        "Belum ada data pengajuan yang dapat ditampilkan.",
+                        "inbox"
+                    );
+                    return;
+                }
+
+                const statusOptions = [
+                    { value: "MENUNGGU", label: "Menunggu" },
+                    { value: "DIPROSES", label: "Diproses" },
+                    { value: "PERLU_PERBAIKAN", label: "Perlu Perbaikan" },
+                    { value: "SELESAI", label: "Selesai" }
+                ];
+
+                submissions.forEach((submission) => {
+                    const row = document.createElement("tr");
+
+                    const submissionId = String(submission.submission_id || "");
+                    const currentStatus = String(submission.status || "")
+                        .trim()
+                        .toUpperCase();
+
+                    const isKnownStatus = statusOptions.some(
+                        (option) => option.value === currentStatus
+                    );
+
+                    // Kolom 1: ID Pengajuan
+                    const idCell = document.createElement("td");
+                    idCell.textContent = submissionId || "-";
+                    row.appendChild(idCell);
+
+                    // Kolom 2: Tanggal
+                    const dateCell = document.createElement("td");
+                    dateCell.textContent = formatSubmissionDate(submission.created_at);
+                    row.appendChild(dateCell);
+
+                    // Kolom 3: Layanan
+                    const serviceCell = document.createElement("td");
+                    serviceCell.textContent = submission.layanan || "-";
+                    row.appendChild(serviceCell);
+
+                    // Kolom 4: Perihal
+                    const subjectCell = document.createElement("td");
+                    subjectCell.textContent = submission.perihal || "-";
+                    row.appendChild(subjectCell);
+
+                    // Kolom 5: Status saat ini
+                    const statusCell = document.createElement("td");
+                    const statusInfo = getStatusInformation(currentStatus);
+
+                    const statusBadge = document.createElement("span");
+                    statusBadge.className =
+                        `submission-status ${statusInfo.className}`;
+                    statusBadge.textContent = statusInfo.label;
+
+                    statusCell.appendChild(statusBadge);
+                    row.appendChild(statusCell);
+
+                    // Kolom 6: Aksi perubahan status
+                    const actionCell = document.createElement("td");
+                    actionCell.className = "submission-action";
+
+                    const controlWrapper = document.createElement("div");
+                    controlWrapper.className = "submission-status-control";
+
+                    const statusSelect = document.createElement("select");
+                    statusSelect.className = "submission-status-select";
+                    statusSelect.dataset.submissionId = submissionId;
+                    statusSelect.dataset.currentStatus = currentStatus;
+                    statusSelect.disabled = !isKnownStatus;
+
+                    statusOptions.forEach((option) => {
+                        const optionElement = document.createElement("option");
+
+                        optionElement.value = option.value;
+                        optionElement.textContent = option.label;
+
+                        if (option.value === currentStatus) {
+                            optionElement.selected = true;
+                        }
+
+                        statusSelect.appendChild(optionElement);
+                    });
+
+                    const saveButton = document.createElement("button");
+                    saveButton.type = "button";
+                    saveButton.className = "submission-save-button";
+                    saveButton.dataset.action = "save-status";
+                    saveButton.textContent = "Simpan";
+
+                    // Tombol baru aktif setelah pilihan status diubah.
+                    saveButton.disabled = true;
+
+                    const feedback = document.createElement("span");
+                    feedback.className = "submission-status-feedback";
+                    feedback.setAttribute("aria-live", "polite");
+
+                    if (!isKnownStatus) {
+                        feedback.textContent = "Status tidak dikenali.";
+                    }
+
+                    controlWrapper.append(
+                        statusSelect,
+                        saveButton,
+                        feedback
+                    );
+
+                    actionCell.appendChild(controlWrapper);
+                    row.appendChild(actionCell);
+
+                    tableBody.appendChild(row);
+                });
+            }
+
+            /* ======================================
+               STATUS CHANGE EVENTS
+            ====================================== */
+
+            tableBody.addEventListener("change", (event) => {
+                if (!event.target.matches(".submission-status-select")) {
+                    return;
+                }
+
+                const select = event.target;
+                const row = select.closest("tr");
+
+                if (!row) return;
+
+                const saveButton = row.querySelector(".submission-save-button");
+
+                if (!saveButton) return;
+
+                saveButton.disabled =
+               !select.dataset.submissionId ||
+               select.value === select.dataset.currentStatus;
+
+                
+                saveButton.textContent = "Simpan";
+            });
+
+            tableBody.addEventListener("click", async (event) => {
+                const saveButton = event.target.closest(
+                    '[data-action="save-status"]'
+                );
+
+                if (!saveButton || saveButton.disabled) {
+                    return;
+                }
+
+                const row = saveButton.closest("tr");
+
+                if (!row) return;
+
+                const statusSelect = row.querySelector(".submission-status-select");
+                const feedback = row.querySelector(".submission-status-feedback");
+
+                if (!statusSelect || !feedback) return;
+
+                const submissionId = statusSelect.dataset.submissionId;
+                const newStatus = statusSelect.value;
+                const currentStatus = statusSelect.dataset.currentStatus;
+
+                if (!submissionId || newStatus === currentStatus) {
+                    return;
+                }
+
+                const auth = getAuthModule();
+
+                if (!auth || typeof auth.updateSubmissionStatus !== "function") {
+                    feedback.textContent =
+                        "Fitur perubahan status belum tersedia.";
+                    feedback.classList.add("error");
+                    return;
+                }
+
+                saveButton.disabled = true;
+                statusSelect.disabled = true;
+                saveButton.textContent = "Menyimpan...";
+
+                feedback.textContent = "";
+                feedback.classList.remove("error", "success");
+
+                try {
+                    const result = await auth.updateSubmissionStatus(
+                        submissionId,
+                        newStatus
+                    );
+
+                    if (!result || result.success !== true) {
+                        throw new Error(
+                            result?.message ||
+                            "Status pengajuan gagal diperbarui."
+                        );
+                    }
+
+                    // Muat ulang data agar tabel dan ringkasan ikut diperbarui.
+                    const refreshSuccessful =
+                        await loadDashboardData(currentPage);
+
+                    if (refreshSuccessful) {
+                        dataSuccess.textContent =
+                            result.message || "Status pengajuan berhasil diperbarui.";
+
+                        dataSuccess.hidden = false;
+                    } else {
+                        dataError.textContent =
+                            "Status berhasil diperbarui, tetapi data dashboard gagal dimuat ulang. Silakan tekan Muat Ulang.";
+
+                        dataError.hidden = false;
+                    }
+
+                } catch (error) {
+                    feedback.textContent =
+                        error.message ||
+                        "Terjadi kesalahan saat memperbarui status.";
+
+                    feedback.classList.add("error");
+
+                    saveButton.disabled = false;
+                    statusSelect.disabled = false;
+                    saveButton.textContent = "Coba Lagi";
+                }
+            });
+
+            /* ======================================
+               PAGINATION RENDERING
+            ====================================== */
+
+            function renderPagination(pageData) {
+                const page = Number(pageData.page) || 1;
+                const totalPages = Number(pageData.totalPages) || 0;
+                const total = Number(pageData.total) || 0;
+
+                const hasPrevious = pageData.hasPreviousPage === true;
+                const hasNext = pageData.hasNextPage === true;
+
+                currentPage = page;
+
+                pagination.hidden = totalPages <= 1;
+
+                paginationInfo.textContent =
+                    "Halaman " + page +
+                    " dari " + totalPages +
+                    " · Total " + formatNumber(total) +
+                    " pengajuan";
+
+                previousButton.disabled = !hasPrevious || dashboardLoading;
+                nextButton.disabled = !hasNext || dashboardLoading;
+
+                // Simpan informasi pagination untuk pemulihan tombol.
+                nextButton.dataset.hasNextPage = String(hasNext);
+                previousButton.dataset.hasPreviousPage = String(hasPrevious);
+
+                refreshIcons();
+            }
+
+            /* ======================================
+               LOAD DASHBOARD DATA
+            ====================================== */
+
+            async function loadDashboardData(page = 1) {
+                if (dashboardLoading) {
+                    return false;
+                }
+
+                currentPage = page;
+
+                const auth = getAuthModule();
+
+                if (!auth || typeof auth.getDashboardData !== "function") {
+                    dataError.hidden = false;
+                    dataError.textContent =
+                        "Fungsi pengambilan data dashboard tidak ditemukan. Periksa staff-auth.js.";
+
+                    return false;
+                }
+
+                dashboardLoading = true;
+
+                refreshButton.disabled = true;
+                refreshButton.querySelector("span").textContent = "Memuat...";
+
+                dataError.hidden = true;
+                dataSuccess.hidden = true;
+                pagination.hidden = true;
+
+                renderTableState(
+                    "Memuat Data Pengajuan",
+                    "Sistem sedang mengambil data dari server.",
+                    "loader-circle"
+                );
+
+                let loadSuccessful = false;
+
+                try {
+                    const result = await auth.getDashboardData(page, pageSize);
+
+                    if (!result || result.success !== true || !result.data) {
+                        throw new Error(
+                            result?.message ||
+                            "Data dashboard tidak dapat dibaca."
+                        );
+                    }
+
+                    const data = result.data;
+
+                    if (
+                        !data.summary ||
+                        !Array.isArray(data.submissions) ||
+                        !data.pagination
+                    ) {
+                        throw new Error(
+                            "Struktur data dashboard tidak lengkap."
+                        );
+                    }
+
+                    renderSummary(data.summary);
+                    renderSubmissions(data.submissions);
+                    renderPagination(data.pagination);
+
+                    dataError.hidden = true;
+
+                    loadSuccessful = true;
+
+                } catch (error) {
+                    renderTableState(
+                        "Data Gagal Dimuat",
+                        error.message ||
+                        "Terjadi kesalahan saat mengambil data pengajuan.",
+                        "alert-circle"
+                    );
+
+                    dataError.hidden = false;
+                    dataError.textContent =
+                        "Gagal memuat data dashboard: " +
+                        (error.message || "Kesalahan tidak diketahui.");
+
+                    pagination.hidden = true;
+
+                } finally {
+                    dashboardLoading = false;
+
+                    refreshButton.disabled = false;
+                    refreshButton.querySelector("span").textContent = "Muat Ulang";
+
+                    previousButton.disabled =
+                        pagination.hidden ||
+                        previousButton.dataset.hasPreviousPage !== "true";
+
+                    nextButton.disabled =
+                        pagination.hidden ||
+                        nextButton.dataset.hasNextPage !== "true";
+
+                    refreshIcons();
+                }
+
+                return loadSuccessful;
+            }
+
+            /* ======================================
+               SESSION VALIDATION
+            ====================================== */
+
+            async function checkStaffSession() {
+                showLoading();
+
+                const auth = getAuthModule();
+
+                if (!auth) {
+                    showError(
+                        "Modul Autentikasi Tidak Ditemukan",
+                        "Periksa file js/staff-auth.js."
+                    );
+                    return;
+                }
+
+                if (typeof auth.validateSession !== "function") {
+                    showError(
+                        "Fungsi Validasi Tidak Tersedia",
+                        "Fungsi pemeriksaan sesi tidak ditemukan."
+                    );
+                    return;
+                }
+
+                try {
+                    const result = await auth.validateSession();
+
+                    if (result?.networkError === true) {
+                        showError(
+                            "Koneksi Tidak Tersedia",
+                            result.message ||
+                            "Periksa koneksi internet lalu coba kembali."
+                        );
+                        return;
+                    }
+
+                    if (
+                        !result ||
+                        result.success !== true ||
+                        result.authenticated !== true
+                    ) {
+                        window.location.replace("petugas.html");
+                        return;
+                    }
+
+                    if (!result.staff) {
+                        showError(
+                            "Informasi Petugas Tidak Tersedia",
+                            "Server tidak memberikan informasi akun petugas."
+                        );
+                        return;
+                    }
+
+                    displayStaffProfile(result.staff);
+                    showDashboard();
+
+                    await loadDashboardData(1);
+
+                } catch (error) {
+                    showError(
+                        "Pemeriksaan Sesi Gagal",
+                        error.message ||
+                        "Terjadi kesalahan ketika memeriksa sesi."
+                    );
+                }
+            }
+
+            /* ======================================
+               LOGOUT
+            ====================================== */
+
+            async function handleLogout() {
+                const auth = getAuthModule();
+
+                if (!auth || typeof auth.logout !== "function") {
+                    showError(
+                        "Logout Tidak Tersedia",
+                        "Fungsi logout tidak ditemukan."
+                    );
+                    return;
+                }
+
+                logoutButton.disabled = true;
+                logoutButton.querySelector("span").textContent = "Memproses...";
+
+                try {
+                    await auth.logout();
+                    window.location.replace("petugas.html");
+
+                } catch (error) {
+                    showError(
+                        "Logout Belum Terverifikasi",
+                        "Server tidak dapat memastikan proses logout. Token lokal telah ditangani oleh modul autentikasi. Silakan login kembali."
+                    );
+
+                } finally {
+                    logoutButton.disabled = false;
+                    logoutButton.querySelector("span").textContent = "Keluar";
+                }
+            }
+
+            /* ======================================
+               EVENT LISTENERS
+            ====================================== */
+
+            retryButton.addEventListener("click", checkStaffSession);
+
+            logoutButton.addEventListener("click", handleLogout);
+
+            refreshButton.addEventListener("click", () => {
+                loadDashboardData(currentPage);
+            });
+
+            previousButton.addEventListener("click", () => {
+                if (currentPage > 1) {
+                    loadDashboardData(currentPage - 1);
+                }
+            });
+
+            nextButton.addEventListener("click", () => {
+                loadDashboardData(currentPage + 1);
+            });
+
+            /* ======================================
+               START DASHBOARD
+            ====================================== */
+
+            refreshIcons();
+            checkStaffSession();
+
+        });
+    </script>
+
+    <!-- PWA REGISTRATION -->
+    <script src="./js/pwa.js" defer></script>
+
+</body>
+</html>

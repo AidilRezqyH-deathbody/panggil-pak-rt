@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+
+    <!-- ======================================
+         BASIC CONFIGURATION
+    ======================================= -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+        content="#173D30">
+
+    <meta name="description"
+        content="Ajukan berbagai kebutuhan layanan masyarakat melalui PANGGIL PAK RT. Satu Pintu Layanan Masyarakat.">
+
+    <meta name="author"
+        content="PANGGIL PAK RT">
+
+    <title>Pengajuan Layanan | PANGGIL PAK RT</title>
+
+
+    <!-- ======================================
+         FAVICON
+    ======================================= -->
+
+    <link
+    rel="icon"
+    type="image/png"
+    href="./assets/images/favicon-panggil-pak-rt.png">
+
+    <!-- ======================================
+         PWA CONFIGURATION
+    ======================================= -->
+
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- ======================================
+         GOOGLE FONTS
+    ======================================= -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- ======================================
+         LUCIDE ICONS
+    ======================================= -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer>
+    </script>
+
+
+    <!-- ======================================
+         STYLESHEETS
+    ======================================= -->
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <link rel="stylesheet"
+        href="css/components.css">
+
+    <link rel="stylesheet"
+        href="css/form.css">
+
+    <link rel="stylesheet"
+        href="css/responsive.css">
+
+    <link rel="stylesheet"
+        href="css/dark-mode.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ======================================
+         PAGE LOADER
+    ======================================= -->
+
+    <div class="page-loader"
+        id="pageLoader"
+        aria-hidden="true">
+
+        <div class="loader-content">
+
+            <div class="loader-spinner"></div>
+
+            <p>Memuat halaman...</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================
+         HEADER
+    ======================================= -->
+
+    <header class="site-header">
+
+        <div class="container">
+
+            <div class="header-content">
+
+
+                <!-- BRAND -->
+                <a href="index.html"
+                    class="site-logo"
+                    aria-label="PANGGIL PAK RT - Beranda">
+
+                   <span class="logo-icon">
+    <img
+        src="assets/images/pwa-512.png"
+        alt="Logo PANGGIL PAK RT"
+    >
+</span>
+
+                    <span class="logo-text">
+
+                        <strong>PANGGIL PAK RT</strong>
+
+                        <small>Satu Pintu Layanan Masyarakat</small>
+
+                    </span>
+
+                </a>
+
+
+                <!-- NAVIGATION -->
+                <nav class="main-navigation"
+                    id="mainNavigation"
+                    aria-label="Navigasi utama">
+
+                    <ul class="nav-list">
+
+                        <li>
+                            <a href="index.html#beranda"
+                                data-i18n="nav-home">
+                                Beranda
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#layanan"
+                                data-i18n="nav-services">
+                                Layanan
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#tentang"
+                                data-i18n="nav-about">
+                                Tentang
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#alur"
+                                data-i18n="nav-process">
+                                Alur Layanan
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#faq"
+                                data-i18n="nav-faq">
+                                FAQ
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <!-- HEADER ACTIONS -->
+                <div class="header-actions">
+
+                    <!-- THEME -->
+                    <button type="button"
+                        class="theme-toggle"
+                        id="themeToggle"
+                        aria-label="Ubah tema"
+                        title="Ubah tema">
+
+                        <i data-lucide="moon"
+                            class="theme-icon"
+                            aria-hidden="true"></i>
+
+                    </button>
+
+
+                    <!-- MOBILE MENU -->
+                    <button type="button"
+                        class="menu-toggle"
+                        id="menuToggle"
+                        aria-label="Buka navigasi"
+                        aria-expanded="false"
+                        aria-controls="mainNavigation">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ======================================
+         MAIN CONTENT
+    ======================================= -->
+
+    <main>
+
+
+        <!-- ======================================
+             SECTION 01 : PAGE HERO
+        ======================================= -->
+
+        <section class="form-hero">
+
+            <div class="container">
+
+                <div class="form-hero-content">
+
+
+                    <!-- BREADCRUMB -->
+                    <nav class="breadcrumb"
+                        aria-label="Breadcrumb">
+
+                        <a href="index.html">
+
+                            <i data-lucide="house"
+                                aria-hidden="true"></i>
+
+                            Beranda
+
+                        </a>
+
+                        <i data-lucide="chevron-right"
+                            aria-hidden="true"></i>
+
+                        <span aria-current="page">
+                            Pengajuan Layanan
+                        </span>
+
+                    </nav>
+
+
+                    <!-- HERO TEXT -->
+                    <div class="form-hero-text">
+
+                        <span class="section-label">
+                            LAYANAN MASYARAKAT
+                        </span>
+
+                        <h1 class="form-hero-title">
+
+                            Sampaikan kebutuhanmu,
+                            <span>kami siap membantu.</span>
+
+                        </h1>
+
+                        <p class="form-hero-description">
+
+                            Lengkapi formulir berikut untuk
+                            menyampaikan pengajuan kepada
+                            pengurus RT dengan mudah dan
+                            terstruktur.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- HERO INFORMATION -->
+                    <div class="form-hero-note">
+
+                        <i data-lucide="info"
+                            aria-hidden="true"></i>
+
+                        <p>
+                            Pastikan informasi yang kamu
+                            masukkan sudah benar sebelum
+                            mengirim pengajuan.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             SECTION 02 : SUBMISSION FORM
+        ======================================= -->
+
+        <section class="submission-section section">
+
+            <div class="container">
+
+                <div class="submission-layout">
+
+
+                    <!-- ==================================
+                         FORM INTRODUCTION
+                    =================================== -->
+
+                    <aside class="submission-sidebar">
+
+                        <div class="submission-sidebar-card">
+
+                            <span class="section-label">
+                                PANDUAN PENGAJUAN
+                            </span>
+
+                            <h2>
+                                Beberapa langkah sederhana.
+                            </h2>
+
+                            <p>
+                                Isi informasi yang diperlukan
+                                agar pengurus RT dapat memahami
+                                kebutuhan yang kamu sampaikan.
+                            </p>
+
+
+                            <!-- STEP LIST -->
+                            <div class="submission-steps">
+
+                                <div class="submission-step">
+
+                                    <span class="step-number">
+                                        01
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Identitas Pemohon
+                                        </strong>
+
+                                        <small>
+                                            Lengkapi informasi dasar.
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="submission-step">
+
+                                    <span class="step-number">
+                                        02
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Pilih Layanan
+                                        </strong>
+
+                                        <small>
+                                            Tentukan kategori kebutuhan.
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="submission-step">
+
+                                    <span class="step-number">
+                                        03
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Detail Pengajuan
+                                        </strong>
+
+                                        <small>
+                                            Jelaskan kebutuhanmu.
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="submission-step">
+
+                                    <span class="step-number">
+                                        04
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Konfirmasi
+                                        </strong>
+
+                                        <small>
+                                            Periksa sebelum mengirim.
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- SIDEBAR HELP -->
+                            <div class="submission-help">
+
+                                <span class="help-icon">
+
+                                    <i data-lucide="help-circle"
+                                        aria-hidden="true"></i>
+
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Butuh bantuan?
+                                    </strong>
+
+                                    <p>
+                                        Pelajari panduan penggunaan
+                                        layanan sebelum mengajukan.
+                                    </p>
+
+                                    <a href="panduan.html"
+                                        class="text-link">
+
+                                        Baca Panduan
+
+                                        <i data-lucide="arrow-right"
+                                            aria-hidden="true"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+
+
+                    <!-- ==================================
+                         MAIN FORM
+                    =================================== -->
+
+                    <div class="submission-main">
+
+
+                        <!-- FORM CARD -->
+                        <div class="submission-card">
+
+
+                            <!-- FORM HEADER -->
+                            <div class="submission-card-header">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        FORMULIR DIGITAL
+                                    </span>
+
+                                    <h2>
+                                        Formulir Pengajuan
+                                    </h2>
+
+                                    <p>
+                                        Isi seluruh kolom wajib
+                                        yang telah disediakan.
+                                    </p>
+
+                                </div>
+
+                                <span class="required-note">
+                                    * Wajib diisi
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- FORM -->
+                            <form id="submissionForm"
+                                class="submission-form"
+                                method="POST"
+                                enctype="multipart/form-data"
+                                novalidate>
+
+
+                                <!-- ==================================
+                                     GROUP 01 : GUEST IDENTITY
+                                =================================== -->
+
+                                <fieldset class="form-group">
+
+                                    <legend>
+
+                                        <span class="form-group-number">
+                                            01
+                                        </span>
+
+                                        Identitas Pemohon
+
+                                    </legend>
+
+
+                                    <div class="form-grid">
+
+
+                                        <!-- FULL NAME -->
+                                        <div class="form-field full-width">
+
+                                            <label for="guestName"
+                                                class="form-label">
+
+                                                Nama Lengkap
+
+                                               <span class="required-mark" aria-hidden="true">*</span>
+
+                                            </label>
+
+                                            <div class="input-wrapper">
+
+                                                <i data-lucide="user"
+                                                    aria-hidden="true"></i>
+
+                                                <input type="text"
+                                                    id="guestName"
+                                                    name="nama"
+                                                    class="form-control"
+                                                    placeholder="Masukkan nama lengkap"
+                                                    autocomplete="name"
+                                                    maxlength="100"
+                                                    required>
+
+                                            </div>
+
+                                            <small class="field-hint">
+                                                Gunakan nama yang mudah
+                                                dikenali oleh pengurus RT.
+                                            </small>
+
+                                        </div>
+
+
+                                        <!-- WHATSAPP -->
+                                        <div class="form-field">
+
+                                            <label for="guestPhone"
+                                                class="form-label">
+
+                                                Nomor WhatsApp
+
+                                                <span class="required-mark" aria-hidden="true">*</span>
+
+                                            </label>
+
+                                            <div class="input-wrapper">
+
+                                                <i data-lucide="phone"
+                                                    aria-hidden="true"></i>
+
+                                                <input type="tel"
+                                                    id="guestPhone"
+                                                    name="nomor_telepon"
+                                                    class="form-control"
+                                                    placeholder="Contoh: 081234567890"
+                                                    autocomplete="tel"
+                                                    inputmode="tel"
+                                                    maxlength="20"
+                                                    required>
+
+                                            </div>
+
+                                            <small class="field-hint">
+                                                Digunakan untuk komunikasi
+                                                terkait pengajuan.
+                                            </small>
+
+                                        </div>
+
+
+                                        <!-- EMAIL -->
+                                        <div class="form-field">
+
+                                            <label for="guestEmail"
+                                                class="form-label">
+
+                                                Alamat Email Aktif
+
+                                                <span class="required-mark" aria-hidden="true">*</span>
+
+                                            </label>
+
+                                            <div class="input-wrapper">
+
+                                                <i data-lucide="mail"
+                                                    aria-hidden="true"></i>
+
+                                                <input type="email"
+                                                    id="guestEmail"
+                                                    name="email"
+                                                    class="form-control"
+                                                    placeholder="Contoh: nama@email.com"
+                                                    autocomplete="email"
+                                                    inputmode="email"
+                                                    maxlength="254"
+                                                    required>
+
+                                            </div>
+
+                                            <small class="field-hint">
+                                                Gunakan email aktif. Email ini
+                                                diperlukan untuk verifikasi
+                                                saat mengecek status pengajuan.
+                                            </small>
+
+                                        </div>
+
+
+                                        <!-- RT -->
+                                        <div class="form-field">
+
+                                            <label for="guestRT"
+                                                class="form-label">
+
+                                                RT Tempat Tinggal
+
+                                                <span class="required-mark" aria-hidden="true">*</span>
+
+                                            </label>
+
+                                            <div class="input-wrapper select-wrapper">
+
+                                                <i data-lucide="map-pin"
+                                                    aria-hidden="true"></i>
+
+                                                <select id="guestRT"
+                                                    name="rt"
+                                                    class="form-control"
+                                                    required>
+
+                                                    <option value="">
+                                                        Pilih RT
+                                                    </option>
+
+                                                    <option value="RT 01">
+                                                        RT 01
+                                                    </option>
+
+                                                    <option value="RT 02">
+                                                        RT 02
+                                                    </option>
+
+                                                    <option value="RT 03">
+                                                        RT 03
+                                                    </option>
+
+                                                    <option value="RT 04">
+                                                        RT 04
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+                                            <small class="field-hint">
+                                                Pilih RT sesuai tempat
+                                                tinggalmu.
+                                            </small>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </fieldset>
+
+
+
+                                <!-- ==================================
+                                     GROUP 02 : SERVICE CATEGORY
+                                =================================== -->
+
+                                <fieldset class="form-group">
+
+                                    <legend>
+
+                                        <span class="form-group-number">
+                                            02
+                                        </span>
+
+                                        Kategori Layanan
+
+                                    </legend>
+
+
+                                    <!-- SERVICE SELECT -->
+                                    <div class="form-field full-width">
+
+                                        <label for="serviceSelect"
+                                            class="form-label">
+
+                                            Pilih Kategori Layanan
+
+                                           <span class="required-mark" aria-hidden="true">*</span>
+
+                                        </label>
+
+                                        <div class="input-wrapper select-wrapper">
+
+                                            <i data-lucide="layout-grid"
+                                                aria-hidden="true"></i>
+
+                                            <select id="serviceSelect"
+                                                name="layanan"
+                                                class="form-control"
+                                                required>
+
+                                                <option value="">
+                                                    Pilih layanan yang dibutuhkan
+                                                </option>
+
+                                                <option value="SRV-01">
+                                                    Surat dan Administrasi
+                                                </option>
+
+                                                <option value="SRV-02">
+                                                    Proposal Kegiatan
+                                                </option>
+
+                                                <option value="SRV-03">
+                                                    Laporan Kependudukan
+                                                </option>
+
+                                                <option value="SRV-04">
+                                                    Laporan Lingkungan
+                                                </option>
+
+                                                <option value="SRV-05">
+                                                    Pengaduan Masyarakat
+                                                </option>
+
+                                                <option value="SRV-06">
+                                                    Aspirasi dan Saran
+                                                </option>
+
+                                                <option value="SRV-07">
+                                                    Keamanan dan Ketertiban
+                                                </option>
+
+                                                <option value="SRV-08">
+                                                    Informasi Lainnya
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+                                        <small class="field-hint">
+                                            Pilih kategori yang paling
+                                            sesuai dengan kebutuhanmu.
+                                        </small>
+
+                                    </div>
+
+
+                                    <!-- SELECTED SERVICE INFORMATION -->
+                                    <div class="selected-service-info"
+                                        id="selectedServiceInfo"
+                                        hidden>
+
+                                        <div class="selected-service-icon">
+
+                                            <i data-lucide="info"
+                                                aria-hidden="true"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <strong
+                                                data-selected-service-name>
+                                            </strong>
+
+                                            <p
+                                                data-selected-service-description>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </fieldset>
+
+
+
+                                <!-- ==================================
+                                     GROUP 03 : SUBMISSION DETAILS
+                                =================================== -->
+
+                                <fieldset class="form-group">
+
+                                    <legend>
+
+                                        <span class="form-group-number">
+                                            03
+                                        </span>
+
+                                        Detail Pengajuan
+
+                                    </legend>
+
+
+                                    <div class="form-grid">
+
+
+                                        <!-- SUBJECT -->
+                                        <div class="form-field full-width">
+
+                                            <label for="submissionSubject"
+                                                class="form-label">
+
+                                                Judul / Perihal Pengajuan
+
+                                               <span class="required-mark" aria-hidden="true">*</span>
+
+                                            </label>
+
+                                            <div class="input-wrapper">
+
+                                                <i data-lucide="file-text"
+                                                    aria-hidden="true"></i>
+
+                                                <input type="text"
+                                                    id="submissionSubject"
+                                                    name="perihal"
+                                                    class="form-control"
+                                                    placeholder="Tuliskan inti kebutuhanmu"
+                                                    maxlength="150"
+                                                    required>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- DESCRIPTION -->
+                                        <div class="form-field full-width">
+
+                                            <label for="submissionDescription"
+                                                class="form-label">
+
+                                                Penjelasan Pengajuan
+
+                                               <span class="required-mark" aria-hidden="true">*</span>
+
+                                            </label>
+
+                                            <textarea id="submissionDescription"
+                                                name="deskripsi"
+                                                class="form-control form-textarea"
+                                                rows="6"
+                                                maxlength="3000"
+                                                placeholder="Jelaskan kebutuhan atau permasalahan yang ingin disampaikan secara jelas..."
+                                                required></textarea>
+
+                                            <div class="textarea-footer">
+
+                                                <small class="field-hint">
+                                                    Berikan informasi yang
+                                                    cukup agar pengurus RT
+                                                    memahami pengajuanmu.
+                                                </small>
+
+                                                <small class="character-counter"
+                                                    id="descriptionCounter">
+
+                                                    0 / 3000
+
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- LOCATION -->
+                                        <div class="form-field full-width">
+
+                                            <label for="submissionLocation"
+                                                class="form-label">
+
+                                                Lokasi Terkait
+
+                                                <span class="optional-label">
+                                                    Opsional
+                                                </span>
+
+                                            </label>
+
+                                            <div class="input-wrapper">
+
+                                                <i data-lucide="map-pin"
+                                                    aria-hidden="true"></i>
+
+                                                <input type="text"
+                                                    id="submissionLocation"
+                                                    name="lokasi"
+                                                    class="form-control"
+                                                    placeholder="Contoh: Jalan lingkungan RT 02"
+                                                    maxlength="200">
+
+                                            </div>
+
+                                            <small class="field-hint">
+                                                Isi apabila pengajuan
+                                                berkaitan dengan lokasi tertentu.
+                                            </small>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </fieldset>
+
+
+
+                                <!-- ==================================
+                                     GROUP 04 : ATTACHMENT
+                                =================================== -->
+
+                                <fieldset class="form-group">
+
+                                    <legend>
+
+                                        <span class="form-group-number">
+                                            04
+                                        </span>
+
+                                        Lampiran Pendukung
+
+                                        <span class="optional-label">
+                                            Opsional
+                                        </span>
+
+                                    </legend>
+
+
+                                    <div class="attachment-area">
+
+                                        <div class="attachment-icon">
+
+                                            <i data-lucide="cloud-upload"
+                                                aria-hidden="true"></i>
+
+                                        </div>
+
+
+                                        <div class="attachment-description">
+
+                                            <strong>
+                                                Tambahkan dokumen pendukung
+                                            </strong>
+
+                                            <p>
+                                                Pilih berkas dari perangkatmu
+                                                apabila diperlukan.
+                                            </p>
+
+                                            <small>
+                                                Format yang direncanakan:
+                                                PDF, JPG, PNG.
+                                                Maksimal 5 MB per berkas.
+                                            </small>
+
+                                        </div>
+
+
+                                        <label for="submissionAttachment"
+                                            class="btn btn-secondary attachment-button">
+
+                                            <i data-lucide="paperclip"
+                                                aria-hidden="true"></i>
+
+                                            Pilih Berkas
+
+                                        </label>
+
+
+                                        <input type="file"
+                                            id="submissionAttachment"
+                                            name="lampiran"
+                                            accept=".pdf,.jpg,.jpeg,.png"
+                                            class="file-input">
+
+                                        <div class="attachment-preview"
+                                            id="attachmentPreview"
+                                            aria-live="polite">
+                                        </div>
+
+                                    </div>
+
+                                </fieldset>
+
+
+
+                                <!-- ==================================
+                                     GROUP 05 : CONFIRMATION
+                                =================================== -->
+
+                                <fieldset class="form-group confirmation-group">
+
+                                    <legend>
+
+                                        <span class="form-group-number">
+                                            05
+                                        </span>
+
+                                        Konfirmasi Pengajuan
+
+                                    </legend>
+
+
+                                    <!-- INFORMATION NOTICE -->
+                                    <div class="information-box">
+
+                                        <i data-lucide="shield-check"
+                                            aria-hidden="true"></i>
+
+                                        <div>
+
+                                            <strong>
+                                                Perlindungan Informasi
+                                            </strong>
+
+                                            <p>
+                                                Informasi yang kamu
+                                                berikan digunakan untuk
+                                                membantu pengurus RT
+                                                menindaklanjuti pengajuan.
+                                                Jangan sertakan informasi
+                                                rahasia yang tidak diperlukan.
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- CONSENT -->
+                                    <div class="consent-wrapper">
+
+                                        <label class="consent-label">
+
+                                            <input type="checkbox"
+                                                id="dataConsent"
+                                                name="persetujuan"
+                                                value="setuju"
+                                                required>
+
+                                            <span class="consent-custom"></span>
+
+                                            <span class="consent-text">
+
+                                                Saya menyatakan bahwa
+                                                informasi yang diberikan
+                                                benar dan menyetujui
+                                                penggunaannya untuk
+                                                keperluan penanganan
+                                                pengajuan oleh pengurus RT.
+
+                                               <span class="required-mark" aria-hidden="true">*</span>
+
+                                            </span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                </fieldset>
+
+
+
+                                <!-- ==================================
+                                     FORM ACTIONS
+                                =================================== -->
+
+                                <div class="form-actions">
+
+
+                                    <a href="index.html#layanan"
+                                        class="btn btn-outline">
+
+                                        <i data-lucide="arrow-left"
+                                            aria-hidden="true"></i>
+
+                                        Kembali
+
+                                    </a>
+
+
+                                    <button type="submit"
+                                        class="btn btn-primary"
+                                        id="submitButton">
+
+                                        <span>
+                                            Kirim Pengajuan
+                                        </span>
+
+                                        <i data-lucide="arrow-right"
+                                            aria-hidden="true"></i>
+
+                                    </button>
+
+
+                                </div>
+
+
+                                <!-- FORM STATUS -->
+                                <div class="form-feedback"
+                                    id="formFeedback"
+                                    role="status"
+                                    aria-live="polite"
+                                    hidden>
+                                </div>
+
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             SECTION 03 : ADDITIONAL INFORMATION
+        ======================================= -->
+
+        <section class="form-information-section">
+
+            <div class="container">
+
+                <div class="form-information-card">
+
+                    <div class="form-information-icon">
+
+                        <i data-lucide="message-circle-question"
+                            aria-hidden="true"></i>
+
+                    </div>
+
+
+                    <div class="form-information-content">
+
+                        <h2>
+                            Masih memiliki pertanyaan?
+                        </h2>
+
+                        <p>
+                            Kamu dapat membaca panduan penggunaan
+                            atau menghubungi pengurus RT untuk
+                            mendapatkan informasi lebih lanjut.
+                        </p>
+
+                    </div>
+
+
+                    <a href="panduan.html"
+                        class="btn btn-secondary">
+
+                        Buka Panduan
+
+                        <i data-lucide="arrow-right"
+                            aria-hidden="true"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ======================================
+         FOOTER
+    ======================================= -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+
+                <!-- FOOTER BRAND -->
+                <div class="footer-brand">
+
+                    <a href="index.html"
+                        class="site-logo">
+
+                        <span class="logo-icon">
+    <img
+        src="assets/images/pwa-512.png"
+        alt="Logo PANGGIL PAK RT">
+</span>
+
+                        <span class="logo-text">
+
+                            <strong>PANGGIL PAK RT</strong>
+
+                            <small>Satu Pintu Layanan Masyarakat</small>
+
+                        </span>
+
+                    </a>
+
+                    <p>
+                        Menghubungkan warga dan pengurus RT
+                        melalui layanan masyarakat yang
+                        lebih mudah dan terstruktur.
+                    </p>
+
+                </div>
+
+
+
+                <!-- FOOTER NAVIGATION -->
+                <div class="footer-links">
+
+                    <h3>Navigasi</h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="index.html">
+                                Beranda
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#layanan">
+                                Layanan
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="cek-status.html">
+                                Cek Status
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="panduan.html">
+                                Panduan
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- FOOTER INFORMATION -->
+                <div class="footer-links">
+
+                    <h3>Informasi</h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="index.html#tentang">
+                                Tentang Kami
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#faq">
+                                Pertanyaan Umum
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="panduan.html">
+                                Bantuan Penggunaan
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- FOOTER BOTTOM -->
+            <div class="footer-bottom">
+
+                <p>
+                    © <span data-current-year>2026</span>
+                    PANGGIL PAK RT.
+                    Hak cipta dilindungi.
+                </p>
+
+                <span>
+                    Dibuat untuk kemudahan masyarakat.
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ======================================
+         JAVASCRIPT
+    ======================================= -->
+
+    <!-- CORE MODULES -->
+    <script src="js/navigation.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/language.js"></script>
+
+    <!-- PUBLIC CONFIGURATION -->
+    <script src="config/public-config.js"></script>
+
+    <!-- SERVICE MODULE -->
+    <script src="js/services.js"></script>
+
+    <!-- FORM MODULE -->
+    <script src="js/form.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/api.js"></script>
+  <script src="js/page-loader.js"></script>
+
+
+    <!-- ======================================
+         LUCIDE INITIALIZATION
+    ======================================= -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+
+        });
+
+    </script>
+
+    <!-- PWA REGISTRATION -->
+    <script src="./js/pwa.js" defer></script>
+
+</body>
+
+</html>

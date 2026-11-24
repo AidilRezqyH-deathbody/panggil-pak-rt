@@ -1,0 +1,1689 @@
+
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+    <!-- ==========================================
+         BASIC CONFIGURATION
+    =========================================== -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PANGGIL PAK RT | Satu Pintu Layanan Masyarakat</title>
+
+    <meta name="description"
+        content="PANGGIL PAK RT adalah portal layanan digital masyarakat untuk pengajuan administrasi, laporan, pengaduan, aspirasi, dan informasi lingkungan.">
+
+    <meta name="theme-color" content="#173D30">
+
+    <meta name="author" content="PANGGIL PAK RT">
+
+    <meta name="keywords"
+        content="PANGGIL PAK RT, layanan masyarakat, layanan RT, layanan RW, administrasi digital">
+
+   <!-- PWA -->
+<link rel="manifest" href="./manifest.json">
+
+<!-- FAVICON -->
+<link
+    rel="icon"
+    type="image/png"
+    href="./assets/images/favicon-panggil-pak-rt.png"
+>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+
+    <!-- LUCIDE ICONS -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         ACCESSIBILITY
+    =========================================== -->
+
+    <a href="#main-content" class="skip-link"
+        data-i18n="skip-link">
+        Lewati ke konten utama
+    </a>
+
+
+  
+<!-- ==========================================
+     HEADER & NAVIGATION
+=========================================== -->
+
+<header class="site-header" id="header">
+
+    <div class="container">
+
+        <div class="header-content">
+
+            <!-- BRAND -->
+            <a href="index.html" class="site-logo"
+                aria-label="PANGGIL PAK RT - Beranda">
+
+                <span class="logo-icon">
+    <img
+        src="assets/images/pwa-512.png"
+        alt="Logo PANGGIL PAK RT">
+</span>
+
+                <span class="logo-text">
+                    <strong>PANGGIL PAK RT</strong>
+                    <small>Satu Pintu Layanan Masyarakat</small>
+                </span>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+            <nav class="main-navigation" id="mainNavigation"
+                aria-label="Navigasi utama">
+
+                <ul class="nav-list">
+
+                    <li>
+                        <a href="index.html#beranda"
+                            class="active"
+                            data-i18n="nav-home">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#layanan"
+                            data-i18n="nav-services">
+                            Layanan
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#tentang"
+                            data-i18n="nav-about">
+                            Tentang
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#alur"
+                            data-i18n="nav-process">
+                            Alur Layanan
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#faq"
+                            data-i18n="nav-faq">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- HEADER ACTIONS -->
+            <div class="header-actions">
+
+                <!-- DARK MODE -->
+                <button type="button"
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Ubah tema"
+                    title="Ubah tema">
+
+                    <i data-lucide="moon"
+                        class="theme-icon"
+                        aria-hidden="true"></i>
+
+                </button>
+
+
+                <!-- MOBILE MENU -->
+                <button type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Buka navigasi"
+                    aria-expanded="false"
+                    aria-controls="mainNavigation">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main id="main-content">
+
+
+        <!-- ======================================
+             SECTION 01 : HERO
+        ======================================= -->
+
+        <section class="hero-section" id="beranda">
+
+            <div class="hero-background">
+
+                <img src="assets/images/ndalem-soekarni.webp"
+                    alt="Suasana lingkungan Desa Sumberdiren"
+                    class="hero-image"
+                    fetchpriority="high">
+
+            </div>
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <!-- LOCATION -->
+                    <div class="hero-location">
+
+                        <span class="location-indicator"></span>
+
+                        <span data-i18n="hero-location">
+                            DESA SUMBERDIREN · RW 01
+                        </span>
+
+                    </div>
+
+
+                    <!-- TITLE -->
+                    <h1 class="hero-title">
+
+                        <span data-i18n="hero-title">
+                            Satu Pintu untuk Layanan Masyarakat.
+                        </span>
+
+                    </h1>
+
+
+                    <!-- DESCRIPTION -->
+                    <p class="hero-description"
+                        data-i18n="hero-description">
+
+                        Kini berbagai kebutuhan administrasi,
+                        laporan, pengaduan, dan aspirasi lingkungan
+                        dapat disampaikan dengan lebih mudah melalui
+                        satu platform digital.
+
+                    </p>
+
+
+                    <!-- ACTIONS -->
+                    <div class="hero-actions">
+
+                        <a href="pengajuan.html"
+                            class="btn btn-primary">
+
+                            <span data-i18n="hero-submit">
+                                Ajukan Layanan
+                            </span>
+
+                            <i data-lucide="arrow-up-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+
+                        <a href="cek-status.html"
+                            class="btn btn-outline"
+                            data-i18n="hero-check">
+
+                            Cek Status Pengajuan
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- NOTE -->
+                    <div class="hero-note">
+
+                        <i data-lucide="sparkles"
+                            aria-hidden="true"></i>
+
+                        <span data-i18n="hero-note">
+                            Lebih mudah, informatif, dan terorganisir.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCROLL -->
+            <a href="#layanan"
+                class="hero-scroll"
+                aria-label="Gulir ke layanan">
+
+                <span data-i18n="hero-scroll">
+                    Jelajahi layanan
+                </span>
+
+                <i data-lucide="arrow-down"
+                    aria-hidden="true"></i>
+
+            </a>
+
+        </section>
+
+
+        <!-- ======================================
+             SECTION 02 : QUICK ACCESS
+        ======================================= -->
+
+        <section class="quick-access-section">
+
+            <div class="container">
+
+                <div class="quick-access-grid">
+
+
+                    <!-- SUBMIT -->
+                    <a href="pengajuan.html"
+                        class="quick-access-card">
+
+                        <div class="quick-access-icon icon-green">
+                            <i data-lucide="file-plus-2"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <div class="quick-access-content">
+
+                            <h3 data-i18n="quick-submit-title">
+                                Buat Pengajuan
+                            </h3>
+
+                            <p data-i18n="quick-submit-description">
+                                Sampaikan kebutuhan layanan kepada
+                                pengurus RT.
+                            </p>
+
+                        </div>
+
+                        <span class="quick-access-arrow"
+                            aria-hidden="true">
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </span>
+
+                    </a>
+
+
+                    <!-- STATUS -->
+                    <a href="cek-status.html"
+                        class="quick-access-card">
+
+                        <div class="quick-access-icon icon-sage">
+                            <i data-lucide="search-check"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <div class="quick-access-content">
+
+                            <h3 data-i18n="quick-status-title">
+                                Cek Status
+                            </h3>
+
+                            <p data-i18n="quick-status-description">
+                                Pantau perkembangan pengajuan
+                                menggunakan kode referensi.
+                            </p>
+
+                        </div>
+
+                        <span class="quick-access-arrow"
+                            aria-hidden="true">
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </span>
+
+                    </a>
+
+
+                    <!-- GUIDE -->
+                    <a href="panduan.html"
+                        class="quick-access-card">
+
+                        <div class="quick-access-icon icon-olive">
+                            <i data-lucide="book-open"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <div class="quick-access-content">
+
+                            <h3 data-i18n="quick-guide-title">
+                                Panduan Penggunaan
+                            </h3>
+
+                            <p data-i18n="quick-guide-description">
+                                Pelajari cara menggunakan layanan
+                                digital ini.
+                            </p>
+
+                        </div>
+
+                        <span class="quick-access-arrow"
+                            aria-hidden="true">
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             SECTION 03 : INTRODUCTION
+        ======================================= -->
+
+        <section class="introduction-section section"
+            id="tentang">
+
+            <div class="container">
+
+                <div class="introduction-grid">
+
+
+                    <!-- INTRO TEXT -->
+                    <div class="introduction-content">
+
+                        <span class="section-label"
+                            data-i18n="intro-label">
+                            TENTANG PLATFORM
+                        </span>
+
+                        <h2 class="section-title"
+                            data-i18n="intro-title">
+
+                            Pelayanan masyarakat, lebih dekat dan mudah.
+
+                        </h2>
+
+                        <p class="section-description"
+                            data-i18n="intro-description">
+
+                            PANGGIL PAK RT merupakan platform
+                            pelayanan digital yang dirancang untuk
+                            membantu warga menyampaikan berbagai
+                            kebutuhan kepada pengurus RT secara
+                            lebih praktis dan terstruktur.
+
+                        </p>
+
+                        <p class="section-description"
+                            data-i18n="intro-description-2">
+
+                            Mulai dari pengajuan surat administrasi,
+                            laporan lingkungan, hingga penyampaian
+                            aspirasi. Semuanya dapat diakses melalui
+                            satu pintu layanan.
+
+                        </p>
+
+
+                        <a href="panduan.html" class="text-link">
+
+                            <span data-i18n="intro-link">
+                                Pelajari cara penggunaan
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- INTRO HIGHLIGHTS -->
+                    <div class="introduction-highlights">
+
+
+                        <div class="highlight-card">
+
+                            <div class="highlight-icon icon-green">
+                                <i data-lucide="house"
+                                    aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 data-i18n="intro-highlight-1-title">
+                                    Berbasis Lingkungan
+                                </h3>
+
+                                <p data-i18n="intro-highlight-1-description">
+                                    Layanan disesuaikan dengan
+                                    kebutuhan warga RT dan RW.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="highlight-card">
+
+                            <div class="highlight-icon icon-sage">
+                                <i data-lucide="smartphone"
+                                    aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 data-i18n="intro-highlight-2-title">
+                                    Mudah Diakses
+                                </h3>
+
+                                <p data-i18n="intro-highlight-2-description">
+                                    Dapat digunakan melalui
+                                    smartphone maupun komputer.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="highlight-card">
+
+                            <div class="highlight-icon icon-olive">
+                                <i data-lucide="clipboard-check"
+                                    aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 data-i18n="intro-highlight-3-title">
+                                    Lebih Terorganisir
+                                </h3>
+
+                                <p data-i18n="intro-highlight-3-description">
+                                    Setiap pengajuan memiliki
+                                    nomor referensi untuk
+                                    membantu proses pemantauan.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             SECTION 04 : SERVICES
+        ======================================= -->
+
+        <section class="services-section section"
+            id="layanan">
+
+            <div class="container">
+
+
+                <!-- SECTION HEADER -->
+                <div class="section-heading">
+
+                    <span class="section-label"
+                        data-i18n="services-label">
+                        LAYANAN MASYARAKAT
+                    </span>
+
+                    <h2 class="section-title"
+                        data-i18n="services-title">
+
+                        Apa yang dapat kami bantu?
+
+                    </h2>
+
+                    <p class="section-description"
+                        data-i18n="services-description">
+
+                        Pilih kategori layanan sesuai kebutuhanmu.
+                        Setiap kategori memiliki formulir pengajuan
+                        yang disesuaikan.
+
+                    </p>
+
+                </div>
+
+
+                <!-- SERVICE GRID -->
+                <div class="services-grid">
+
+
+                    <!-- SERVICE 01 -->
+                    <article class="service-card">
+
+                        <div class="service-icon icon-green">
+                            <i data-lucide="file-text"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <span class="service-code">SRV-01</span>
+
+                        <h3 data-i18n="service-1-title">
+                            Surat dan Administrasi
+                        </h3>
+
+                        <p data-i18n="service-1-description">
+                            Pengajuan surat pengantar dan kebutuhan
+                            administrasi warga.
+                        </p>
+
+                        <a href="pengajuan.html?layanan=SRV-01"
+                            class="service-link">
+
+                            <span data-i18n="service-action">
+                                Ajukan layanan
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 02 -->
+                    <article class="service-card">
+
+                        <div class="service-icon icon-sage">
+                            <i data-lucide="calendar-days"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <span class="service-code">SRV-02</span>
+
+                        <h3 data-i18n="service-2-title">
+                            Proposal Kegiatan
+                        </h3>
+
+                        <p data-i18n="service-2-description">
+                            Penyampaian rencana kegiatan dan
+                            permohonan dukungan lingkungan.
+                        </p>
+
+                        <a href="pengajuan.html?layanan=SRV-02"
+                            class="service-link">
+
+                            <span data-i18n="service-action">
+                                Ajukan layanan
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 03 -->
+                    <article class="service-card">
+
+                        <div class="service-icon icon-blue">
+                            <i data-lucide="users"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <span class="service-code">SRV-03</span>
+
+                        <h3 data-i18n="service-3-title">
+                            Laporan Kependudukan
+                        </h3>
+
+                        <p data-i18n="service-3-description">
+                            Pelaporan kelahiran, kematian,
+                            pendatang, dan perubahan data warga.
+                        </p>
+
+                        <a href="pengajuan.html?layanan=SRV-03"
+                            class="service-link">
+
+                            <span data-i18n="service-action">
+                                Ajukan layanan
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 04 -->
+                    <article class="service-card">
+
+                        <div class="service-icon icon-olive">
+                            <i data-lucide="leaf"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <span class="service-code">SRV-04</span>
+
+                        <h3 data-i18n="service-4-title">
+                            Laporan Lingkungan
+                        </h3>
+
+                        <p data-i18n="service-4-description">
+                            Pelaporan masalah kebersihan,
+                            fasilitas umum, dan kondisi lingkungan.
+                        </p>
+
+                        <a href="pengajuan.html?layanan=SRV-04"
+                            class="service-link">
+
+                            <span data-i18n="service-action">
+                                Ajukan layanan
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 05 -->
+                    <article class="service-card">
+
+                        <div class="service-icon icon-purple">
+                            <i data-lucide="message-square"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <span class="service-code">SRV-05</span>
+
+                        <h3 data-i18n="service-5-title">
+                            Pengaduan Masyarakat
+                        </h3>
+
+                        <p data-i18n="service-5-description">
+                            Sampaikan keluhan atau permasalahan
+                            yang membutuhkan perhatian pengurus.
+                        </p>
+
+                        <a href="pengajuan.html?layanan=SRV-05"
+                            class="service-link">
+
+                            <span data-i18n="service-action">
+                                Ajukan layanan
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 06 -->
+                    <article class="service-card">
+
+                        <div class="service-icon icon-yellow">
+                            <i data-lucide="lightbulb"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <span class="service-code">SRV-06</span>
+
+                        <h3 data-i18n="service-6-title">
+                            Aspirasi dan Saran
+                        </h3>
+
+                        <p data-i18n="service-6-description">
+                            Berikan ide, masukan, dan saran
+                            untuk kemajuan lingkungan.
+                        </p>
+
+                        <a href="pengajuan.html?layanan=SRV-06"
+                            class="service-link">
+
+                            <span data-i18n="service-action">
+                                Ajukan layanan
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 07 -->
+                    <article class="service-card">
+
+                        <div class="service-icon icon-red">
+                            <i data-lucide="shield-check"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <span class="service-code">SRV-07</span>
+
+                        <h3 data-i18n="service-7-title">
+                            Keamanan dan Ketertiban
+                        </h3>
+
+                        <p data-i18n="service-7-description">
+                            Penyampaian informasi terkait keamanan
+                            dan ketertiban lingkungan.
+                        </p>
+
+                        <a href="pengajuan.html?layanan=SRV-07"
+                            class="service-link">
+
+                            <span data-i18n="service-action">
+                                Ajukan layanan
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 08 -->
+                    <article class="service-card">
+
+                        <div class="service-icon icon-teal">
+                            <i data-lucide="notebook-pen"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <span class="service-code">SRV-08</span>
+
+                        <h3 data-i18n="service-8-title">
+                            Informasi Lainnya
+                        </h3>
+
+                        <p data-i18n="service-8-description">
+                            Sampaikan kebutuhan lain yang belum
+                            termasuk dalam kategori layanan.
+                        </p>
+
+                        <a href="pengajuan.html?layanan=SRV-08"
+                            class="service-link">
+
+                            <span data-i18n="service-action">
+                                Ajukan layanan
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- SERVICES FOOTER -->
+                <div class="services-footer">
+
+                    <p data-i18n="services-footer-text">
+                        Belum yakin layanan mana yang sesuai?
+                    </p>
+
+                    <a href="panduan.html" class="text-link">
+
+                        <span data-i18n="services-footer-link">
+                            Lihat panduan layanan
+                        </span>
+
+                        <i data-lucide="arrow-right"
+                            aria-hidden="true"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             SECTION 05 : HOW IT WORKS
+        ======================================= -->
+
+        <section class="process-section section"
+            id="alur">
+
+            <div class="container">
+
+
+                <!-- SECTION HEADER -->
+                <div class="section-heading">
+
+                    <span class="section-label"
+                        data-i18n="process-label">
+                        CARA PENGGUNAAN
+                    </span>
+
+                    <h2 class="section-title"
+                        data-i18n="process-title">
+
+                        Empat langkah, lebih sederhana.
+
+                    </h2>
+
+                    <p class="section-description"
+                        data-i18n="process-description">
+
+                        Ikuti tahapan berikut untuk menyampaikan
+                        kebutuhan layanan kepada pengurus RT.
+
+                    </p>
+
+                </div>
+
+
+                <!-- PROCESS STEPS -->
+                <div class="process-grid">
+
+
+                    <!-- STEP 01 -->
+                    <div class="process-card">
+
+                        <div class="process-number">01</div>
+
+                        <div class="process-icon icon-green">
+                            <i data-lucide="folder-search"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <h3 data-i18n="process-1-title">
+                            Pilih Layanan
+                        </h3>
+
+                        <p data-i18n="process-1-description">
+                            Tentukan kategori layanan yang
+                            sesuai dengan kebutuhanmu.
+                        </p>
+
+                    </div>
+
+
+                    <!-- STEP 02 -->
+                    <div class="process-card">
+
+                        <div class="process-number">02</div>
+
+                        <div class="process-icon icon-sage">
+                            <i data-lucide="clipboard-pen-line"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <h3 data-i18n="process-2-title">
+                            Isi Pengajuan
+                        </h3>
+
+                        <p data-i18n="process-2-description">
+                            Lengkapi identitas dan informasi
+                            yang diperlukan.
+                        </p>
+
+                    </div>
+
+
+                    <!-- STEP 03 -->
+                    <div class="process-card">
+
+                        <div class="process-number">03</div>
+
+                        <div class="process-icon icon-blue">
+                            <i data-lucide="send"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <h3 data-i18n="process-3-title">
+                            Kirim Pengajuan
+                        </h3>
+
+                        <p data-i18n="process-3-description">
+                            Pengajuan diteruskan kepada
+                            pengurus RT yang dipilih.
+                        </p>
+
+                    </div>
+
+
+                    <!-- STEP 04 -->
+                    <div class="process-card">
+
+                        <div class="process-number">04</div>
+
+                        <div class="process-icon icon-olive">
+                            <i data-lucide="clipboard-check"
+                                aria-hidden="true"></i>
+                        </div>
+
+                        <h3 data-i18n="process-4-title">
+                            Pantau Status
+                        </h3>
+
+                        <p data-i18n="process-4-description">
+                            Gunakan nomor referensi dan kode
+                            verifikasi untuk memeriksa status.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- PROCESS CTA -->
+                <div class="process-action">
+
+                    <a href="pengajuan.html"
+                        class="btn btn-primary">
+
+                        <span data-i18n="process-action">
+                            Mulai Pengajuan
+                        </span>
+
+                        <i data-lucide="arrow-right"
+                            aria-hidden="true"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             SECTION 06 : RT INFORMATION
+        ======================================= -->
+
+        <section class="rt-section section"
+            id="informasi-rt">
+
+            <div class="container">
+
+
+                <!-- SECTION HEADER -->
+                <div class="section-heading">
+
+                    <span class="section-label"
+                        data-i18n="rt-label">
+                        WILAYAH PELAYANAN
+                    </span>
+
+                    <h2 class="section-title"
+                        data-i18n="rt-title">
+
+                        Terhubung dengan lingkunganmu.
+
+                    </h2>
+
+                    <p class="section-description"
+                        data-i18n="rt-description">
+
+                        Pilih RT sesuai dengan domisili untuk
+                        memastikan pengajuan diteruskan kepada
+                        pengurus yang tepat.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RT GRID -->
+                <div class="rt-grid">
+
+
+                    <!-- RT 01 -->
+                    <article class="rt-card">
+
+                        <div class="rt-card-top">
+
+                            <span class="rt-label">RW 01</span>
+                            <span class="rt-number">01</span>
+
+                        </div>
+
+                        <h3>RT 01</h3>
+
+                        <p data-i18n="rt-description-01">
+                            Wilayah pelayanan RT 01.
+                        </p>
+
+                        <div class="rt-card-footer">
+
+                            <span data-i18n="rt-village">
+                                Desa Sumberdiren
+                            </span>
+
+                            <i data-lucide="arrow-up-right"
+                                aria-hidden="true"></i>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- RT 02 -->
+                    <article class="rt-card">
+
+                        <div class="rt-card-top">
+
+                            <span class="rt-label">RW 01</span>
+                            <span class="rt-number">02</span>
+
+                        </div>
+
+                        <h3>RT 02</h3>
+
+                        <p data-i18n="rt-description-02">
+                            Wilayah pelayanan RT 02.
+                        </p>
+
+                        <div class="rt-card-footer">
+
+                            <span data-i18n="rt-village">
+                                Desa Sumberdiren
+                            </span>
+
+                            <i data-lucide="arrow-up-right"
+                                aria-hidden="true"></i>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- RT 03 -->
+                    <article class="rt-card">
+
+                        <div class="rt-card-top">
+
+                            <span class="rt-label">RW 01</span>
+                            <span class="rt-number">03</span>
+
+                        </div>
+
+                        <h3>RT 03</h3>
+
+                        <p data-i18n="rt-description-03">
+                            Wilayah pelayanan RT 03.
+                        </p>
+
+                        <div class="rt-card-footer">
+
+                            <span data-i18n="rt-village">
+                                Desa Sumberdiren
+                            </span>
+
+                            <i data-lucide="arrow-up-right"
+                                aria-hidden="true"></i>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- RT 04 -->
+                    <article class="rt-card">
+
+                        <div class="rt-card-top">
+
+                            <span class="rt-label">RW 01</span>
+                            <span class="rt-number">04</span>
+
+                        </div>
+
+                        <h3>RT 04</h3>
+
+                        <p data-i18n="rt-description-04">
+                            Wilayah pelayanan RT 04.
+                        </p>
+
+                        <div class="rt-card-footer">
+
+                            <span data-i18n="rt-village">
+                                Desa Sumberdiren
+                            </span>
+
+                            <i data-lucide="arrow-up-right"
+                                aria-hidden="true"></i>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- RT NOTE -->
+                <div class="rt-information-note">
+
+                    <i data-lucide="info"
+                        aria-hidden="true"></i>
+
+                    <p data-i18n="rt-note">
+                        Pastikan memilih RT sesuai domisili
+                        sebelum mengirimkan pengajuan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             SECTION 07 : FAQ
+        ======================================= -->
+
+        <section class="faq-section section"
+            id="faq">
+
+            <div class="container">
+
+                <div class="faq-layout">
+
+
+                    <!-- FAQ INTRO -->
+                    <div class="faq-introduction">
+
+                        <span class="section-label"
+                            data-i18n="faq-label">
+                            INFORMASI
+                        </span>
+
+                        <h2 class="section-title"
+                            data-i18n="faq-title">
+
+                            Ada yang ingin ditanyakan?
+
+                        </h2>
+
+                        <p class="section-description"
+                            data-i18n="faq-description">
+
+                            Temukan jawaban dari beberapa
+                            pertanyaan umum mengenai penggunaan
+                            PANGGIL PAK RT.
+
+                        </p>
+
+                        <a href="panduan.html" class="text-link">
+
+                            <span data-i18n="faq-guide-link">
+                                Baca panduan lengkap
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- FAQ LIST -->
+                    <div class="faq-list">
+
+
+                        <!-- FAQ 01 -->
+                        <details class="faq-item">
+
+                            <summary>
+                                <span data-i18n="faq-1-question">
+                                    Apa itu PANGGIL PAK RT?
+                                </span>
+
+                                <span class="faq-indicator"></span>
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p data-i18n="faq-1-answer">
+                                    PANGGIL PAK RT merupakan platform
+                                    layanan digital yang membantu
+                                    warga menyampaikan pengajuan,
+                                    laporan, pengaduan, dan aspirasi
+                                    kepada pengurus RT.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <!-- FAQ 02 -->
+                        <details class="faq-item">
+
+                            <summary>
+                                <span data-i18n="faq-2-question">
+                                    Apakah layanan ini dapat diakses melalui HP?
+                                </span>
+
+                                <span class="faq-indicator"></span>
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p data-i18n="faq-2-answer">
+                                    Ya. Website dirancang agar
+                                    dapat digunakan melalui
+                                    smartphone, tablet, maupun
+                                    komputer.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <!-- FAQ 03 -->
+                        <details class="faq-item">
+
+                            <summary>
+                                <span data-i18n="faq-3-question">
+                                    Bagaimana cara mengajukan layanan?
+                                </span>
+
+                                <span class="faq-indicator"></span>
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p data-i18n="faq-3-answer">
+                                    Pilih kategori layanan,
+                                    lengkapi formulir pengajuan,
+                                    periksa kembali informasi,
+                                    kemudian kirim pengajuan.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <!-- FAQ 04 -->
+                        <details class="faq-item">
+
+                            <summary>
+                                <span data-i18n="faq-4-question">
+                                    Bagaimana cara mengetahui status pengajuan?
+                                </span>
+
+                                <span class="faq-indicator"></span>
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p data-i18n="faq-4-answer">
+                                    Gunakan nomor referensi dan
+                                    kode verifikasi yang diberikan
+                                    setelah pengajuan berhasil
+                                    dikirim melalui halaman
+                                    Cek Status.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <!-- FAQ 05 -->
+                        <details class="faq-item">
+
+                            <summary>
+                                <span data-i18n="faq-5-question">
+                                    Apakah pengajuan langsung disetujui?
+                                </span>
+
+                                <span class="faq-indicator"></span>
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p data-i18n="faq-5-answer">
+                                    Tidak. Setiap pengajuan perlu
+                                    diperiksa oleh pengurus RT.
+                                    Status pengajuan akan diperbarui
+                                    sesuai perkembangan penanganan.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <!-- FAQ 06 -->
+                        <details class="faq-item">
+
+                            <summary>
+                                <span data-i18n="faq-6-question">
+                                    Apakah data pribadi warga aman?
+                                </span>
+
+                                <span class="faq-indicator"></span>
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p data-i18n="faq-6-answer">
+                                    Sistem dirancang untuk membatasi
+                                    akses terhadap informasi pribadi.
+                                    Warga hanya perlu memberikan data
+                                    yang diperlukan untuk layanan
+                                    yang dipilih.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             SECTION 08 : FINAL CTA
+        ======================================= -->
+
+        <section class="final-cta-section">
+
+            <div class="container">
+
+                <div class="final-cta-content">
+
+                    <span class="section-label"
+                        data-i18n="cta-label">
+                        MULAI SEKARANG
+                    </span>
+
+                    <h2 data-i18n="cta-title">
+                        Sampaikan kebutuhanmu, kami siap membantu.
+                    </h2>
+
+                    <p data-i18n="cta-description">
+                        Gunakan PANGGIL PAK RT untuk
+                        menyampaikan berbagai kebutuhan
+                        layanan masyarakat secara lebih mudah.
+                    </p>
+
+                    <div class="final-cta-actions">
+
+                        <a href="pengajuan.html"
+                            class="btn btn-light">
+
+                            <span data-i18n="cta-button">
+                                Buat Pengajuan
+                            </span>
+
+                            <i data-lucide="arrow-right"
+                                aria-hidden="true"></i>
+
+                        </a>
+
+                        <a href="cek-status.html"
+                            class="btn btn-cta-outline"
+                            data-i18n="cta-check">
+
+                            Periksa Status
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+  
+<!-- ==========================================
+     FOOTER
+=========================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <!-- FOOTER MAIN -->
+        <div class="footer-main">
+
+            <!-- BRAND INFORMATION -->
+            <div class="footer-brand">
+
+                <a href="index.html" class="brand">
+
+                    <div class="brand-logo">
+                        <img
+                            src="assets/images/pwa-512.png"
+                            alt="Logo PANGGIL PAK RT">
+                    </div>
+
+                    <div class="brand-information">
+
+                        <span class="brand-name">
+                            PANGGIL PAK RT
+                        </span>
+
+                        <span class="brand-tagline">
+                            Satu Pintu Layanan Masyarakat
+                        </span>
+
+                    </div>
+
+                </a>
+
+                <p class="footer-description"
+                    data-i18n="footer-description">
+
+                    Menghubungkan masyarakat dengan
+                    layanan lingkungan melalui
+                    kemudahan teknologi digital.
+
+                </p>
+
+            </div>
+
+            <!-- FOOTER NAVIGATION -->
+            <div class="footer-column">
+
+                <h3 data-i18n="footer-navigation">
+                    Navigasi
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#beranda" data-i18n="nav-home">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#layanan" data-i18n="nav-services">
+                            Layanan
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#tentang" data-i18n="nav-about">
+                            Tentang
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#alur" data-i18n="nav-process">
+                            Alur Layanan
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- FOOTER INFORMATION -->
+            <div class="footer-column">
+
+                <h3 data-i18n="footer-information">
+                    Informasi
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="cek-status.html"
+                            data-i18n="quick-status-title">
+                            Cek Status
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="panduan.html"
+                            data-i18n="footer-guide">
+                            Panduan Penggunaan
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#faq" data-i18n="faq-title">
+                            Pertanyaan Umum
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <p>
+                © <span data-current-year>2026</span>
+                PANGGIL PAK RT.
+                Hak cipta dilindungi.
+            </p>
+
+            <p data-i18n="footer-closing">
+                Dibangun untuk pelayanan masyarakat.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <!-- LUCIDE INITIALIZATION -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+
+        });
+    </script>
+
+    <!-- NAVIGATION -->
+    <script src="js/navigation.js" defer></script>
+
+    <!-- THEME -->
+    <script src="js/theme.js" defer></script>
+
+<!-- GENERAL SCRIPT -->
+<script src="js/script.js" defer></script>
+
+<!-- PWA REGISTRATION -->
+<script src="./js/pwa.js" defer></script>
+
+<script src="./js/install-prompt.js" defer></script>
+
+
+</body>
+
+</html>

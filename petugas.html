@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+    <!-- BASIC CONFIGURATION -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Petugas | PANGGIL PAK RT</title>
+
+    <meta name="description"
+        content="Halaman autentikasi khusus petugas PANGGIL PAK RT.">
+
+    <meta name="theme-color" content="#173D30">
+    <meta name="author" content="PANGGIL PAK RT">
+
+    <!-- PWA -->
+<link rel="manifest" href="./manifest.json">
+
+
+    <!-- FAVICON -->
+<link rel="icon"
+    type="image/png"
+    href="./assets/images/favicon-panggil-pak-rt.png">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ICONS -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <!-- STAFF CSS -->
+    <link rel="stylesheet" href="css/staff.css">
+</head>
+
+<body class="staff-page">
+
+    <a href="#main-content" class="skip-link">
+        Lewati ke konten utama
+    </a>
+
+    <!-- HEADER -->
+    <header class="staff-header">
+
+        <div class="staff-header-inner">
+
+            <a href="index.html" class="brand" aria-label="Kembali ke beranda">
+
+                <div class="brand-logo">
+    <img
+        src="./assets/images/pwa-512.png"
+        alt="Logo PANGGIL PAK RT">
+</div>
+
+                <div class="brand-information">
+                    <span class="brand-name">PANGGIL PAK RT</span>
+                    <span class="brand-tagline">
+                        Satu Pintu Layanan Masyarakat
+                    </span>
+                </div>
+
+            </a>
+
+            <a href="index.html" class="staff-back-link">
+                <i data-lucide="arrow-left" aria-hidden="true"></i>
+                <span>Kembali ke Beranda</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main id="main-content" class="staff-main">
+
+        <div class="staff-login-container">
+
+            <!-- INTRODUCTION -->
+            <section class="staff-introduction">
+
+                <div class="staff-intro-icon">
+                    <i data-lucide="shield-check" aria-hidden="true"></i>
+                </div>
+
+                <span class="staff-eyebrow">
+                    AREA KHUSUS PETUGAS
+                </span>
+
+                <h1>
+                    Selamat Datang,<br>
+                    Petugas RT.
+                </h1>
+
+                <p>
+                    Masuk untuk mengakses ruang kerja petugas
+                    dan membantu pengelolaan layanan masyarakat.
+                </p>
+
+                <div class="staff-security-note">
+
+                    <i data-lucide="lock-keyhole" aria-hidden="true"></i>
+
+                    <span>
+                        Akses dilindungi dengan verifikasi email.
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- LOGIN CARD -->
+            <section class="staff-login-card" aria-labelledby="login-title">
+
+                <div class="staff-card-heading">
+
+                    <span class="staff-card-label">
+                        AUTENTIKASI PETUGAS
+                    </span>
+
+                    <h2 id="login-title">
+                        Masuk ke Akun
+                    </h2>
+
+                    <p id="login-description">
+                        Gunakan email petugas yang telah terdaftar
+                        pada sistem.
+                    </p>
+
+                </div>
+
+
+                <!-- GLOBAL MESSAGE -->
+                <div
+                    id="loginMessage"
+                    class="staff-message"
+                    role="status"
+                    aria-live="polite"
+                    hidden>
+                </div>
+
+
+                <!-- STEP 1: EMAIL -->
+                <form id="emailForm" class="staff-form">
+
+                    <div class="staff-form-group">
+
+                        <label for="staffEmail">
+                            Alamat Email
+                        </label>
+
+                        <div class="staff-input-wrapper">
+
+                            <i data-lucide="mail" aria-hidden="true"></i>
+
+                            <input
+                                type="email"
+                                id="staffEmail"
+                                name="email"
+                                placeholder="nama@email.com"
+                                autocomplete="email"
+                                maxlength="254"
+                                required>
+
+                        </div>
+
+                        <small>
+                            Gunakan alamat email yang terdaftar
+                            pada konfigurasi petugas RT.
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="requestCodeButton"
+                        class="staff-submit-button">
+
+                        <span class="button-text">
+                            Kirim Kode Verifikasi
+                        </span>
+
+                        <i data-lucide="arrow-right" aria-hidden="true"></i>
+
+                    </button>
+
+                </form>
+
+
+                <!-- STEP 2: OTP -->
+                <form id="otpForm" class="staff-form" hidden>
+
+                    <div class="staff-otp-information">
+
+                        <div class="staff-otp-icon">
+                            <i data-lucide="mail-check" aria-hidden="true"></i>
+                        </div>
+
+                        <h3>
+                            Periksa Email Anda
+                        </h3>
+
+                        <p>
+                            Masukkan kode verifikasi enam digit
+                            yang dikirimkan ke alamat email petugas.
+                        </p>
+
+                        <strong id="maskedEmail">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="staff-form-group">
+
+                        <label for="staffOTP">
+                            Kode Verifikasi
+                        </label>
+
+                        <input
+                            type="text"
+                            id="staffOTP"
+                            name="code"
+                            class="staff-otp-input"
+                            placeholder="000000"
+                            inputmode="numeric"
+                            autocomplete="one-time-code"
+                            maxlength="6"
+                            pattern="[0-9]{6}"
+                            required>
+
+                        <small>
+                            Kode verifikasi terdiri dari enam angka.
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="verifyCodeButton"
+                        class="staff-submit-button">
+
+                        <span class="button-text">
+                            Verifikasi dan Masuk
+                        </span>
+
+                        <i data-lucide="shield-check" aria-hidden="true"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="backToEmailButton"
+                        class="staff-secondary-button">
+
+                        <i data-lucide="arrow-left" aria-hidden="true"></i>
+                        Gunakan Email Lain
+
+                    </button>
+
+                </form>
+
+
+                <!-- SECURITY FOOTER -->
+                <div class="staff-card-footer">
+
+                    <i data-lucide="shield" aria-hidden="true"></i>
+
+                    <span>
+                        Halaman ini hanya diperuntukkan bagi petugas
+                        yang memiliki akun terdaftar.
+                    </span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="staff-footer">
+
+        <p>
+            © <span id="currentYear">2026</span>
+            PANGGIL PAK RT.
+            Hak cipta dilindungi.
+        </p>
+
+        <span>
+            Satu Pintu Layanan Masyarakat
+        </span>
+
+    </footer>
+
+
+    <!-- CONFIGURATION -->
+    <script src="config/public-config.js" defer></script>
+
+    <!-- STAFF AUTHENTICATION -->
+    <script src="js/staff-auth.js" defer></script>
+
+
+    <!-- PAGE LOGIC -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            "use strict";
+
+            const emailForm = document.getElementById("emailForm");
+            const otpForm = document.getElementById("otpForm");
+
+            const emailInput = document.getElementById("staffEmail");
+            const otpInput = document.getElementById("staffOTP");
+
+            const requestButton = document.getElementById("requestCodeButton");
+            const verifyButton = document.getElementById("verifyCodeButton");
+
+            const backButton = document.getElementById("backToEmailButton");
+
+            const messageBox = document.getElementById("loginMessage");
+            const maskedEmail = document.getElementById("maskedEmail");
+
+            const currentYear = document.getElementById("currentYear");
+
+            let activeEmail = "";
+
+
+            /* ======================================
+               INITIALIZATION
+            ====================================== */
+
+            currentYear.textContent = new Date().getFullYear();
+
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+
+
+            /* ======================================
+               MESSAGE HANDLER
+            ====================================== */
+
+            function showMessage(message, type = "info") {
+
+                messageBox.textContent = message;
+                messageBox.className = "staff-message " + type;
+                messageBox.hidden = false;
+
+            }
+
+
+            function hideMessage() {
+
+                messageBox.textContent = "";
+                messageBox.hidden = true;
+                messageBox.className = "staff-message";
+
+            }
+
+
+            /* ======================================
+               BUTTON LOADING
+            ====================================== */
+
+            function setButtonLoading(button, loading, loadingText) {
+
+                const text = button.querySelector(".button-text");
+
+                button.disabled = loading;
+
+                if (loading) {
+
+                    button.dataset.originalText = text.textContent;
+                    text.textContent = loadingText;
+
+                } else {
+
+                    text.textContent =
+                        button.dataset.originalText || text.textContent;
+
+                }
+
+            }
+
+
+            /* ======================================
+               EMAIL MASKING
+            ====================================== */
+
+            function maskEmail(email) {
+
+                const parts = email.split("@");
+
+                if (parts.length !== 2) {
+                    return email;
+                }
+
+                const username = parts[0];
+                const domain = parts[1];
+
+                const visible =
+                    username.length <= 2
+                        ? username.charAt(0)
+                        : username.substring(0, 2);
+
+                return visible + "***@" + domain;
+
+            }
+
+
+            /* ======================================
+               STEP 1: REQUEST LOGIN CODE
+            ====================================== */
+
+            emailForm.addEventListener("submit", async (event) => {
+
+                event.preventDefault();
+
+                hideMessage();
+
+                const email = emailInput.value.trim().toLowerCase();
+
+                if (!emailInput.checkValidity()) {
+
+                    emailInput.reportValidity();
+                    return;
+
+                }
+
+                if (
+                    !window.PanggilPakRTStaffAuth ||
+                    typeof window.PanggilPakRTStaffAuth.requestLoginCode !== "function"
+                ) {
+
+                    showMessage(
+                        "Modul autentikasi belum berhasil dimuat. Muat ulang halaman.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+                setButtonLoading(
+                    requestButton,
+                    true,
+                    "Mengirim kode..."
+                );
+
+                try {
+
+                    const result =
+                        await window.PanggilPakRTStaffAuth.requestLoginCode(email);
+
+                    if (!result || result.success !== true) {
+
+                        throw new Error(
+                            result?.message || "Permintaan kode verifikasi gagal."
+                        );
+
+                    }
+
+                    activeEmail = email;
+
+                    maskedEmail.textContent = maskEmail(email);
+
+                    emailForm.hidden = true;
+                    otpForm.hidden = false;
+
+                    otpInput.value = "";
+                    otpInput.focus();
+
+                    showMessage(
+                        result.message ||
+                        "Permintaan berhasil diproses. Jika email terdaftar dan aktif, kode verifikasi akan dikirimkan.",
+                        "success"
+                    );
+
+                } catch (error) {
+
+                    showMessage(
+                        error.message ||
+                        "Tidak dapat mengirim kode verifikasi. Silakan coba kembali.",
+                        "error"
+                    );
+
+                } finally {
+
+                    setButtonLoading(requestButton, false);
+
+                }
+
+            });
+
+
+            /* ======================================
+               OTP INPUT: NUMBERS ONLY
+            ====================================== */
+
+            otpInput.addEventListener("input", () => {
+
+                otpInput.value = otpInput.value
+                    .replace(/\D/g, "")
+                    .slice(0, 6);
+
+            });
+
+
+            /* ======================================
+               STEP 2: VERIFY LOGIN CODE
+            ====================================== */
+
+            otpForm.addEventListener("submit", async (event) => {
+
+                event.preventDefault();
+
+                hideMessage();
+
+                const code = otpInput.value.trim();
+
+                if (!/^\d{6}$/.test(code)) {
+
+                    showMessage(
+                        "Masukkan kode verifikasi yang terdiri dari enam angka.",
+                        "error"
+                    );
+
+                    otpInput.focus();
+                    return;
+
+                }
+
+                if (
+                    !window.PanggilPakRTStaffAuth ||
+                    typeof window.PanggilPakRTStaffAuth.verifyLoginCode !== "function"
+                ) {
+
+                    showMessage(
+                        "Modul autentikasi belum berhasil dimuat. Muat ulang halaman.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+                setButtonLoading(
+                    verifyButton,
+                    true,
+                    "Memverifikasi..."
+                );
+
+                try {
+
+                    const result =
+                        await window.PanggilPakRTStaffAuth.verifyLoginCode(
+                            activeEmail,
+                            code
+                        );
+
+                    if (!result || result.success !== true) {
+
+                        throw new Error(
+                            result?.message || "Kode verifikasi tidak valid."
+                        );
+
+                    }
+
+                    showMessage(
+                        "Verifikasi berhasil. Mengalihkan ke dashboard petugas...",
+                        "success"
+                    );
+
+                    window.location.replace("dashboard.html");
+
+                } catch (error) {
+
+                    showMessage(
+                        error.message ||
+                        "Verifikasi gagal. Periksa kode dan coba kembali.",
+                        "error"
+                    );
+
+                    otpInput.select();
+
+                } finally {
+
+                    setButtonLoading(verifyButton, false);
+
+                }
+
+            });
+
+
+            /* ======================================
+               BACK TO EMAIL STEP
+            ====================================== */
+
+            backButton.addEventListener("click", () => {
+
+                hideMessage();
+
+                otpForm.hidden = true;
+                emailForm.hidden = false;
+
+                otpInput.value = "";
+                emailInput.focus();
+
+            });
+
+        });
+    </script>
+
+  <!-- PWA REGISTRATION -->
+    <script src="./js/pwa.js" defer></script>
+
+    
+</body>
+
+</html>
