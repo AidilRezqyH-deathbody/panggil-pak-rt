@@ -1,0 +1,962 @@
+
+/* =========================================================
+   PANGGIL PAK RT
+   STAFF AUTHENTICATION STYLESHEET
+   Version: 1.0.0
+========================================================= */
+
+
+/* =========================================================
+   01. DESIGN TOKENS
+========================================================= */
+
+:root {
+    --staff-forest: #173D30;
+    --staff-deep-forest: #102B22;
+    --staff-sage: #A8C5AE;
+    --staff-soft-cream: #F5F6EF;
+    --staff-white: #FFFFFF;
+
+    --staff-text: #26352D;
+    --staff-muted: #69766E;
+
+    --staff-border: #E1E7E0;
+
+    --staff-success: #237A4B;
+    --staff-success-bg: #EAF6ED;
+
+    --staff-danger: #B42318;
+    --staff-danger-bg: #FDECEC;
+
+    --staff-info: #285D8F;
+    --staff-info-bg: #EDF5FC;
+
+    --staff-shadow:
+        0 20px 60px rgba(16, 43, 34, 0.09);
+
+    --staff-radius: 18px;
+
+    --staff-transition:
+        0.25s ease;
+}
+
+
+/* =========================================================
+   02. GLOBAL RESET
+========================================================= */
+
+.staff-page,
+.staff-page * {
+    box-sizing: border-box;
+}
+
+.staff-page {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Inter", sans-serif;
+
+    color: var(--staff-text);
+    background: var(--staff-soft-cream);
+
+    -webkit-font-smoothing: antialiased;
+}
+
+.staff-page button,
+.staff-page input {
+    font: inherit;
+}
+
+.staff-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.staff-page button {
+    cursor: pointer;
+}
+
+.staff-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   03. ACCESSIBILITY
+========================================================= */
+
+.staff-page .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    z-index: 1000;
+
+    padding: 12px 18px;
+
+    color: var(--staff-white);
+    background: var(--staff-deep-forest);
+
+    border-radius: 8px;
+}
+
+.staff-page .skip-link:focus {
+    top: 15px;
+}
+
+.staff-page a:focus-visible,
+.staff-page button:focus-visible,
+.staff-page input:focus-visible {
+    outline: 3px solid var(--staff-sage);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   04. HEADER
+========================================================= */
+
+.staff-header {
+    width: 100%;
+
+    background: var(--staff-white);
+
+    border-bottom: 1px solid var(--staff-border);
+}
+
+.staff-header-inner {
+    width: min(1180px, calc(100% - 48px));
+    min-height: 84px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+
+/* BRAND */
+
+.staff-page .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.staff-page .brand-logo {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    overflow: hidden;
+
+    background: #B9D7BD;
+    border-radius: 12px;
+}
+
+.staff-page .brand-logo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.staff-page .brand-information {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.staff-page .brand-name {
+    color: var(--staff-deep-forest);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+
+    letter-spacing: -0.3px;
+}
+
+.staff-page .brand-tagline {
+    color: var(--staff-muted);
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+/* BACK LINK */
+
+.staff-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--staff-muted);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: var(--staff-transition);
+}
+
+.staff-back-link:hover {
+    color: var(--staff-forest);
+}
+
+.staff-back-link i {
+    width: 17px;
+    height: 17px;
+}
+
+
+/* =========================================================
+   05. MAIN LAYOUT
+========================================================= */
+
+.staff-main {
+    flex: 1;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 24px;
+}
+
+.staff-login-container {
+    width: min(1050px, 100%);
+
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+
+    align-items: center;
+
+    gap: 75px;
+}
+
+
+/* =========================================================
+   06. INTRODUCTION
+========================================================= */
+
+.staff-introduction {
+    max-width: 450px;
+}
+
+.staff-intro-icon {
+    width: 66px;
+    height: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 27px;
+
+    color: var(--staff-forest);
+    background: rgba(168, 197, 174, 0.35);
+
+    border: 1px solid rgba(23, 61, 48, 0.08);
+
+    border-radius: 19px;
+}
+
+.staff-intro-icon i {
+    width: 31px;
+    height: 31px;
+}
+
+.staff-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 17px;
+
+    color: var(--staff-success);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+}
+
+.staff-introduction h1 {
+    margin: 0 0 20px;
+
+    color: var(--staff-deep-forest);
+
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(34px, 4vw, 49px);
+    font-weight: 800;
+
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+.staff-introduction > p {
+    max-width: 410px;
+
+    margin: 0;
+
+    color: var(--staff-muted);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.staff-security-note {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    margin-top: 35px;
+
+    color: var(--staff-forest);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.staff-security-note i {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   07. LOGIN CARD
+========================================================= */
+
+.staff-login-card {
+    width: 100%;
+
+    padding: 39px;
+
+    background: var(--staff-white);
+
+    border: 1px solid rgba(23, 61, 48, 0.06);
+    border-radius: var(--staff-radius);
+
+    box-shadow: var(--staff-shadow);
+}
+
+.staff-card-heading {
+    margin-bottom: 30px;
+}
+
+.staff-card-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--staff-success);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+.staff-card-heading h2 {
+    margin: 0 0 10px;
+
+    color: var(--staff-deep-forest);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+
+    letter-spacing: -0.6px;
+}
+
+.staff-card-heading p {
+    margin: 0;
+
+    color: var(--staff-muted);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   08. FORM
+========================================================= */
+
+.staff-form {
+    width: 100%;
+}
+
+.staff-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-bottom: 23px;
+}
+
+.staff-form-group label {
+    color: var(--staff-text);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.staff-form-group small {
+    color: var(--staff-muted);
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* INPUT WRAPPER */
+
+.staff-input-wrapper {
+    position: relative;
+}
+
+
+.staff-input-wrapper > i,
+.staff-input-wrapper > svg {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+
+    width: 18px;
+    height: 18px;
+
+    color: var(--staff-muted);
+
+    transform: translateY(-50%);
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+
+.staff-input-wrapper input,
+.staff-otp-input {
+    width: 100%;
+    height: 53px;
+
+    padding: 0 16px;
+
+    color: var(--staff-text);
+    background: #FAFBF9;
+
+    border: 1px solid var(--staff-border);
+    border-radius: 11px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color var(--staff-transition),
+        box-shadow var(--staff-transition),
+        background var(--staff-transition);
+}
+
+.staff-input-wrapper input {
+    padding-left: 47px;
+}
+
+.staff-input-wrapper input::placeholder,
+.staff-otp-input::placeholder {
+    color: #A0AAA2;
+}
+
+.staff-input-wrapper input:hover,
+.staff-otp-input:hover {
+    border-color: #B7C9BA;
+}
+
+.staff-input-wrapper input:focus,
+.staff-otp-input:focus {
+    background: var(--staff-white);
+
+    border-color: var(--staff-forest);
+
+    box-shadow:
+        0 0 0 4px rgba(23, 61, 48, 0.08);
+}
+
+
+/* =========================================================
+   09. SUBMIT BUTTON
+========================================================= */
+
+.staff-submit-button {
+    width: 100%;
+    min-height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 14px 20px;
+
+    color: var(--staff-white);
+    background: var(--staff-forest);
+
+    border: 0;
+    border-radius: 11px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        background var(--staff-transition),
+        transform var(--staff-transition),
+        box-shadow var(--staff-transition);
+}
+
+.staff-submit-button:hover:not(:disabled) {
+    background: var(--staff-deep-forest);
+
+    box-shadow:
+        0 8px 20px rgba(16, 43, 34, 0.16);
+
+    transform: translateY(-2px);
+}
+
+.staff-submit-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.staff-submit-button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.staff-submit-button i {
+    width: 17px;
+    height: 17px;
+}
+
+
+/* =========================================================
+   10. OTP SECTION
+========================================================= */
+
+.staff-otp-information {
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+.staff-otp-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 16px;
+
+    color: var(--staff-forest);
+    background: rgba(168, 197, 174, 0.3);
+
+    border-radius: 17px;
+}
+
+.staff-otp-icon i {
+    width: 27px;
+    height: 27px;
+}
+
+.staff-otp-information h3 {
+    margin: 0 0 9px;
+
+    color: var(--staff-deep-forest);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.staff-otp-information p {
+    margin: 0 0 13px;
+
+    color: var(--staff-muted);
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.staff-otp-information strong {
+    display: inline-block;
+
+    padding: 8px 13px;
+
+    color: var(--staff-forest);
+    background: var(--staff-soft-cream);
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    letter-spacing: 0.3px;
+}
+
+
+/* OTP INPUT */
+
+.staff-otp-input {
+    height: 61px;
+
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+
+    letter-spacing: 10px;
+}
+
+
+/* SECONDARY BUTTON */
+
+.staff-secondary-button {
+    width: 100%;
+    min-height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    margin-top: 12px;
+    padding: 10px;
+
+    color: var(--staff-muted);
+    background: transparent;
+
+    border: 0;
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: var(--staff-transition);
+}
+
+.staff-secondary-button:hover {
+    color: var(--staff-forest);
+    background: var(--staff-soft-cream);
+}
+
+.staff-secondary-button i {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* =========================================================
+   11. MESSAGE
+========================================================= */
+
+.staff-message {
+    margin-bottom: 22px;
+    padding: 13px 15px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.staff-message.success {
+    color: var(--staff-success);
+    background: var(--staff-success-bg);
+
+    border-color: #CDE8D3;
+}
+
+.staff-message.error {
+    color: var(--staff-danger);
+    background: var(--staff-danger-bg);
+
+    border-color: #F3CCCC;
+}
+
+.staff-message.info {
+    color: var(--staff-info);
+    background: var(--staff-info-bg);
+
+    border-color: #D4E5F5;
+}
+
+
+/* =========================================================
+   12. CARD FOOTER
+========================================================= */
+
+.staff-card-footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 28px;
+    padding-top: 21px;
+
+    border-top: 1px solid var(--staff-border);
+}
+
+.staff-card-footer i {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    color: var(--staff-success);
+}
+
+.staff-card-footer span {
+    color: var(--staff-muted);
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   13. FOOTER
+========================================================= */
+
+.staff-footer {
+    width: min(1180px, calc(100% - 48px));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin: 0 auto;
+    padding: 24px 0;
+
+    border-top: 1px solid rgba(23, 61, 48, 0.1);
+}
+
+.staff-footer p,
+.staff-footer span {
+    margin: 0;
+
+    color: var(--staff-muted);
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   14. RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .staff-login-container {
+        grid-template-columns: 1fr;
+
+        max-width: 510px;
+
+        gap: 38px;
+    }
+
+    .staff-introduction {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .staff-intro-icon {
+        margin: 0 auto 20px;
+    }
+
+    .staff-introduction h1 {
+        font-size: 37px;
+    }
+
+    .staff-introduction > p {
+        margin: 0 auto;
+    }
+
+    .staff-security-note {
+        justify-content: center;
+        margin-top: 22px;
+    }
+
+    .staff-main {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+}
+
+
+/* =========================================================
+   15. RESPONSIVE MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .staff-header-inner {
+        width: calc(100% - 32px);
+        min-height: 72px;
+
+        gap: 12px;
+    }
+
+    .staff-page .brand-logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .staff-page .brand-name {
+        font-size: 12px;
+    }
+
+    .staff-page .brand-tagline {
+        font-size: 9px;
+    }
+
+    .staff-back-link {
+        gap: 5px;
+        font-size: 11px;
+    }
+
+    .staff-back-link i {
+        width: 15px;
+        height: 15px;
+    }
+
+    .staff-main {
+        padding: 43px 16px;
+    }
+
+    .staff-login-container {
+        gap: 31px;
+    }
+
+    .staff-intro-icon {
+        width: 55px;
+        height: 55px;
+
+        margin-bottom: 17px;
+
+        border-radius: 15px;
+    }
+
+    .staff-intro-icon i {
+        width: 26px;
+        height: 26px;
+    }
+
+    .staff-eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.4px;
+    }
+
+    .staff-introduction h1 {
+        margin-bottom: 13px;
+
+        font-size: 31px;
+        letter-spacing: -0.9px;
+    }
+
+    .staff-introduction > p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .staff-security-note {
+        font-size: 10px;
+    }
+
+    .staff-login-card {
+        padding: 25px 21px;
+
+        border-radius: 15px;
+    }
+
+    .staff-card-heading {
+        margin-bottom: 25px;
+    }
+
+    .staff-card-heading h2 {
+        font-size: 22px;
+    }
+
+    .staff-card-heading p {
+        font-size: 12px;
+    }
+
+    .staff-form-group label {
+        font-size: 12px;
+    }
+
+    .staff-input-wrapper input {
+        height: 50px;
+        font-size: 13px;
+    }
+
+    .staff-submit-button {
+        min-height: 51px;
+        font-size: 12px;
+    }
+
+    .staff-otp-input {
+        height: 57px;
+        font-size: 22px;
+        letter-spacing: 8px;
+    }
+
+    .staff-footer {
+        width: calc(100% - 32px);
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 5px;
+
+        padding: 19px 0;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   16. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .staff-page *,
+    .staff-page *::before,
+    .staff-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

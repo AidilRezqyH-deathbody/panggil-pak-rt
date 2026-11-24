@@ -1,0 +1,2018 @@
+
+/* ==========================================
+   PANGGIL PAK RT
+   FORM PAGE STYLESHEET
+
+   File: css/form.css
+   Version: 1.1.0
+   Theme: Forest Green Modern
+========================================== */
+
+
+/* ==========================================
+   01. FORM PAGE VARIABLES
+========================================== */
+
+:root {
+    --form-primary: #173D30;
+    --form-primary-dark: #102B22;
+    --form-primary-light: #EAF2EC;
+
+    --form-sage: #A8C5AE;
+    --form-cream: #F5F6EF;
+
+    --form-text: #25352C;
+    --form-muted: #69766E;
+
+    --form-border: #E1E8E2;
+    --form-surface: #FFFFFF;
+    --form-background: #F8FAF7;
+
+    --form-danger: #C94B4B;
+    --form-success: #32845A;
+
+    --form-radius: 14px;
+    --form-radius-small: 9px;
+
+    --form-shadow: 0 8px 28px rgba(23, 61, 48, 0.06);
+}
+
+
+/* ==========================================
+   02. GENERAL FORM PAGE
+========================================== */
+
+body:has(.submission-section) {
+    background: var(--form-background);
+}
+
+.submission-section {
+    padding-top: 70px;
+    padding-bottom: 80px;
+}
+
+.form-information-section {
+    padding: 0 0 80px;
+}
+
+/* Pertahankan lebar .container dari style.css */
+
+
+/* ==========================================
+   03. FORM HERO
+========================================== */
+
+.form-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 45px 0 65px;
+
+    background: linear-gradient(
+        135deg,
+        var(--form-primary-dark),
+        var(--form-primary)
+    );
+
+    color: #FFFFFF;
+}
+
+.form-hero::before,
+.form-hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.form-hero::before {
+    width: 340px;
+    height: 340px;
+    top: -180px;
+    right: -80px;
+    background: rgba(168, 197, 174, 0.10);
+}
+
+.form-hero::after {
+    width: 240px;
+    height: 240px;
+    bottom: -150px;
+    left: 10%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.form-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==========================================
+   04. BREADCRUMB
+========================================== */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 38px;
+
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 13px;
+}
+
+.breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.breadcrumb a:hover {
+    color: #FFFFFF;
+}
+
+.breadcrumb svg {
+    width: 15px;
+    height: 15px;
+}
+
+.breadcrumb > span {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   05. HERO TEXT
+========================================== */
+
+.form-hero-text {
+    max-width: 760px;
+}
+
+.form-hero .section-label {
+    display: inline-block;
+    margin-bottom: 17px;
+
+    color: var(--form-sage);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.form-hero-title {
+    margin: 0 0 20px;
+
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(30px, 4.5vw, 48px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.form-hero-title span {
+    display: block;
+    color: var(--form-sage);
+}
+
+.form-hero-description {
+    max-width: 620px;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+
+/* ==========================================
+   06. HERO INFORMATION NOTE
+========================================== */
+
+.form-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    max-width: 610px;
+    margin-top: 30px;
+    padding: 14px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.form-hero-note svg {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    color: var(--form-sage);
+}
+
+.form-hero-note p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   07. SUBMISSION LAYOUT
+========================================== */
+
+.submission-layout {
+    display: grid;
+    grid-template-columns: 285px minmax(0, 1fr);
+    align-items: start;
+    gap: 30px;
+}
+
+
+/* ==========================================
+   08. SUBMISSION SIDEBAR
+========================================== */
+
+.submission-sidebar {
+    position: relative;
+    min-width: 0;
+}
+
+.submission-sidebar-card {
+    position: sticky;
+    top: 110px;
+
+    padding: 27px 23px;
+
+    border: 1px solid var(--form-border);
+    border-radius: var(--form-radius);
+
+    background: var(--form-surface);
+    box-shadow: var(--form-shadow);
+}
+
+.submission-sidebar-card > .section-label {
+    display: block;
+    margin-bottom: 12px;
+
+    color: var(--form-success);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.submission-sidebar-card > h2 {
+    margin: 0 0 12px;
+
+    color: var(--form-primary);
+    font-family: "Poppins", sans-serif;
+    font-size: 21px;
+    line-height: 1.45;
+}
+
+.submission-sidebar-card > p {
+    margin: 0;
+
+    color: var(--form-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   09. SUBMISSION STEPS
+========================================== */
+
+.submission-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    margin-top: 30px;
+}
+
+.submission-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    min-width: 0;
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: var(--form-primary-light);
+    color: var(--form-primary);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.submission-step > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+    padding-top: 2px;
+}
+
+.submission-step strong {
+    color: var(--form-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.submission-step small {
+    color: var(--form-muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   10. SIDEBAR HELP
+========================================== */
+
+.submission-help {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    margin-top: 32px;
+    padding-top: 23px;
+
+    border-top: 1px solid var(--form-border);
+}
+
+.help-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: var(--form-cream);
+    color: var(--form-primary);
+}
+
+.help-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.submission-help > div {
+    min-width: 0;
+}
+
+.submission-help strong {
+    display: block;
+    margin-bottom: 5px;
+
+    color: var(--form-text);
+    font-size: 13px;
+}
+
+.submission-help p {
+    margin: 0 0 10px;
+
+    color: var(--form-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.submission-help .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--form-primary);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.submission-help .text-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* ==========================================
+   11. SUBMISSION CARD
+========================================== */
+
+.submission-main {
+    min-width: 0;
+}
+
+.submission-card {
+    overflow: hidden;
+
+    border: 1px solid var(--form-border);
+    border-radius: var(--form-radius);
+
+    background: var(--form-surface);
+    box-shadow: var(--form-shadow);
+}
+
+.submission-card-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 30px 32px 25px;
+
+    border-bottom: 1px solid var(--form-border);
+}
+
+.submission-card-header .section-label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--form-success);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.submission-card-header h2 {
+    margin: 0 0 8px;
+
+    color: var(--form-primary);
+    font-family: "Poppins", sans-serif;
+    font-size: 23px;
+    line-height: 1.4;
+}
+
+.submission-card-header p {
+    margin: 0;
+
+    color: var(--form-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.required-note {
+    flex-shrink: 0;
+
+    color: var(--form-danger);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   12. SUBMISSION FORM
+========================================== */
+
+.submission-form {
+    padding: 5px 32px 30px;
+}
+
+.submission-form .form-group {
+    min-width: 0;
+    margin: 0;
+    padding: 29px 0;
+
+    border: 0;
+    border-bottom: 1px solid var(--form-border);
+}
+
+.submission-form .form-group:last-of-type {
+    border-bottom: none;
+}
+
+.submission-form .form-group legend {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 0;
+
+    color: var(--form-primary);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.form-group-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+    flex-shrink: 0;
+
+    border-radius: 9px;
+    background: var(--form-primary-light);
+    color: var(--form-primary);
+
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   13. FORM GRID
+========================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+.form-field.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* ==========================================
+   14. FORM LABEL
+========================================== */
+
+.form-label {
+    display: block;
+
+    color: var(--form-text);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Gunakan class required-mark pada HTML */
+.form-label .required-mark {
+    color: var(--form-danger);
+}
+
+.optional-label {
+    display: inline-block;
+    margin-left: 5px;
+
+    color: var(--form-muted);
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+
+/* ==========================================
+   15. INPUT WRAPPER
+========================================== */
+
+.input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.input-wrapper > svg {
+    position: absolute;
+    left: 15px;
+
+    width: 17px;
+    height: 17px;
+
+    color: var(--form-muted);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.input-wrapper .form-control {
+    padding-left: 44px;
+}
+
+
+/* ==========================================
+   16. FORM CONTROLS
+========================================== */
+
+.submission-form .form-control {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 49px;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--form-border);
+    border-radius: var(--form-radius-small);
+    outline: none;
+
+    background: var(--form-surface);
+    color: var(--form-text);
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.submission-form .form-control::placeholder {
+    color: #A2ADA5;
+    opacity: 1;
+}
+
+.submission-form .form-control:hover {
+    border-color: var(--form-sage);
+}
+
+.submission-form .form-control:focus {
+    border-color: var(--form-primary);
+    box-shadow: 0 0 0 3px rgba(23, 61, 48, 0.09);
+}
+
+.submission-form .form-control:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.submission-form select.form-control {
+    padding-right: 38px;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.select-wrapper::after {
+    content: "";
+
+    position: absolute;
+    right: 15px;
+
+    width: 8px;
+    height: 8px;
+
+    border-right: 1.5px solid var(--form-muted);
+    border-bottom: 1.5px solid var(--form-muted);
+
+    transform: rotate(45deg) translateY(-2px);
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   17. TEXTAREA
+========================================== */
+
+.submission-form .form-textarea {
+    min-height: 145px;
+    padding: 14px;
+
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.textarea-footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.field-hint {
+    display: block;
+
+    color: var(--form-muted);
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+.character-counter {
+    flex-shrink: 0;
+
+    color: var(--form-muted);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ==========================================
+   18. SELECTED SERVICE INFORMATION
+========================================== */
+
+.selected-service-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    margin-top: 17px;
+    padding: 16px;
+
+    border: 1px solid #D9E8DC;
+    border-radius: 10px;
+
+    background: var(--form-primary-light);
+}
+
+.selected-service-info[hidden] {
+    display: none !important;
+}
+
+.selected-service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+
+    border-radius: 9px;
+    background: rgba(23, 61, 48, 0.08);
+    color: var(--form-primary);
+}
+
+.selected-service-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.selected-service-info strong {
+    display: block;
+    margin-bottom: 5px;
+
+    color: var(--form-primary);
+    font-size: 13px;
+}
+
+.selected-service-info p {
+    margin: 0;
+
+    color: var(--form-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   19. ATTACHMENT AREA
+========================================== */
+
+.attachment-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 29px 20px;
+
+    border: 1.5px dashed var(--form-border);
+    border-radius: 12px;
+
+    background: var(--form-background);
+    text-align: center;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.attachment-area:hover {
+    border-color: var(--form-sage);
+    background: var(--form-primary-light);
+}
+
+.attachment-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+    margin-bottom: 15px;
+
+    border-radius: 15px;
+    background: var(--form-primary-light);
+    color: var(--form-primary);
+}
+
+.attachment-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.attachment-description strong {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--form-text);
+    font-size: 14px;
+}
+
+.attachment-description p {
+    margin: 0 0 8px;
+
+    color: var(--form-muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.attachment-description small {
+    display: block;
+
+    color: var(--form-muted);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.attachment-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 42px;
+    margin-top: 19px;
+    padding: 10px 17px;
+
+    cursor: pointer;
+}
+
+.attachment-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.file-input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Input berada di dalam attachment-area */
+.attachment-area:has(.file-input:focus-visible) .attachment-button {
+    outline: 2px solid var(--form-primary);
+    outline-offset: 3px;
+}
+
+
+/* ==========================================
+   20. ATTACHMENT PREVIEW
+========================================== */
+
+.attachment-preview {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    gap: 9px;
+    margin-top: 16px;
+}
+
+.attachment-preview:empty {
+    display: none;
+}
+
+.attachment-file {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 11px 13px;
+
+    border: 1px solid var(--form-border);
+    border-radius: 9px;
+
+    background: var(--form-surface);
+    text-align: left;
+}
+
+.attachment-file-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+
+    border-radius: 8px;
+    background: var(--form-primary-light);
+    color: var(--form-primary);
+}
+
+.attachment-file-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.attachment-file-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    flex: 1;
+    gap: 4px;
+}
+
+.attachment-file-info strong {
+    overflow: hidden;
+
+    color: var(--form-text);
+    font-size: 11px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.attachment-file-info small {
+    color: var(--form-muted);
+    font-size: 10px;
+}
+
+.attachment-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: transparent;
+    color: var(--form-danger);
+
+    cursor: pointer;
+}
+
+.attachment-remove:hover {
+    background: rgba(201, 75, 75, 0.08);
+}
+
+.attachment-remove svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* ==========================================
+   21. INFORMATION BOX
+========================================== */
+
+.information-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    padding: 16px;
+
+    border: 1px solid #DDE9DF;
+    border-radius: 10px;
+
+    background: var(--form-primary-light);
+}
+
+.information-box > svg {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+
+    color: var(--form-primary);
+}
+
+.information-box strong {
+    display: block;
+    margin-bottom: 5px;
+
+    color: var(--form-primary);
+    font-size: 13px;
+}
+
+.information-box p {
+    margin: 0;
+
+    color: var(--form-muted);
+    font-size: 11px;
+    line-height: 1.75;
+}
+
+
+/* ==========================================
+   22. CONSENT CHECKBOX
+========================================== */
+
+.consent-wrapper {
+    margin-top: 20px;
+}
+
+.consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+
+    cursor: pointer;
+}
+
+.consent-label input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+}
+
+.consent-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    border: 1.5px solid #BCC9BE;
+    border-radius: 5px;
+
+    background: var(--form-surface);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.consent-custom::after {
+    content: "";
+
+    width: 9px;
+    height: 5px;
+
+    border-left: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+
+    transform: rotate(-45deg) scale(0);
+    transition: transform 0.15s ease;
+}
+
+.consent-label input:checked + .consent-custom {
+    border-color: var(--form-primary);
+    background: var(--form-primary);
+}
+
+.consent-label input:checked + .consent-custom::after {
+    transform: rotate(-45deg) scale(1);
+}
+
+.consent-label input:focus-visible + .consent-custom {
+    outline: 3px solid rgba(23, 61, 48, 0.18);
+    outline-offset: 3px;
+}
+
+.consent-text {
+    color: var(--form-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.consent-text > span {
+    color: var(--form-danger);
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   23. FORM ACTIONS
+========================================== */
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+
+    padding-top: 26px;
+}
+
+.form-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 49px;
+    padding: 12px 20px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.form-actions .btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.form-actions .btn:hover {
+    transform: translateY(-2px);
+}
+
+.form-actions .btn-primary {
+    border: 1px solid var(--form-primary);
+    background: var(--form-primary);
+    color: #FFFFFF;
+}
+
+.form-actions .btn-primary:hover {
+    border-color: var(--form-primary-dark);
+    background: var(--form-primary-dark);
+}
+
+.form-actions .btn-outline {
+    border: 1px solid var(--form-border);
+    background: transparent;
+    color: var(--form-text);
+}
+
+.form-actions .btn-outline:hover {
+    border-color: var(--form-primary);
+    background: var(--form-primary-light);
+}
+
+.form-actions .btn-secondary {
+    border: 1px solid var(--form-border);
+    background: var(--form-surface);
+    color: var(--form-primary);
+}
+
+
+/* ==========================================
+   24. FORM FEEDBACK
+========================================== */
+
+.form-feedback {
+    margin-top: 20px;
+    padding: 14px 16px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* hidden harus selalu menang dari class status */
+.form-feedback[hidden] {
+    display: none !important;
+}
+
+.form-feedback.success {
+    border: 1px solid #CBE5D2;
+    background: #EEF8F0;
+    color: #276440;
+}
+
+.form-feedback.error {
+    border: 1px solid #F0D1D1;
+    background: #FFF1F1;
+    color: #A63838;
+}
+
+.form-feedback.warning {
+    border: 1px solid #F0E0BB;
+    background: #FFF8E9;
+    color: #88621D;
+}
+
+
+/* ==========================================
+   25. FORM VALIDATION STATES
+========================================== */
+
+.submission-form .form-control.is-invalid {
+    border-color: var(--form-danger);
+    box-shadow: 0 0 0 3px rgba(201, 75, 75, 0.08);
+}
+
+.submission-form .form-control.is-invalid:focus {
+    border-color: var(--form-danger);
+    box-shadow: 0 0 0 3px rgba(201, 75, 75, 0.12);
+}
+
+.submission-form .form-control.is-valid {
+    border-color: var(--form-success);
+}
+
+.field-error {
+    display: block;
+    margin-top: 7px;
+
+    color: var(--form-danger);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   26. ADDITIONAL INFORMATION
+========================================== */
+
+.form-information-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 27px 30px;
+
+    border: 1px solid var(--form-border);
+    border-radius: var(--form-radius);
+
+    background: var(--form-surface);
+    box-shadow: var(--form-shadow);
+}
+
+.form-information-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+
+    border-radius: 14px;
+    background: var(--form-primary-light);
+    color: var(--form-primary);
+}
+
+.form-information-icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+.form-information-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.form-information-content h2 {
+    margin: 0 0 7px;
+
+    color: var(--form-primary);
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+}
+
+.form-information-content p {
+    margin: 0;
+
+    color: var(--form-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.form-information-card > .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 44px;
+    flex-shrink: 0;
+    padding: 10px 16px;
+
+    border: 1px solid var(--form-border);
+    border-radius: 9px;
+
+    background: var(--form-surface);
+    color: var(--form-primary);
+
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.form-information-card > .btn:hover {
+    border-color: var(--form-primary);
+    background: var(--form-primary-light);
+}
+
+.form-information-card > .btn svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* ==========================================
+   27. DARK MODE
+========================================== */
+
+[data-theme="dark"] {
+    --form-primary: #A8C5AE;
+    --form-primary-dark: #173D30;
+    --form-primary-light: #243B30;
+
+    --form-sage: #A8C5AE;
+
+    --form-text: #E6EEE8;
+    --form-muted: #A4B2A7;
+
+    --form-border: #35473B;
+    --form-surface: #1C2B22;
+    --form-background: #142119;
+
+    --form-danger: #F08A8A;
+    --form-success: #83C99A;
+
+    --form-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .form-hero {
+    background: linear-gradient(135deg, #102B22, #193E30);
+}
+
+[data-theme="dark"] .submission-sidebar-card > h2,
+[data-theme="dark"] .submission-card-header h2,
+[data-theme="dark"] .submission-form .form-group legend,
+[data-theme="dark"] .form-information-content h2 {
+    color: #DDEBE0;
+}
+
+[data-theme="dark"] .step-number,
+[data-theme="dark"] .form-group-number,
+[data-theme="dark"] .help-icon,
+[data-theme="dark"] .attachment-icon,
+[data-theme="dark"] .selected-service-icon,
+[data-theme="dark"] .form-information-icon {
+    background: #2C4434;
+    color: #B6D5BC;
+}
+
+[data-theme="dark"] .submission-form .form-control {
+    background: #17251C;
+    color: #E6EEE8;
+}
+
+[data-theme="dark"] .submission-form .form-control::placeholder {
+    color: #819187;
+}
+
+[data-theme="dark"] .submission-form .form-control:focus {
+    border-color: #83AD8D;
+    box-shadow: 0 0 0 3px rgba(131, 173, 141, 0.12);
+}
+
+[data-theme="dark"] .attachment-area {
+    background: #17251C;
+}
+
+[data-theme="dark"] .attachment-area:hover {
+    background: #243B30;
+}
+
+[data-theme="dark"] .selected-service-info,
+[data-theme="dark"] .information-box {
+    border-color: #405B46;
+    background: #243B30;
+}
+
+[data-theme="dark"] .selected-service-info strong,
+[data-theme="dark"] .information-box strong {
+    color: #C5E0CA;
+}
+
+[data-theme="dark"] .form-actions .btn-outline,
+[data-theme="dark"] .form-information-card > .btn {
+    border-color: var(--form-border);
+    background: transparent;
+    color: #DDEBE0;
+}
+
+[data-theme="dark"] .form-actions .btn-outline:hover,
+[data-theme="dark"] .form-information-card > .btn:hover {
+    background: #243B30;
+}
+
+[data-theme="dark"] .consent-custom {
+    border-color: #607267;
+    background: #17251C;
+}
+
+[data-theme="dark"] .consent-label input:checked + .consent-custom {
+    border-color: #83AD8D;
+    background: #426B4D;
+}
+
+[data-theme="dark"] .attachment-file {
+    background: #17251C;
+}
+
+[data-theme="dark"] .attachment-file-icon {
+    background: #2C4434;
+    color: #B6D5BC;
+}
+
+[data-theme="dark"] .form-feedback.success {
+    border-color: #426B4D;
+    background: #203A29;
+    color: #B6DDBE;
+}
+
+[data-theme="dark"] .form-feedback.error {
+    border-color: #754747;
+    background: #3A2424;
+    color: #F0AAAA;
+}
+
+[data-theme="dark"] .form-feedback.warning {
+    border-color: #6E5935;
+    background: #3B3120;
+    color: #EBD19B;
+}
+
+
+/* ==========================================
+   28. RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+    .submission-layout {
+        grid-template-columns: 245px minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .submission-sidebar-card {
+        padding: 23px 19px;
+    }
+
+    .submission-card-header {
+        padding: 27px 25px 22px;
+    }
+
+    .submission-form {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+}
+
+
+/* ==========================================
+   29. RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+    .form-hero {
+        padding: 32px 0 45px;
+    }
+
+    .breadcrumb {
+        margin-bottom: 28px;
+        font-size: 11px;
+    }
+
+    .form-hero-title {
+        font-size: clamp(28px, 7vw, 38px);
+    }
+
+    .form-hero-description {
+        font-size: 13px;
+    }
+
+    .form-hero-note {
+        align-items: flex-start;
+        padding: 13px;
+    }
+
+    .form-hero-note p {
+        font-size: 11px;
+    }
+
+    .submission-section {
+        padding-top: 42px;
+        padding-bottom: 50px;
+    }
+
+    .submission-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .submission-sidebar-card {
+        position: static;
+    }
+
+    .submission-steps {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 19px 13px;
+    }
+
+    .submission-help {
+        margin-top: 24px;
+    }
+
+    .submission-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        padding: 24px 21px 20px;
+    }
+
+    .submission-card-header h2 {
+        font-size: 20px;
+    }
+
+    .submission-form {
+        padding: 0 21px 25px;
+    }
+
+    .submission-form .form-group {
+        padding: 24px 0;
+    }
+
+    .submission-form .form-group legend {
+        font-size: 14px;
+    }
+
+    .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 19px;
+    }
+
+    .form-field.full-width {
+        grid-column: auto;
+    }
+
+    .form-information-section {
+        padding-bottom: 55px;
+    }
+
+    .form-information-card {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 22px;
+    }
+
+    .form-information-content {
+        flex-basis: calc(100% - 70px);
+    }
+
+    .form-information-card > .btn {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================
+   30. RESPONSIVE - SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+    .form-hero {
+        padding: 26px 0 38px;
+    }
+
+    .form-hero-title {
+        font-size: 28px;
+        line-height: 1.35;
+    }
+
+    .form-hero-description {
+        font-size: 12px;
+    }
+
+    .breadcrumb {
+        gap: 7px;
+        font-size: 10px;
+    }
+
+    .submission-section {
+        padding-top: 30px;
+    }
+
+    .submission-sidebar-card {
+        padding: 21px 17px;
+    }
+
+    .submission-steps {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .submission-card-header {
+        padding: 21px 17px;
+    }
+
+    .submission-form {
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+
+    .submission-form .form-group legend {
+        flex-wrap: wrap;
+        gap: 9px;
+        font-size: 13px;
+    }
+
+    .submission-form .form-control {
+        min-height: 47px;
+        font-size: 12px;
+    }
+
+    .submission-form .form-textarea {
+        min-height: 130px;
+    }
+
+    .field-hint {
+        font-size: 10px;
+    }
+
+    .attachment-area {
+        padding: 24px 14px;
+    }
+
+    .attachment-description strong {
+        font-size: 12px;
+    }
+
+    .attachment-description p {
+        font-size: 11px;
+    }
+
+    .textarea-footer {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .form-actions {
+        align-items: stretch;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .form-information-card {
+        padding: 19px 16px;
+    }
+
+    .form-information-content h2 {
+        font-size: 15px;
+    }
+
+    .form-information-content p {
+        font-size: 11px;
+    }
+}
+
+
+/* ==========================================
+   31. ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .submission-form *,
+    .form-hero *,
+    .submission-sidebar *,
+    .form-information-section * {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* ==========================================
+   INPUT ICON SPACING FIX
+========================================== */
+
+.submission-form .input-wrapper {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.submission-form .input-wrapper > svg {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+    pointer-events: none;
+
+    color: var(--form-muted);
+    z-index: 2;
+}
+
+.submission-form .input-wrapper > .form-control {
+    width: 100%;
+    padding-left: 44px;
+}
+
+.submission-form .input-wrapper > textarea.form-control {
+    padding-top: 14px;
+    padding-left: 44px;
+}
+
+/* Select dengan ikon */
+
+.submission-form .select-wrapper > .form-control {
+    padding-left: 44px;
+}
+
+
+/* ==========================================
+   10. INPUT ICON ALIGNMENT FIX
+========================================== */
+
+.submission-form .input-wrapper {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Posisi ikon Lucide */
+
+.submission-form .input-wrapper > svg {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    width: 18px;
+    height: 18px;
+
+    transform: translateY(-50%);
+
+    color: var(--form-muted);
+
+    pointer-events: none;
+    flex-shrink: 0;
+
+    z-index: 2;
+}
+
+/* Beri ruang khusus untuk ikon */
+
+.submission-form .input-wrapper > input.form-control,
+.submission-form .input-wrapper > select.form-control {
+    width: 100%;
+    padding-left: 46px !important;
+}
+
+/* Pastikan teks pilihan select tidak menabrak ikon */
+
+.submission-form .select-wrapper > select.form-control {
+    padding-right: 40px;
+}
+
+/* Ikon tidak mengganggu interaksi select */
+
+.submission-form .select-wrapper > svg {
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   32. FOOTER - FORM PAGE
+   Menyesuaikan footer dengan index.html
+========================================== */
+
+body:has(.submission-section) .site-footer {
+    padding-top: 65px;
+    background: #102B22;
+    color: #FFFFFF;
+}
+
+/* Footer Layout */
+
+body:has(.submission-section) .footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 0.8fr;
+    gap: 55px;
+    padding-bottom: 45px;
+}
+
+/* Brand */
+
+body:has(.submission-section) .footer-brand {
+    min-width: 0;
+}
+
+body:has(.submission-section) .footer-brand .site-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    text-decoration: none;
+}
+
+body:has(.submission-section) .footer-brand .logo-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #B9D7BD;
+}
+
+body:has(.submission-section) .footer-brand .logo-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+body:has(.submission-section) .footer-brand .logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+body:has(.submission-section) .footer-brand .logo-text strong {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+body:has(.submission-section) .footer-brand .logo-text small {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+body:has(.submission-section) .footer-brand > p {
+    max-width: 310px;
+    margin: 22px 0 0;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* Footer Navigation */
+
+body:has(.submission-section) .footer-links {
+    min-width: 0;
+}
+
+body:has(.submission-section) .footer-links h3 {
+    margin: 0 0 20px;
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+body:has(.submission-section) .footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body:has(.submission-section) .footer-links a {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 11px;
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        padding 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body:has(.submission-section) .footer-links a:hover {
+        color: #B9D7BD;
+        padding-left: 4px;
+    }
+}
+
+/* Footer Bottom */
+
+body:has(.submission-section) .footer-bottom {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-top: none;
+}
+
+body:has(.submission-section) .footer-bottom p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.52);
+    font-size: 10px;
+}
+
+body:has(.submission-section) .footer-bottom > span {
+    color: rgba(255, 255, 255, 0.52);
+    font-size: 10px;
+}
+
+/* Footer Responsive */
+
+@media (max-width: 768px) {
+    body:has(.submission-section) .footer-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+    }
+
+    body:has(.submission-section) .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 576px) {
+    body:has(.submission-section) .site-footer {
+        padding-top: 45px;
+    }
+
+    body:has(.submission-section) .footer-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding-bottom: 32px;
+    }
+
+    body:has(.submission-section) .footer-brand {
+        grid-column: auto;
+    }
+
+    body:has(.submission-section) .footer-bottom {
+        min-height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+        padding: 18px 0;
+    }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+    body:has(.submission-section) .footer-links a {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   END OF FORM STYLESHEET
+========================================== */

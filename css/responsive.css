@@ -1,0 +1,1217 @@
+
+/* ==========================================
+   PANGGIL PAK RT
+   RESPONSIVE STYLESHEET
+
+   File: css/responsive.css
+   Version: 1.4.0
+   Theme: Forest Green Modern
+========================================== */
+
+
+/* ==========================================
+   00. RESPONSIVE SAFETY
+========================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+.container,
+.header-content,
+.hero-container,
+.hero-content,
+.introduction-grid,
+.introduction-content,
+.introduction-highlights,
+.quick-access-grid,
+.services-grid,
+.process-grid,
+.rt-grid,
+.footer-main {
+    min-width: 0;
+}
+
+.quick-access-card,
+.highlight-card,
+.service-card,
+.process-card,
+.rt-card,
+.faq-item,
+.footer-column {
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+button,
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+html {
+    overflow-x: clip;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: clip;
+}
+
+
+/* ==========================================
+   01. LARGE TABLET & SMALL LAPTOP
+   Maximum Width: 1024px
+========================================== */
+
+@media screen and (max-width: 1024px) {
+
+    /* GENERAL */
+
+    .container {
+        width: min(100% - 48px, 960px);
+    }
+
+    .section,
+    .quick-access-section,
+    .hero-section,
+    .final-cta-section {
+        padding-top: 76px;
+        padding-bottom: 76px;
+    }
+
+
+    /* HERO */
+
+    .hero-container {
+        gap: 36px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.4rem, 5vw, 3.5rem);
+    }
+
+    .hero-image {
+        min-height: 380px;
+    }
+
+
+    /* QUICK ACCESS */
+
+    .quick-access-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+
+    /* INTRODUCTION */
+
+    .introduction-grid {
+        gap: 36px;
+    }
+
+    .introduction-highlights {
+        gap: 18px;
+    }
+
+
+    /* SERVICES */
+
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+
+    /* PROCESS */
+
+    .process-grid {
+        gap: 18px;
+    }
+
+
+    /* RT */
+
+    .rt-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================
+   02. TABLET
+   Maximum Width: 768px
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* GENERAL */
+
+    .container {
+        width: min(100% - 36px, 680px);
+    }
+
+    .section,
+    .quick-access-section,
+    .hero-section,
+    .final-cta-section {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .section-heading {
+        margin-bottom: 34px;
+    }
+
+
+    /* HERO */
+
+    .hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 34px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-description {
+        max-width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+
+    /* QUICK ACCESS */
+
+    .quick-access-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* INTRODUCTION */
+
+    .introduction-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .introduction-highlights {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+
+    /* SERVICES */
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+
+    /* PROCESS */
+
+    .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+
+    /* RT */
+
+    .rt-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+
+    /* FAQ */
+
+    .faq-layout {
+        max-width: 100%;
+    }
+
+
+    /* FINAL CTA */
+
+    .final-cta-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
+    /* FOOTER */
+
+.footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.footer-brand {
+    grid-column: 1 / -1;
+}
+
+.footer-description {
+    max-width: 420px;
+}
+
+}
+
+
+/* ==========================================
+   03. MOBILE
+   Maximum Width: 576px
+========================================== */
+
+@media screen and (max-width: 576px) {
+
+    /* GENERAL */
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .section,
+    .quick-access-section,
+    .hero-section,
+    .final-cta-section {
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .section-title {
+        font-size: clamp(1.65rem, 7vw, 2.1rem);
+        line-height: 1.25;
+    }
+
+    .section-description {
+        font-size: 0.92rem;
+        line-height: 1.7;
+    }
+
+
+    /* HERO */
+
+    .hero-section {
+        padding-top: 48px;
+        padding-bottom: 54px;
+    }
+
+    .hero-container {
+        gap: 26px;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        line-height: 1.15;
+    }
+
+    .hero-description {
+        font-size: 0.94rem;
+        line-height: 1.75;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        min-height: 240px;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+
+    /* QUICK ACCESS */
+
+    .quick-access-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .quick-access-card {
+        padding: 18px;
+    }
+
+    .quick-access-icon {
+        width: 46px;
+        height: 46px;
+    }
+
+    .quick-access-arrow {
+        margin-left: auto;
+    }
+
+
+    /* INTRODUCTION */
+
+    .introduction-grid {
+        gap: 24px;
+    }
+
+    .highlight-card {
+        padding: 18px;
+    }
+
+    .highlight-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    /* SERVICES */
+
+    .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .service-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .service-card h3 {
+        font-size: 1rem;
+    }
+
+
+    /* PROCESS */
+
+    .process-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .process-card {
+        padding: 20px;
+    }
+
+    .process-icon {
+        width: 46px;
+        height: 46px;
+    }
+
+
+    /* RT */
+
+    .rt-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .rt-card {
+        padding: 20px;
+    }
+
+
+    /* FAQ */
+
+    .faq-item {
+        padding: 16px;
+    }
+
+    .faq-item > summary {
+        gap: 12px;
+        font-size: 0.94rem;
+    }
+
+    .faq-answer {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+
+    /* FINAL CTA */
+
+    .final-cta-section {
+        text-align: center;
+    }
+
+    .final-cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .final-cta-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* FOOTER */
+
+.footer-main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+}
+
+.footer-brand {
+    grid-column: auto;
+}
+
+.footer-description {
+    max-width: 100%;
+}
+
+.footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    text-align: left;
+}
+
+}
+
+
+/* ==========================================
+   04. SMALL MOBILE
+   Maximum Width: 380px
+========================================== */
+
+@media screen and (max-width: 380px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+    }
+
+    .hero-description {
+        font-size: 0.88rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .quick-access-card,
+    .service-card,
+    .process-card,
+    .rt-card {
+        padding: 16px;
+    }
+
+}
+
+
+/* ==========================================
+   05. LANDSCAPE MOBILE
+========================================== */
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+    .hero-section {
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+
+    .hero-image {
+        max-height: 260px;
+    }
+
+}
+
+
+/* ==========================================
+   06. HOVER & TOUCH IMPROVEMENTS
+========================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .main-navigation a:hover {
+        background: rgba(168, 197, 174, 0.18);
+    }
+
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+    .btn,
+    .button,
+    .main-navigation a,
+    .quick-access-card,
+    .service-card,
+    .rt-card,
+    .faq-item > summary {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn,
+    .button {
+        min-height: 48px;
+    }
+
+}
+
+
+/* ==========================================
+   07. RESPONSIVE ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .main-navigation,
+    .main-navigation a,
+    .quick-access-card,
+    .service-card,
+    .rt-card,
+    .btn,
+    .button,
+    .menu-toggle span {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .main-navigation,
+    .main-navigation.is-open {
+        transform: none;
+    }
+
+}
+
+
+/* ==========================================
+   08. SUBMISSION PAGE RESPONSIVE
+   Khusus halaman pengajuan layanan
+========================================== */
+
+
+/* TABLET & SMALL LAPTOP */
+
+@media screen and (max-width: 1024px) {
+
+    .submission-section.section {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .submission-layout {
+        gap: 24px;
+    }
+
+    .submission-sidebar-card {
+        padding: 23px 19px;
+    }
+
+    .submission-card-header {
+        padding: 26px 26px 22px;
+    }
+
+    .submission-form {
+        padding-left: 26px;
+        padding-right: 26px;
+    }
+
+}
+
+
+/* TABLET */
+
+@media screen and (max-width: 768px) {
+
+    .submission-section.section {
+        padding-top: 48px;
+        padding-bottom: 56px;
+    }
+
+    .submission-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .submission-sidebar {
+        min-width: 0;
+    }
+
+    .submission-sidebar-card {
+        position: static;
+        padding: 22px;
+    }
+
+    .submission-main,
+    .submission-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .submission-card-header {
+        padding: 24px 24px 20px;
+    }
+
+    .submission-form {
+        padding: 4px 24px 26px;
+    }
+
+    .submission-form .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .submission-form .form-field,
+    .submission-form .form-control {
+        min-width: 0;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 576px) {
+
+    .submission-section.section {
+        padding-top: 36px;
+        padding-bottom: 44px;
+    }
+
+    .submission-layout {
+        gap: 18px;
+    }
+
+    .submission-sidebar-card {
+        padding: 19px;
+    }
+
+    .submission-card {
+        border-radius: 12px;
+    }
+
+    .submission-card-header {
+        padding: 21px 19px 18px;
+    }
+
+    .submission-form {
+        padding: 2px 19px 23px;
+    }
+
+    .submission-form .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .submission-form .form-group {
+        padding-top: 23px;
+        padding-bottom: 23px;
+    }
+
+    .submission-form .form-group legend {
+        margin-bottom: 19px;
+    }
+
+    .submission-form .form-control {
+        width: 100%;
+        min-width: 0;
+        font-size: 0.94rem;
+    }
+
+    .submission-form textarea.form-control {
+        min-height: 130px;
+    }
+
+    .form-actions {
+        gap: 12px;
+    }
+
+    .form-information-section {
+        padding-bottom: 48px;
+    }
+
+    .form-information-card {
+        padding: 20px;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media screen and (max-width: 380px) {
+
+    .submission-section.section {
+        padding-top: 30px;
+        padding-bottom: 38px;
+    }
+
+    .submission-card-header {
+        padding: 19px 16px 17px;
+    }
+
+    .submission-form {
+        padding: 0 16px 20px;
+    }
+
+    .submission-sidebar-card {
+        padding: 17px;
+    }
+
+    .submission-form .form-group {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .submission-form .form-control {
+        font-size: 0.9rem;
+    }
+
+}
+
+
+/* ==========================================
+   09. SUBMISSION LAYOUT REFINEMENT
+========================================== */
+
+/* Informasi langkah berada di atas formulir */
+
+.submission-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+}
+
+.submission-sidebar {
+    width: 100%;
+    min-width: 0;
+}
+
+.submission-sidebar-card {
+    position: static;
+    width: 100%;
+}
+
+.submission-main {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* Tips: 2 kolom dan 2 baris */
+
+.submission-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 22px;
+}
+
+
+/* Tablet */
+
+@media screen and (max-width: 768px) {
+
+    .submission-layout {
+        gap: 20px;
+    }
+
+    .submission-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+}
+
+
+/* Mobile kecil */
+
+@media screen and (max-width: 480px) {
+
+    .submission-steps {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+}
+
+
+/* ==========================================
+   10. STANDARD HEADER RESPONSIVE
+   Menggunakan struktur header terbaru
+========================================== */
+
+
+/* DESKTOP */
+
+@media screen and (min-width: 769px) {
+
+    .header-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+    }
+
+    .site-logo {
+        flex-shrink: 0;
+    }
+
+    .main-navigation {
+        position: static;
+
+        display: flex;
+        flex: 1;
+
+        justify-content: center;
+
+        max-height: none;
+        padding: 0;
+
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        overflow: visible;
+        transform: none;
+
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(15px, 2vw, 26px);
+    }
+
+    .nav-list a {
+        width: auto;
+        min-height: auto;
+        padding: 10px 0;
+    }
+
+    .header-actions {
+        flex-shrink: 0;
+    }
+
+    .menu-toggle {
+        display: none !important;
+    }
+
+}
+
+
+/* TABLET & MOBILE */
+
+@media screen and (max-width: 768px) {
+
+    .header-content {
+        position: relative;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        min-height: 72px;
+        gap: 12px;
+    }
+
+    .site-logo {
+        max-width: 190px;
+        min-width: 0;
+        flex-shrink: 1;
+    }
+
+    .logo-icon {
+        flex-shrink: 0;
+    }
+
+    .logo-text {
+        min-width: 0;
+    }
+
+    .logo-text strong,
+    .logo-text small {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .main-navigation {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        max-height: calc(100vh - 80px);
+        max-height: calc(100dvh - 80px);
+
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        padding: 16px 20px 20px;
+
+        background: var(--color-surface, #FFFFFF);
+        border-bottom: 1px solid rgba(23, 61, 48, 0.10);
+
+        box-shadow: 0 12px 24px rgba(16, 43, 34, 0.08);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-8px);
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+
+        z-index: 100;
+    }
+
+    .main-navigation.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .main-navigation .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        width: 100%;
+    }
+
+    .main-navigation .nav-list a {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        min-height: 46px;
+
+        padding: 10px 14px;
+        border-radius: 8px;
+    }
+
+    .main-navigation .nav-list a::after {
+        display: none;
+    }
+
+    .header-actions {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 8px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* HAMBURGER TO CLOSE ICON */
+
+    .menu-toggle.is-active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.is-active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 576px) {
+
+    .header-content {
+        min-height: 66px;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .site-logo {
+        max-width: 190px;
+    }
+
+    .main-navigation {
+        padding: 14px 16px 18px;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media screen and (max-width: 380px) {
+
+    .header-content {
+        gap: 8px;
+        min-height: 64px;
+    }
+
+    .site-logo {
+        gap: 8px;
+        max-width: 155px;
+    }
+
+    .logo-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .logo-text strong {
+        font-size: 12px;
+    }
+
+    .logo-text small {
+        font-size: 9px;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+}
+
+
+/* ==========================================
+   FAQ MOBILE LAYOUT FIX
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* Susun pengantar dan daftar FAQ secara vertikal */
+    .faq-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Pengantar FAQ */
+    .faq-introduction {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Daftar pertanyaan */
+    .faq-list {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Setiap pertanyaan */
+    .faq-item {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Teks pertanyaan */
+    .faq-item summary {
+        justify-content: space-between;
+        gap: 12px;
+        padding: 16px;
+        text-align: left;
+    }
+
+    .faq-item summary > span:first-child {
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: break-word;
+    }
+
+    /* Jawaban */
+    .faq-answer {
+        padding: 0 16px 18px;
+    }
+
+}
+
+
+/* ==========================================
+   11. HERO BACKGROUND - MOBILE PORTRAIT
+   Zoom background khusus layar HP portrait
+========================================== */
+
+@media screen and (max-width: 576px) and (orientation: portrait) {
+
+    .hero-background {
+        overflow: hidden;
+    }
+
+    .hero-image {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        min-height: 0;
+        max-height: none;
+
+        display: block;
+
+        object-fit: cover;
+        object-position: center 50%;
+
+        /* Zoom gambar tanpa memperbesar konten hero */
+        scale: 1.3;
+    }
+
+}
+
+/* ==========================================
+   END OF RESPONSIVE STYLESHEET
+========================================== */

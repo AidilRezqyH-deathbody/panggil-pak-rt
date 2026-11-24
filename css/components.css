@@ -1,0 +1,873 @@
+
+/* ==========================================
+   PANGGIL PAK RT
+   COMPONENT DESIGN SYSTEM
+   Version: 1.1.0
+   Theme: Forest Green Modern
+   Style: Mixed Icons + Soft Colors
+========================================== */
+
+
+/* ==========================================
+   01. COMPONENT VARIABLES
+========================================== */
+
+:root {
+    /* Soft Background Colors */
+
+    --soft-green: #E8F0E8;
+    --soft-sage: #E9EEE4;
+    --soft-cream: #F0EEE3;
+    --soft-blue-green: #E8EFED;
+    --soft-yellow: #F5F0DC;
+    --soft-red: #F8E9E6;
+    --soft-blue: #E8EFF5;
+    --soft-purple: #EEEAF5;
+
+    /* Icon Colors */
+
+    --icon-green: #315D48;
+    --icon-sage: #52765D;
+    --icon-olive: #6B7752;
+    --icon-teal: #416C65;
+    --icon-yellow: #8A713B;
+    --icon-red: #A65D52;
+    --icon-blue: #52718D;
+    --icon-purple: #75618F;
+
+    /* Component Theme Tokens
+       Mengikuti variabel utama style.css */
+
+    --component-primary: var(--color-primary, #173D30);
+    --component-primary-dark: var(--color-primary-dark, #102B22);
+    --component-sage: var(--color-sage, #A8C5AE);
+    --component-muted: var(--color-text-secondary, #69766E);
+    --component-text: var(--color-text, #26352D);
+    --component-border: var(--color-border, #E3E8E0);
+    --component-background: var(--color-surface, #FFFFFF);
+    --component-background-soft: var(--color-surface-soft, #EEF1E9);
+
+    /* Component Shadows */
+
+    --component-shadow:
+        0 4px 16px rgba(23, 61, 48, 0.05);
+
+    --component-shadow-hover:
+        0 10px 28px rgba(23, 61, 48, 0.10);
+
+    /* Component Radius */
+
+    --component-radius-sm: 10px;
+    --component-radius-md: 14px;
+    --component-radius-lg: 18px;
+}
+
+
+/* ==========================================
+   02. GENERAL COMPONENT
+========================================== */
+
+.component-card {
+    min-width: 0;
+
+    background: var(--component-background);
+    border: 1px solid var(--component-border);
+    border-radius: var(--component-radius-md);
+    box-shadow: var(--component-shadow);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.component-card:focus-within {
+    border-color: var(--component-sage);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .component-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--component-shadow-hover);
+    }
+}
+
+
+/* ==========================================
+   03. ICON SYSTEM
+========================================== */
+
+.icon-wrapper {
+    width: 48px;
+    height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: var(--soft-green);
+    color: var(--icon-green);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.icon-wrapper svg {
+    width: 23px;
+    height: 23px;
+
+    display: block;
+    stroke-width: 1.8;
+}
+
+
+/* Icon Sizes */
+
+.icon-wrapper.icon-small {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 11px;
+}
+
+.icon-wrapper.icon-small svg {
+    width: 18px;
+    height: 18px;
+}
+
+.icon-wrapper.icon-medium {
+    width: 48px;
+    height: 48px;
+}
+
+.icon-wrapper.icon-large {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 18px;
+}
+
+.icon-wrapper.icon-large svg {
+    width: 29px;
+    height: 29px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .icon-wrapper:hover {
+        transform: translateY(-2px);
+    }
+}
+
+
+/* Icon Color Variants */
+
+.icon-green {
+    background: var(--soft-green);
+    color: var(--icon-green);
+}
+
+.icon-sage {
+    background: var(--soft-sage);
+    color: var(--icon-sage);
+}
+
+.icon-olive {
+    background: var(--soft-cream);
+    color: var(--icon-olive);
+}
+
+.icon-teal {
+    background: var(--soft-blue-green);
+    color: var(--icon-teal);
+}
+
+.icon-yellow {
+    background: var(--soft-yellow);
+    color: var(--icon-yellow);
+}
+
+.icon-red {
+    background: var(--soft-red);
+    color: var(--icon-red);
+}
+
+.icon-blue {
+    background: var(--soft-blue);
+    color: var(--icon-blue);
+}
+
+.icon-purple {
+    background: var(--soft-purple);
+    color: var(--icon-purple);
+}
+
+
+/* Circular Icon */
+
+.icon-circle {
+    border-radius: 50%;
+}
+
+
+/* ==========================================
+   04. SERVICE ICON COMPONENTS
+========================================== */
+
+.service-icon {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 16px;
+
+    background: var(--soft-green);
+    color: var(--icon-green);
+}
+
+.service-icon svg {
+    width: 26px;
+    height: 26px;
+
+    display: block;
+    stroke-width: 1.8;
+}
+
+.service-icon.service-icon-sage {
+    background: var(--soft-sage);
+    color: var(--icon-sage);
+}
+
+.service-icon.service-icon-cream {
+    background: var(--soft-cream);
+    color: var(--icon-olive);
+}
+
+.service-icon.service-icon-teal {
+    background: var(--soft-blue-green);
+    color: var(--icon-teal);
+}
+
+.service-icon.service-icon-blue {
+    background: var(--soft-blue);
+    color: var(--icon-blue);
+}
+
+.service-icon.service-icon-red {
+    background: var(--soft-red);
+    color: var(--icon-red);
+}
+
+.service-icon.service-icon-purple {
+    background: var(--soft-purple);
+    color: var(--icon-purple);
+}
+
+
+/* ==========================================
+   05. BADGE COMPONENT
+========================================== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 6px 11px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.badge svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+}
+
+.badge-green {
+    background: var(--soft-green);
+    color: var(--icon-green);
+}
+
+.badge-sage {
+    background: var(--soft-sage);
+    color: var(--icon-sage);
+}
+
+.badge-blue {
+    background: var(--soft-blue);
+    color: var(--icon-blue);
+}
+
+.badge-yellow {
+    background: var(--soft-yellow);
+    color: var(--icon-yellow);
+}
+
+.badge-red {
+    background: var(--soft-red);
+    color: var(--icon-red);
+}
+
+.badge-gray {
+    background: #EFF1EF;
+    color: #69766E;
+}
+
+
+/* ==========================================
+   06. STATUS COMPONENT
+========================================== */
+
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.status-pending {
+    color: #92743C;
+}
+
+.status-processing {
+    color: #52718D;
+}
+
+.status-completed {
+    color: #397453;
+}
+
+.status-revision {
+    color: #A65D52;
+}
+
+
+/* ==========================================
+   07. BUTTON COMPONENT
+========================================== */
+
+.button {
+    min-height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 12px 20px;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.button svg {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+}
+
+.button:focus-visible {
+    outline: 3px solid rgba(82, 118, 93, 0.25);
+    outline-offset: 3px;
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.button-primary {
+    background: var(--component-primary);
+    color: #FFFFFF;
+}
+
+.button-secondary {
+    background: var(--soft-green);
+    color: var(--icon-green);
+}
+
+.button-outline {
+    background: transparent;
+    color: var(--component-primary);
+    border-color: var(--component-border);
+}
+
+.button-danger {
+    background: var(--soft-red);
+    color: var(--icon-red);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .button:not(:disabled):not([aria-disabled="true"]):hover {
+        transform: translateY(-2px);
+    }
+
+    .button-primary:not(:disabled):hover {
+        background: var(--component-primary-dark);
+        box-shadow: var(--component-shadow-hover);
+    }
+
+    .button-secondary:not(:disabled):hover {
+        background: #DCE9DC;
+    }
+
+    .button-outline:not(:disabled):hover {
+        background: var(--soft-green);
+        border-color: var(--component-sage);
+    }
+
+    .button-danger:not(:disabled):hover {
+        background: #F2DCD7;
+    }
+}
+
+
+/* ==========================================
+   08. FORM COMPONENT
+========================================== */
+
+.form-control {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 12px 15px;
+
+    border: 1px solid #DDE5DC;
+    border-radius: 11px;
+
+    background: #FFFFFF;
+    color: var(--component-text);
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: #98A39A;
+    opacity: 1;
+}
+
+.form-control:focus {
+    border-color: var(--component-sage);
+
+    box-shadow:
+        0 0 0 3px rgba(168, 197, 174, 0.20);
+}
+
+.form-control:disabled {
+    background: #F1F3EF;
+    color: #929B94;
+    cursor: not-allowed;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* Form Label */
+
+.form-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--component-primary-dark);
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.form-required {
+    margin-left: 3px;
+    color: #B75D52;
+}
+
+
+/* Form Helper */
+
+.form-helper {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--component-muted);
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   09. INFORMATION COMPONENT
+========================================== */
+
+.information-box {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 13px;
+
+    padding: 16px;
+
+    border: 1px solid #DDE9DD;
+    border-radius: 14px;
+
+    background: var(--soft-green);
+}
+
+.information-box > svg {
+    width: 21px;
+    height: 21px;
+
+    flex-shrink: 0;
+
+    color: var(--icon-green);
+}
+
+.information-box p {
+    margin: 0;
+
+    color: #496052;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.information-box.warning {
+    background: var(--soft-yellow);
+    border-color: #ECE3C6;
+}
+
+.information-box.warning > svg {
+    color: var(--icon-yellow);
+}
+
+.information-box.danger {
+    background: var(--soft-red);
+    border-color: #F0DAD5;
+}
+
+.information-box.danger > svg {
+    color: var(--icon-red);
+}
+
+
+/* ==========================================
+   10. DIVIDER COMPONENT
+========================================== */
+
+.component-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 18px 0;
+
+    border: none;
+    background: var(--component-border);
+}
+
+
+/* ==========================================
+   11. EMPTY STATE COMPONENT
+========================================== */
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 42px 20px;
+
+    text-align: center;
+}
+
+.empty-state-icon {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 22px;
+
+    background: var(--soft-green);
+    color: var(--icon-green);
+}
+
+.empty-state-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.empty-state h3 {
+    margin-bottom: 8px;
+
+    color: var(--component-primary-dark);
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.empty-state p {
+    max-width: 380px;
+
+    color: var(--component-muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   12. LOADING COMPONENT
+========================================== */
+
+.loading-spinner {
+    width: 22px;
+    height: 22px;
+
+    border: 3px solid #DDE8DE;
+    border-top-color: var(--component-primary);
+
+    border-radius: 50%;
+
+    animation: component-spin 0.8s linear infinite;
+}
+
+@keyframes component-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==========================================
+   13. ACCESSIBILITY
+========================================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+    outline: 3px solid rgba(82, 118, 93, 0.25);
+    outline-offset: 3px;
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+/* ==========================================
+   14. LUCIDE ICON INTEGRATION
+========================================== */
+
+.quick-access-icon,
+.highlight-icon,
+.process-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.quick-access-icon svg,
+.highlight-icon svg,
+.process-icon svg {
+    width: 24px;
+    height: 24px;
+
+    stroke-width: 1.8;
+}
+
+.theme-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.quick-access-arrow svg,
+.service-link svg,
+.text-link svg,
+.hero-scroll svg,
+.hero-actions svg,
+.final-cta-actions svg,
+.process-action svg {
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+}
+
+.rt-card-footer svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* ==========================================
+   15. REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .component-card,
+    .icon-wrapper,
+    .button {
+        scroll-behavior: auto;
+        transition: none;
+    }
+
+    .component-card:hover,
+    .icon-wrapper:hover,
+    .button:hover {
+        transform: none;
+    }
+
+    .loading-spinner {
+        animation: none;
+    }
+}
+
+
+/* =========================================================
+   PAGE LOADER
+========================================================= */
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #F5F6EF;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.page-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.loader-spinner {
+    width: 42px;
+    height: 42px;
+
+    border: 4px solid #DCE6DC;
+    border-top-color: #173D30;
+    border-radius: 50%;
+
+    animation: loader-spin 0.8s linear infinite;
+}
+
+.loader-content p {
+    margin: 0;
+
+    color: #173D30;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes loader-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .loader-spinner {
+        animation-duration: 2s;
+    }
+
+    .page-loader {
+        transition: none;
+    }
+}
