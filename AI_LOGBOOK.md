@@ -136,6 +136,7 @@ Pada tahap ini, AI digunakan sebagai pendamping dalam menyusun struktur proyek, 
 
 Pengembangan dilakukan secara bertahap agar setiap komponen dapat diperiksa dan disesuaikan tanpa harus membangun seluruh sistem sekaligus.
 
+
 ## 2. Pengembangan Frontend
 
 AI membantu dalam penyusunan dan pengembangan struktur halaman website menggunakan HTML, CSS, dan JavaScript.
