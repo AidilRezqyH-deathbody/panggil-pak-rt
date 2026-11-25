@@ -161,7 +161,7 @@ Database Google Sheets PANGGIL PAK RT memiliki empat bagian utama:
 3. **KATEGORI LAYANAN** – Menyimpan daftar kategori layanan yang tersedia.
 4. **LOG NOTIFIKASI** – Menyimpan catatan aktivitas notifikasi sistem.
 
-## 5. 📂 Struktur Halaman Website
+## 5. Struktur Halaman Website
 
 Website PANGGIL PAK RT memiliki beberapa halaman utama dengan fungsi yang berbeda.
 
