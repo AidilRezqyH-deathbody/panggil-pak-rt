@@ -4,6 +4,7 @@ Oleh Anggota Kelompok:
 1. Aidil Rezqy Hadiansyah
 2. Eka Kusuma Darmoko
 
+Kelas: XI TKJ 1
 Asal Sekolah: *SMKN 1 BLITAR*
 
 ## Prompt:
